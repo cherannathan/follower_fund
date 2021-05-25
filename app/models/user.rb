@@ -8,7 +8,6 @@ class User < ApplicationRecord
   validates :pseudo, presence: true, uniqueness: true
   validates :role, presence: true
   validates :bio, presence: true
-  validates :youtube_link
   validates :number_suscribers, presence: true
 
 
