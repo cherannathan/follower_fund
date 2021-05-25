@@ -1,11 +1,19 @@
-<% @users.each do |user| %>
-  <%= user.pseudo%>
-  <% if user.photo.attached? %>
-    <%= cl_image_tag user.photo.first.key%>
-  <% end %>
-  <%= user.bio %>
-  <%= user.first_name %>
-<% end %>
 
 
-
+<div class="container">
+  <div class="cards-index">
+    <% @users.each do |user| %>
+      <div class="card-product">
+          <div class="card-product-infos mt-2">
+            <h2><%= user.first_name %></h2>
+            <p><%= user.last_name %></p>
+            <p><%= user.pseudo %></p>
+            <p><%= user.bio%></p>
+            <br>
+          <div class="avatar-bordered">
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
