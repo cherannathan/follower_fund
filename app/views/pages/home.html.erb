@@ -5,3 +5,34 @@
     <a class="btn btn-outline-danger px-5 py-2 rounded-pill " href="#">Invest</a>
   </div>
 </div>
+<ul class="navbar-universe list-inline tabs-underlined">
+  <li>
+  <%= link_to "#" do %>
+    <div class="tab-underlined <% params[:all] ? 'active' : '' %>  ">All</div>
+    <% end %>
+  </li>
+  <li>
+  <%= link_to "#" do %>
+    <div class="tab-underlined <% params[:comedy] ? 'active' : '' %>  ">Comedy</div>
+    <% end %>
+  </li>
+  <li>
+   <%= link_to "#" do %>
+    <div class="tab-underlined <% params[:gaming] ? 'active' : '' %>  ">Gaming</div>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to "#" do %>
+    <div class="tab-underlined <% params[:tech] ? 'active' : '' %>  ">Tech</div>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to "#" do %>
+    <div class="tab-underlined <% params[:tutorials] ? 'active' : '' %>  ">Tutorials</div>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to "#" do %>
+    <div class="tab-underlined <% params[:wtf] ? 'active' : '' %>  ">WTF</div>
+    <% end %>
+</ul>
