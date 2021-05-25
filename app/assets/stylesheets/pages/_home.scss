@@ -20,6 +20,11 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
+.image-win {
+  height: 360px;
+  width: 960px;
+  background-size: cover;
+
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
