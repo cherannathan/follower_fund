@@ -1,2 +1,33 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<ul class="navbar-universe list-inline tabs-underlined">
+  <li>
+  <%= link_to "#" do %>
+    <div class="tab-underlined <% params[:all] ? 'active' : '' %>  ">All</div>
+    <% end %>
+  </li>
+  <li>
+  <%= link_to "#" do %>
+    <div class="tab-underlined <% params[:comedy] ? 'active' : '' %>  ">Comedy</div>
+    <% end %>
+  </li>
+  <li>
+   <%= link_to "#" do %>
+    <div class="tab-underlined <% params[:gaming] ? 'active' : '' %>  ">Gaming</div>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to "#" do %>
+    <div class="tab-underlined <% params[:tech] ? 'active' : '' %>  ">Tech</div>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to "#" do %>
+    <div class="tab-underlined <% params[:tutorials] ? 'active' : '' %>  ">Tutorials</div>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to "#" do %>
+    <div class="tab-underlined <% params[:wtf] ? 'active' : '' %>  ">WTF</div>
+    <% end %>
+</ul>
+
+
