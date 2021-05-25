@@ -1,5 +1,8 @@
 <% @users.each do |user| %>
-<%= user.last_name %>
-<%= user.bio %>
-<%= user.first_name %>
+  <%= user.pseudo%>
+  <% if user.photo.attached? %>
+    <%= cl_image_tag user.photo.first.key%>
+  <% end %>
+  <%= user.bio %>
+  <%= user.first_name %>
 <% end %>
