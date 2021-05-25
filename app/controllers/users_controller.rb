@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-
   def index
     @users_role = User.where(role: 'creator')
 
@@ -8,5 +7,7 @@ class UsersController < ApplicationController
     end
   end
 
-
+  def show
+    @creator = User.find(params[:id])
+  end
 end
