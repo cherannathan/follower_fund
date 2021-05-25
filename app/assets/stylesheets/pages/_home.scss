@@ -20,10 +20,18 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
+.card-win {
+  height: 300px;
+  width: 720px;
+  background-color: #d31818ec;
+
+}
+
 .image-win {
   height: 360px;
   width: 960px;
   background-size: cover;
+  padding: 112px;
 }
 
 .cards {
