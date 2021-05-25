@@ -1,5 +1,4 @@
 class User < ApplicationRecord
-
   has_one_attached :photo
   has_many :projects
   has_many :investments
@@ -9,9 +8,10 @@ class User < ApplicationRecord
   validates :role, presence: true
   validates :bio, presence: true
 
-
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
+
+
