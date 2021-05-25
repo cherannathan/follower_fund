@@ -8,7 +8,6 @@ class User < ApplicationRecord
   validates :pseudo, presence: true, uniqueness: true
   validates :role, presence: true
   validates :bio, presence: true
-  validates :number_suscribers, presence: true
 
 
   # Include default devise modules. Others available are:
