@@ -1,7 +1,11 @@
 class UsersController < ApplicationController
 
-  def show
-    @user = User.find(params[:id])
+  def index
+    @users_role = User.where(role: 'creator')
+
+    if params[:genre]
+      @users = @users_role.where(genre: params[:query])
+    end
   end
 
 
