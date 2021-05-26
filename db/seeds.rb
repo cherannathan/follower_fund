@@ -46,20 +46,16 @@ user_7.photo.attach(io: file_7, filename: 'nes.png', content_type: 'image/png')
 
 
 
+Project_1 = Project.new(user: user_1, status: 'done', goal_amount: '300', number_of_views: '50000', revenue_split: '20%', deadline: '19 aout 2020', revenue_generated: '100', name: 'Comedy Project on French people', bio: 'We are looking for funding to shoot a video in Paris. The subject will be about stereotypes on French people. We hope this project will interest you, and also many others! We are very hopeful that we will get some traction based on our previous experience.', creator_thankyou: 'Thank you so much for investing in us and believing in us! It really means a lot; we hope that we will be able to reimburse you monetarily.')
 
+Project_2 = Project.new(user: user_1, status: 'fundraising', goal_amount: '500', number_of_views: '0', revenue_split: '20%', deadline: '19 aout 2020', revenue_generated: '0', name: 'Comedy Project on plants', bio: 'We are looking for funding to shoot a video where we will talk about the millenial fascination with houseplants,especially during these Covid times.', creator_thankyou: 'Thank you so much for investing in us and believing in us! It really means a lot; we hope that we will be able to reimburse you monetarily.')
 
+Project_3 = Project.new(user: user_1, status: 'fundraising', goal_amount: '1000', number_of_views: '0', revenue_split: '10%', deadline: '19 aout 2020', revenue_generated: '0', name: 'A new Gaming Channel', bio: 'We are looking for funding to create a new gaming genre of videos on our channel. We think this will go well with our current seleciton of comedy shorts! Invest and be part of the journey with us', creator_thankyou: 'Thank you so much for investing in us and believing in us! It really means a lot; we hope that we will be able to reimburse you monetarily.')
 
-
-
-
+Project_4 = Project.new(user: user_1, status: 'fundraising', goal_amount: '1000', number_of_views: '0', revenue_split: '10%', deadline: '19 aout 2020', revenue_generated: '0', name: 'A new Gaming Channel', bio: 'We are looking for funding to create a new gaming genre of videos on our channel. We think this will go well with our current seleciton of comedy shorts! Invest and be part of the journey with us', creator_thankyou: 'Thank you so much for investing in us and believing in us! It really means a lot; we hope that we will be able to reimburse you monetarily.')
 
 
 projet1 = Project.create(user: tata, status: 'done', goal_amount: '2000', number_of_views: '240', revenue_split: '10%', deadline:'19 novembre 2020', revenue_generated:'20')
-user_4.photo.attach(io: file_4, filename: 'nes.png', content_type: 'image/png')
-
-
-
-
 
 
 
