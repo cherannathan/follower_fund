@@ -1,7 +1,85 @@
-<h1>This is my project, give me your money bitch</h1>
+<div class="headerprojectsshow">
+  <h2>PROJECT NAME</h2>
+</div>
 
+<div class="row">
+  <div class="leftcolumn">
+    <div class="cardprojectsshow">
+      <div class="fakeimg" style="height:250px;">Project video</div>
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="container">
+      <div class="cardprojectsshow">
+          <p><strong>€3,348</strong> Out of <strong>€5,400</strong></p>
+        <div id="myProgress">
+            <div id="myBar"></div>
+        </div>
+          <div class="row">
+            <div class="col">
+              <p><strong>13</strong> packers.</p>
+            </div>
+            <div class="col">
+              <p><strong>8</strong>  days remaining</p>
+            </div>
+          </div>
+          <p>Total revenue split: 20% for my investors.</p>
+          <div class="slidecontainer">
+              <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+          </div>
+            <button class="btn addcartbutton">Add to cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="leftcolumn">
+    <div class="cardprojectsshow">
+      <h2>Project slogan</h2>
+      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="cardprojectsshowsharecalculator">
+      <h2 class="under">Revenue share calculator</h2>
+        <div class="row">
+          <div class="col">
+            <p><strong>Your investment</strong></p>
+          </div>
+          <div class="col">
+            <p><strong>Profit at 1 millions</strong></p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p>5 balles</p>
+          </div>
+          <div class="col">
+            <p>$100</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p>10 balles</p>
+          </div>
+          <div class="col">
+            <p>$200</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <p>15 balles</p>
+          </div>
+          <div class="col">
+            <p>$400</p>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
 
 
 <%= @project.investments.first.price %>
-<h3>add to cart</h3>
-<h4>Revenue share calculator</h4>
+<%= @project.revenue_split %>
+<%= @project.revenue_generated %>
+
