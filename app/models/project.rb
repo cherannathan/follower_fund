@@ -1,5 +1,7 @@
 class Project < ApplicationRecord
   belongs_to :user
+  has_many :project_genres
+  has_many :genres, through: :project_genres
   validates :status, presence: true
   validates :goal_amount, presence: true
   validates :revenue_split, presence: true
