@@ -2,6 +2,7 @@ class User < ApplicationRecord
   has_one_attached :photo
   has_many :projects
   has_many :investments
+  has_many :investors, -> { distinct }, through: :projects
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :pseudo, presence: true, uniqueness: true
@@ -13,5 +14,3 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 end
-
-
