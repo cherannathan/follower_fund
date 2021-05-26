@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_26_102905) do
+
+ActiveRecord::Schema.define(version: 2021_05_26_123316) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +38,12 @@ ActiveRecord::Schema.define(version: 2021_05_26_102905) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "genres", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "investments", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "project_id", null: false
@@ -47,6 +55,14 @@ ActiveRecord::Schema.define(version: 2021_05_26_102905) do
     t.string "price_currency", default: "USD", null: false
     t.index ["project_id"], name: "index_investments_on_project_id"
     t.index ["user_id"], name: "index_investments_on_user_id"
+  end
+
+  create_table "project_genres", force: :cascade do |t|
+    t.bigint "project_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "genre_id"
+    t.index ["project_id"], name: "index_project_genres_on_project_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -85,5 +101,6 @@ ActiveRecord::Schema.define(version: 2021_05_26_102905) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "investments", "projects"
   add_foreign_key "investments", "users"
+  add_foreign_key "project_genres", "projects"
   add_foreign_key "projects", "users"
 end
