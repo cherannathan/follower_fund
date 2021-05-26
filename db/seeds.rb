@@ -66,6 +66,10 @@ project_photo_3 = URI.open('https://static.hitek.fr/img/actualite/ill_m/11076494
 project_3 = Project.new(user: user_1, status: 'fundraising', goal_amount: '1000', number_of_views: '0', revenue_split: '10%', deadline: DateTime.now + 30, revenue_generated: '0', title: 'A new Gaming Channel', bio: 'We are looking for funding to create a new gaming genre of videos on our channel. We think this will go well with our current seleciton of comedy shorts! Invest and be part of the journey with us', creator_thankyou: 'Thank you so much for investing in us and believing in us! It really means a lot; we hope that we will be able to reimburse you monetarily.', genre: 'Gaming')
 project_3.save!
 
+# project_photo_4 = URI.open('')
+# project_4 = Project.new(user: user_1, status: 'fundraising', goal_amount: '1000', number_of_views: '0', revenue_split: '10%', deadline: DateTime.now + 25, revenue_generated: '0', title: 'A new Gaming Channel', bio: 'We are looking for funding to create a new gaming genre of videos on our channel. We think this will go well with our current seleciton of comedy shorts! Invest and be part of the journey with us', creator_thankyou: 'Thank you so much for investing in us and believing in us! It really means a lot; we hope that we will be able to reimburse you monetarily.')
+# project_4.save!
+
 project_photo_5 = URI.open('https://cdn.unitycms.io/image/ocroped/2001,2000,1000,1000,0,0/bdnzKHqeiIk/AqXCcY7Nqi_ACy1RJZaBPq.jpg')
 project_5 = Project.new(user: user_2, status: 'fundraising', goal_amount: '300', number_of_views: '0', revenue_split: '30%', deadline: DateTime.now + 16, revenue_generated: '0', title: 'Interview with Elon Musk', bio: 'This video is going to be crazy; I have an interview set up with Elon Musk! I will need to buy a new camera lens for this event so I hope you will invest', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.', genre: 'Interview')
 project_5.save!
