@@ -1,9 +1,26 @@
-<h1>Show d'un mec</h1>
+<div class= "banner"></div>
 <div>
-  <h2>Creator Pseudo</h2>
-  <p><%= @creator.pseudo %></p>
-  <h2> Creator data</h2>
-  <p><%= @creator.email %></p>
-  <h2>My projects you can invest in</h2>
+  <%#= cl_image_tag @creator.photo.key, class:"avatar-large"  %>
+  <h1><%= @creator.pseudo %></h1>
+  <h3><%= @creator.first_name%> <%= @creator.last_name %></h3>
+
+  <div>
+    <h3> Creator data</h3>
+    <p><%= @creator.email %></p>
+    <ul>
+      <li>Number of followers :<%#= @creator.number_of_subscribers %></li>
+      <li>Number of projects done : <%#= @done_projects.count %></li>
+      <li>On going projects : <%#= @ongoing_projects.count %></li>
+      <li>Number of investors : <%#= @investors %></li>
+    </ul>
+  </div>
+</div>
+<div>
+  <h3>My projects you can invest in</h3>
+    <div class="banner-creator-project">
+      <%#= video area %>
+    </div>
 
 </div>
+
+
