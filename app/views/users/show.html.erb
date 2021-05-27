@@ -1,5 +1,5 @@
 <div class="creator-banner" style="background-image: url('https://images.unsplash.com/photo-1601907234174-e7a575b47753?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80')">
- <img src="FakeAvatar.jpeg" class="avatar-creator-page" alt="">
+ <%= cl_image_tag @creator.photo.key, class:"avatar-creator-page" %>
 </div>
 <div class="container">
   <div>
@@ -9,11 +9,13 @@
   <div class="row d-flex justify-content-between align-items">
     <div class="col-sm-6" style="height: 400px padding: 88px">
       <div class="embed-responsive embed-responsive-16by9">
-        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/v64KOxKVLVg" allowfullscreen></iframe>
+        <iframe class="embed-responsive-item" src="<%= @creator.youtube_link %>" allowfullscreen></iframe>
       </div>
     </div>
-    <div class="col-sm-5 border border-secondary position-relative" style="height: 400px padding: 88px">
+    <div class="col-sm-5 border border-secondary position-relative text-center" style="height: 400px padding: 88px">
       <h2>Who am I ?</h2>
+      <a><%= @creator.youtube_link %></a>
+      quote
       <p><%= @creator.bio %></p>
       <div class="data ml-50px border border-secondary">
         <h3 > Creator data</h3>
@@ -27,10 +29,13 @@
       </div>
     </div>
   </div>
-  <div>
+  <div class="container mt-100">
     <h3>My projects you can invest in</h3>
-      <div class="banner-creator-project">
-        <%#= video area %>
+      <div class="project-card">
+        <% @ongoing_projects.each do |project| %>
+        <%= cl_image_tag project.photos.first&.key  %>
+        <div> <%= project.title %></div>
+        <% end %>
       </div>
   </div>
 </div>
