@@ -11,6 +11,10 @@ class Project < ApplicationRecord
   has_many :investments
   has_many :investors, through: :investments, source: :user
 
+  def total_investments
+    investments.pluck(:price_cents).sum/100
+  end
+
   include PgSearch::Model
   pg_search_scope :global_search,
     against: [:title, :bio ],
@@ -21,4 +25,5 @@ class Project < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
 end
