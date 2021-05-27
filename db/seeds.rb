@@ -47,7 +47,7 @@ user_6.photo.attach(io: file_6, filename: 'nes.png', content_type: 'image/png')
 user_6.save!
 
 file_7 = URI.open('https://i.pinimg.com/originals/4f/28/eb/4f28ebb0323a47bfb86556f0ef56e96f.jpg')
-user_7 = User.new(last_name: 'Garlsonn', first_name: 'Name', email: 'JustDrawCats@gmail.com', password: '123456', bio: 'Do you like games? I do too. I hope you like my channel; I hope to get more investment to grow a lot more! ', role: 'creator', pseudo: 'JustDrawCats')
+user_7 = User.new(last_name: 'Garlsonn', first_name: 'Justin', email: 'JustDrawCats@gmail.com', password: '123456', bio: 'Do you like games? I do too. I hope you like my channel; I hope to get more investment to grow a lot more! ', role: 'creator', pseudo: 'JustDrawCats')
 user_7.photo.attach(io: file_7, filename: 'nes.png', content_type: 'image/png')
 user_7.save!
 
@@ -68,11 +68,71 @@ project_3.save!
 
 
 project_photo_5 = URI.open('https://cdn.unitycms.io/image/ocroped/2001,2000,1000,1000,0,0/bdnzKHqeiIk/AqXCcY7Nqi_ACy1RJZaBPq.jpg')
-project_5 = Project.new(user: user_2, status: 'fundraising', goal_amount: '300', number_of_views: '0', revenue_split: '30%', deadline: DateTime.now + 16, revenue_generated: '0', title: 'Interview with Elon Musk', bio: 'This video is going to be crazy; I have an interview set up with Elon Musk! I will need to buy a new camera lens for this event so I hope you will invest', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.', genre: 'Interview')
+project_5 = Project.new(user: user_2, status: 'fundraising', goal_amount: '300', number_of_views: '0', revenue_split: '10%', deadline: DateTime.now + 16, revenue_generated: '0', title: 'Interview with Elon Musk', bio: 'This video is going to be crazy; I have an interview set up with Elon Musk! I will need to buy a new camera lens for this event so I hope you will invest', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.', genre: 'Interview')
 project_5.save!
 
 
 project_photo_6 = URI.open('https://wearesocial-net.s3.amazonaws.com/wp-content/uploads/2020/11/gamer_room.jpg')
 project_6 = Project.new(user: user_2, status: 'done', goal_amount: '1000', number_of_views: '0', revenue_split: '30%', deadline: DateTime.now + 27, revenue_generated: '2000', title: 'Blogging in a volcano', bio: 'I want to create a video where I record in a live volcano! It is going to be mental', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.', genre: 'Nature')
 project_6.save!
+
+project_photo_7 = URI.open('https://www.insidehook.com/wp-content/uploads/2017/04/Casino-royale-1967-04-25-17-e1493139687821-1.jpg')
+project_7 = Project.new(user: user_3, status: 'fundraising', goal_amount: '200', number_of_views: '0', revenue_split: '10%', deadline: DateTime.now + 27, revenue_generated: '0', title: 'A very British comedy sketch', bio: 'James Bond and Mr  Bean together? Yes, Johnny English might exist but we want to do it way better. Please give us your money!', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.', genre: 'Comedy')
+project_7.save!
+
+project_photo_8 = URI.open('https://www.irishtimes.com/polopoly_fs/1.3143129.1499175788!/image/image.jpg_gen/derivatives/box_620_330/image.jpg')
+project_8 = Project.new(user: user_3, status: 'fundraising', goal_amount: '300', number_of_views: '0', revenue_split: '30%', deadline: DateTime.now + 40, revenue_generated: '0', title: 'Tech comedy sketch', bio: 'Apple users v Samsung users. Who will reign in a world with blue messages?', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.', genre: 'Tech')
+project_8.save!
+
+project_photo_9 = URI.open('https://images.ctfassets.net/wlke2cbybljx/5jTqjlIw5jAbUiDfquMoIC/c03b3152d944e6655d1904d491d331f6/bigger-brighter-eyes-diamond-lips-kit-packshot.png')
+project_9 = Project.new(user: user_4, status: 'fundraising', goal_amount: '2000', number_of_views: '0', revenue_split: '30%', deadline: DateTime.now + 23, revenue_generated: '0', title: 'Trying the most expensive makeup in the world', bio: 'I really want to try the best makeup in the world and create a video about it. I think my fans will love it', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.', genre: 'Makeup')
+project_9.save!
+
+project_photo_10 = URI.open('https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F35%2F2020%2F11%2F24%2Fbest-foot-massager-fb-2000.jpg&q=85')
+project_10 = Project.new(user: user_4, status: 'done', goal_amount: '150', number_of_views: '0', revenue_split: '10%', deadline: DateTime.now + 3, revenue_generated: '200', title: 'Trying the worst reviewed foot massage in New York', bio: 'Hopefully you will all fundraise with a new trend that I have seen on Youtube for trying out the worst reviewed places in my city!', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.', genre: 'Comedy')
+project_10.save!
+
+project_photo_11 = URI.open('https://i2.wp.com/darlingafrica.com/kenya/blog/wp-content/uploads/2019/07/Ciara_met_gala.jpg')
+project_11 = Project.new(user: user_5, status: 'fundraising', goal_amount: '500', number_of_views: '0', revenue_split: '15%', deadline: DateTime.now + 23, revenue_generated: '0', title: 'Styling my hair into 20 of the newest trends', bio: 'I need to hire a hairstylist to style my hair in 20 different ways; I hope that you will help me finance these videos!', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.', genre: 'Makeup')
+project_11.save!
+
+project_photo_12 = URI.open('https://blog.fr.playstation.com/tachyon/sites/10/2020/11/00-PlayStation-FAQ-featured-image-Cropped.jpg')
+project_12 = Project.new(user: user_6, status: 'fundraising', goal_amount: '500', number_of_views: '0', revenue_split: '10%', deadline: DateTime.now + 23, revenue_generated: '0', title: 'PS5 unboxing', bio: 'I still have not got my hands on a PS5! I think my subscribers will like a video where I unbox it and play a few games; and I hope you enjoy it too!', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.', genre: 'Gaming')
+project_12.save!
+
+project_photo_13 = URI.open('https://images-na.ssl-images-amazon.com/images/I/41cm%2BeTdOKL._AC_SX425_.jpg')
+project_10 = Project.new(user: user_6, status: 'fundraising', goal_amount: '500', number_of_views: '0', revenue_split: '30%', deadline: DateTime.now + 23, revenue_generated: '0', title: 'Can you use an XBOX controller as a buttplug?', bio: 'I heard about this website, buttplug.io and I thought it would be funny to create a crossover', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.', genre: 'gaming')
+project_13.save!
+
+project_photo_14 = URI.open('https://www.unilad.co.uk/cdn-cgi/image/width=648,quality=70,format=webp,fit=pad,dpr=2/https%3A%2F%2Fwww.unilad.co.uk%2Fwp-content%2Fuploads%2F2020%2F10%2Frubbishdog.jpg')
+project_14 = Project.new(user: user_7, status: 'done', goal_amount: '100', number_of_views: '0', revenue_split: '10%', deadline: DateTime.now + 8, revenue_generated: '1000', title: 'Just drawing dogs', bio: 'My gaming channel has been about mixing cats and games. Now it is time to move onto the next frontier; dogs!', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.', genre: 'gaming')
+project_14.save!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+project_photo_11 = URI.open('')
+project_10 = Project.new(user: user_4, status: 'fundraising', goal_amount: '500', number_of_views: '0', revenue_split: '30%', deadline: DateTime.now + 23, revenue_generated: '0', title: '', bio: '', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.', genre: '')
+project_10.save!
+
+project_photo_11 = URI.open('')
+project_10 = Project.new(user: user_4, status: 'fundraising', goal_amount: '500', number_of_views: '0', revenue_split: '30%', deadline: DateTime.now + 23, revenue_generated: '0', title: '', bio: '', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.', genre: '')
+project_10.save!
+
+project_photo_11 = URI.open('')
+project_10 = Project.new(user: user_4, status: 'fundraising', goal_amount: '500', number_of_views: '0', revenue_split: '30%', deadline: DateTime.now + 23, revenue_generated: '0', title: '', bio: '', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.', genre: '')
+project_10.save!
 
