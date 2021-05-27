@@ -1,23 +1,28 @@
 class InvestmentsController < ApplicationController
 
-  def new
-    @investment = Investment.new
+  # def new
+  #   @investment = Investment.new
+  # end
+
+  def index
+    @investment = Investment.where(status: 'pending')
+    authorize @investment
   end
 
+  # def create
+  #   @investment = Investment.new(investment_params)
+  #   @investment.save
 
-  def create
-    @investment = Investment.new(investment_params)
-    @investment.save
+  # end
 
-  end
+  # def show
+  # @investment = Investment.find(params[:id])
+  # end
 
-  def show
-  @investment = Investment.find(params[:id])
-  end
+#   private
 
-  private
-
-  def investment_params
-    params.require(:investment).permit(:amount, :status)
-  end
+#   def investment_params
+#     params.require(:investment).permit(:amount, :status)
+#   end
+# end
 end
