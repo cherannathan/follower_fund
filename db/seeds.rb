@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+ProjectGenre.destroy_all
 Genre.destroy_all
 User.destroy_all
 Project.destroy_all
@@ -184,7 +185,7 @@ genre_12 = Genre.find_by(name: "Gaming")
 project_genre_12 = ProjectGenre.create(project: project_12, genre: genre_12)
 
 project_photo_13 = URI.open('https://images-na.ssl-images-amazon.com/images/I/41cm%2BeTdOKL._AC_SX425_.jpg')
-project_10 = Project.new(user: user_6, status: 'fundraising', goal_amount: '500', number_of_views: '0', revenue_split: '30%', deadline: DateTime.now + 23, revenue_generated: '0', title: 'Can you use an XBOX controller as a buttplug?', bio: 'I heard about this website, buttplug.io and I thought it would be funny to create a crossover', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.')
+project_13 = Project.new(user: user_6, status: 'fundraising', goal_amount: '500', number_of_views: '0', revenue_split: '30%', deadline: DateTime.now + 23, revenue_generated: '0', title: 'Can you use an XBOX controller as a buttplug?', bio: 'I heard about this website, buttplug.io and I thought it would be funny to create a crossover', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.')
 project_13.save!
 genre_13 = Genre.find_by(name: "Tech")
 project_genre_13 = ProjectGenre.create(project: project_13, genre: genre_13)
