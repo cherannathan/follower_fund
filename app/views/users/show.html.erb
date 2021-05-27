@@ -28,7 +28,9 @@
   <div>
     <h3>My projects you can invest in</h3>
       <div class="banner-creator-project">
-        <%#= video area %>
+        <% @ongoing_projects.each do |project| %>
+        <div> <%= project.title %></div>
+        <% end %>
       </div>
   </div>
 </div>
