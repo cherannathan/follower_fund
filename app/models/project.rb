@@ -25,5 +25,7 @@ class Project < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
-
+ def currentamountinvestment
+  (investments.where(status: 'done').pluck(:price_cents).sum*100)/goal_amount
+ end
 end

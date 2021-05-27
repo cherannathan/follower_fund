@@ -13,4 +13,8 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+      def pendingamount
+        investments.where(status: 'pending').pluck(:price_cents).sum
+      end
 end

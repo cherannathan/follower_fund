@@ -11,38 +11,21 @@
                 <b>4</b>
               </span>
             </h4>
-            <p><a href="#">Project 1</a> <span class="price">$15</span></p>
-            <p><a href="#">Project 2</a> <span class="price">$5</span></p>
-            <hr>
-            <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+            <% @investments.each do |investment| %>
+            <p><a href="#"> <%= investment.project.title %> </a> <span class="price">  <%=investment.price_cents %> </span></p> <% if policy(@investments).destroy? %>
+              <div class = "btn btn-black"><%= link_to "Destroy", checkout_path, method: :delete, data: { confirm: "Are you sure?" }%></div>
+                <% end %>
+            <%end %>
+              <hr>
+            <p>Total <span class="price" style="color:black"><b> <%= current_user.pendingamount %> </b></span></p>
           </div>
       </div>
 <div class="headerprojectsshow">
   <h2> My project</h2>
 </div>
 <div class= "container">
-  <h2>Project 1</h2>
-  <div class="row">
-    <div class="leftcolumn">
-        <div class="fakeimg" style="height:250px;">Project video</div>
-    </div>
-      <div class="rightcolumn">
-       <div class="row">
-            <div class="col">
-              <p><strong>  Investor’s share  </strong></p>
-            </div>
-            <div class="col">
-              <p><strong> YouTuber’s share </strong></p>
-            </div>
-          </div>
-        <div id="myProgress">
-            <div id="myBar"></div>
-        </div>
-      </div>
-    </div>
-</div>
-<div class= "container">
-  <h2>Project 1</h2>
+  <% @investments.each do |investment| %>
+  <h2><%= investment.project.title %></h2>
   <div class="row">
     <div class="leftcolumn">
         <div class="fakeimg" style="height:250px;">Project video</div>
@@ -53,15 +36,17 @@
         </div>
           <div class="row">
             <div class="col">
-              <p><strong>  @project.investments.count  </strong> backers.</p>
+              <p><strong>   </strong> backers.</p>
             </div>
             <div class="col">
-              <p><strong> @project.deadline </strong></p>
+              <p><strong></strong></p>
             </div>
           </div>
         </div>
     </div>
+    <%end %>
 </div>
+
 <div class="headerprojectsshow">
   <h2> Paiement</h2>
 </div>
