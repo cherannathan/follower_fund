@@ -53,6 +53,66 @@ user_7.save!
 
 
 
+file_8 = URI.open('https://i.dailymail.co.uk/1s/2021/05/07/22/42710566-9555329-image-m-131_1620422404811.jpg')
+user_8 = User.new(last_name: 'Shekh', first_name: 'Irina', email: 'irina.tech@gmail.com', password: '123456', bio: 'Hey, guys! My name is Irina and I am happy to see you on my channel😊
+Stay tuned for more of my tech reviews! ', role: 'creator', pseudo: 'Irina Tech')
+user_8.photo.attach(io: file_8, filename: 'nes.png', content_type: 'image/png')
+user_8.save!
+
+
+
+file_9 = URI.open('https://mma.prnewswire.com/media/1075986/Tips_on_TV.jpg?p=publish&w=650')
+user_9 = User.new(last_name: 'Taki', first_name: 'Paul', email: 'Sandimas206@gmail.com', password: '123456', bio: ' I provide unboxings, reviews with tutorials so you can get the most out of your smartphone! ', role: 'creator', pseudo: 'Paul Taki')
+user_9.photo.attach(io: file_9, filename: 'nes.png', content_type: 'image/png')
+user_9.save!
+
+file_10 = URI.open('https://i.playboard.app/p/AATXAJw0qZ41vP0c1-MuVov8r0OuJGt-MlpJ38L74NU63w/default.webp')
+user_10 = User.new(last_name: 'Lane', first_name: 'Tiffany', email: 'Sand23imas206@gmail.com', password: '123456', bio: ' Tiffany is a software developer who started her career in the modeling & fashion industry.  Tech can be very overwhelming for many at first as she experienced first hand entering into the industry. Tiff saw a gap to help ease people into what tech has to offer, to improve their day to day lives. She brings value and trust to her audience by maintaining authenticity through sharing her life through the lens. Her real and candid approach is why she has a very strong engagement with her community. Through sharing her day to day life, she has built a loyal audience that engages with her in tech, fashion, business and many other areas of everyday lifestyle.
+//Tiff', pseudo: 'Tiff In Tech')
+user_10.photo.attach(io: file_10, filename: 'nes.png', content_type: 'image/png')
+user_10.save!
+
+
+
+file_11 = URI.open('https://comoto.imgix.net/blog_content_image/image/32694/gallery/Capturesfsfs.jpg?w=796&dpr=2&auto=format')
+user_11 = User.new(last_name: 'Noob', first_name: 'Yammie', email: '232gmas206@gmail.com', password: '123456', bio: 'Where internet culture and motorcycle culture collide. We provide motorcycle edutainment in the hopes of creating more motorcyclists. Join us!', pseudo: 'Yammie Noob')
+user_11.photo.attach(io: file_11, filename: 'nes.png', content_type: 'image/png')
+user_11.save!
+
+
+
+file_12 = URI.open('https://99designs-blog.imgix.net/blog/wp-content/dist/images/subscribe/dinos-large.svg?auto=format&q=60&fit=max&w=930')
+user_12 = User.new(last_name: 'May', first_name: 'James', email: 'jamesmay@gmail.com', password: '123456', bio: 'We create tutorials about anything and everything. Fro paper airplanes to japanese swords!', pseudo: 'Crazy Tutorials')
+user_12.photo.attach(io: file_12, filename: 'nes.png', content_type: 'image/png')
+user_12.save!
+
+file_13 = URI.open('https://datastandard.blob.core.windows.net/botimg/59fd8e47525d5d12288245ab.png')
+user_13 = User.new(last_name: 'Lasope', first_name: 'Tyler', email: 'devslopes@gmail.com', password: '123456', bio: 'Devslopes is the worlds most affordable and effective platform to learn how to code.', pseudo: 'Devslopes')
+user_13.photo.attach(io: file_13, filename: 'nes.png', content_type: 'image/png')
+user_13.save!
+
+file_14 = URI.open('https://pianote.s3.amazonaws.com/sales/2021/fb-share-image.jpg')
+user_14 = User.new(last_name: 'Pianote', first_name: 'Mary', email: 'mary206@gmail.com', password: '123456', bio: 'Pianote combines the latest technology with the traditional teaching approach to deliver the best online learning experience around. Unlike “video-game learning” found in most other online methods, Pianote students get access to on-demand video lessons from real teachers, who are available to answer questions, provide feedback, and personal support throughout the learning journey. No connection between your piano and a computer is necessary. ', pseudo: 'Pianote')
+user_14.photo.attach(io: file_14, filename: 'nes.png', content_type: 'image/png')
+user_14.save!
+
+file_15 = URI.open('')
+user_15 = User.new(last_name: '', first_name: '', email: '23gmas206@gmail.com', password: '123456', bio: ' ', pseudo: '')
+user_15.photo.attach(io: file_15, filename: 'nes.png', content_type: 'image/png')
+user_15.save!
+
+
+file_16 = URI.open('https://images.sk-static.com/images/media/img/col6/20161031-205544-247843.jpg')
+user_16 = User.new(last_name: 'Lauren', first_name: 'Mayhem', email: 'meyhemlauren@gmail.com', password: '123456', bio: 'Yo! I’m Meyhem Lauren. I make music. I make food. What more could you want?
+
+Catch me on my new cooking series, Fridge Diving, where I make meals from whatever is in my fridge. Simple as that.', pseudo: 'Meyhem Lauren')
+user_16.photo.attach(io: file_16, filename: 'nes.png', content_type: 'image/png')
+user_16.save!
+
+
+
+
+
 project_photo_1 = URI.open('https://www.thelocal.fr/wp-content/uploads/2018/01/8a47b429fbc675d3e87ddbbf4c46b41410d97705a7206f1aa5aab8444c191caa-646x431.jpg')
 project_1 = Project.new(user: user_1, status: 'done', goal_amount: '300', number_of_views: '50000', revenue_split: '20%', deadline: DateTime.now + 7, revenue_generated: '100', title: 'Comedy Project on French people', bio: 'We are looking for funding to shoot a video in Paris. The subject will be about stereotypes on French people. We hope this project will interest you, and also many others! We are very hopeful that we will get some traction based on our previous experience.', creator_thankyou: 'Thank you so much for investing in us and believing in us! It really means a lot; we hope that we will be able to reimburse you monetarily.', genre: 'Comedy')
 project_1.save!
@@ -66,8 +126,8 @@ project_photo_3 = URI.open('https://static.hitek.fr/img/actualite/ill_m/11076494
 project_3 = Project.new(user: user_1, status: 'fundraising', goal_amount: '1000', number_of_views: '0', revenue_split: '10%', deadline: DateTime.now + 30, revenue_generated: '0', title: 'A new Gaming Channel', bio: 'We are looking for funding to create a new gaming genre of videos on our channel. We think this will go well with our current seleciton of comedy shorts! Invest and be part of the journey with us', creator_thankyou: 'Thank you so much for investing in us and believing in us! It really means a lot; we hope that we will be able to reimburse you monetarily.', genre: 'Gaming')
 project_3.save!
 
-# project_photo_4 = URI.open('')
-# project_4 = Project.new(user: user_1, status: 'fundraising', goal_amount: '1000', number_of_views: '0', revenue_split: '10%', deadline: DateTime.now + 25, revenue_generated: '0', title: 'A new Gaming Channel', bio: 'We are looking for funding to create a new gaming genre of videos on our channel. We think this will go well with our current seleciton of comedy shorts! Invest and be part of the journey with us', creator_thankyou: 'Thank you so much for investing in us and believing in us! It really means a lot; we hope that we will be able to reimburse you monetarily.')
+project_photo_4 = URI.open('https://ujg433eawlo3i4uqknhm8e1b-wpengine.netdna-ssl.com/wp-content/uploads/2020/09/114992844_l-702x336@2x.jpg')
+project_4 = Project.new(user: user_1, status: 'fundraising', goal_amount: '1000', number_of_views: '0', revenue_split: '10%', deadline: DateTime.now + 25, revenue_generated: '0', title: 'A new Gaming Channel', bio: 'We are looking for funding to create a new gaming genre of videos on our channel. We think this will go well with our current seleciton of comedy shorts! Invest and be part of the journey with us', creator_thankyou: 'Thank you so much for investing in us and believing in us! It really means a lot; we hope that we will be able to reimburse you monetarily.')
 # project_4.save!
 
 project_photo_5 = URI.open('https://cdn.unitycms.io/image/ocroped/2001,2000,1000,1000,0,0/bdnzKHqeiIk/AqXCcY7Nqi_ACy1RJZaBPq.jpg')
@@ -104,38 +164,31 @@ project_12 = Project.new(user: user_6, status: 'fundraising', goal_amount: '500'
 project_12.save!
 
 project_photo_13 = URI.open('https://images-na.ssl-images-amazon.com/images/I/41cm%2BeTdOKL._AC_SX425_.jpg')
-project_10 = Project.new(user: user_6, status: 'fundraising', goal_amount: '500', number_of_views: '0', revenue_split: '30%', deadline: DateTime.now + 23, revenue_generated: '0', title: 'Can you use an XBOX controller as a buttplug?', bio: 'I heard about this website, buttplug.io and I thought it would be funny to create a crossover', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.', genre: 'gaming')
+project_10 = Project.new(user: user_6, status: 'fundraising', goal_amount: '500', number_of_views: '0', revenue_split: '30%', deadline: DateTime.now + 23, revenue_generated: '0', title: 'Can you use an XBOX controller as a buttplug?', bio: 'I heard about this website, buttplug.io and I thought it would be funny to create a crossover', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.', genre: 'Gaming')
 project_13.save!
 
 project_photo_14 = URI.open('https://www.unilad.co.uk/cdn-cgi/image/width=648,quality=70,format=webp,fit=pad,dpr=2/https%3A%2F%2Fwww.unilad.co.uk%2Fwp-content%2Fuploads%2F2020%2F10%2Frubbishdog.jpg')
-project_14 = Project.new(user: user_7, status: 'done', goal_amount: '100', number_of_views: '0', revenue_split: '10%', deadline: DateTime.now + 8, revenue_generated: '1000', title: 'Just drawing dogs', bio: 'My gaming channel has been about mixing cats and games. Now it is time to move onto the next frontier; dogs!', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.', genre: 'gaming')
+project_14 = Project.new(user: user_7, status: 'done', goal_amount: '100', number_of_views: '0', revenue_split: '10%', deadline: DateTime.now + 8, revenue_generated: '1000', title: 'Just drawing dogs', bio: 'My gaming channel has been about mixing cats and games. Now it is time to move onto the next frontier; dogs!', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.', genre: 'Gaming')
 project_14.save!
 
 
+project_photo_15 = URI.open('https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2018/05/Blog_feminist-podcast.jpg.webp')
+project_15 = Project.new(user: user_8, status: 'fundraising', goal_amount: '1500', number_of_views: '0', revenue_split: '40%', deadline: DateTime.now + 18, revenue_generated: '0', title: 'A feminist tech podcast', bio: 'Looking to create a feminist tech podcast! I need the fundraising in order to set up an audio studio for this project.', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.', genre: 'Tech')
+project_15.save!
 
+project_photo_16 = URI.open('https://dwj199mwkel52.cloudfront.net/assets/core/banners/home-bg-11396371bfee6ea0382d71223cd73460a5247fce33035af60939c9ff4f006f71.jpg')
+project_16 = Project.new(user: user_8, status: 'fundraising', goal_amount: '6800', number_of_views: '0', revenue_split: '40%', deadline: DateTime.now + 18, revenue_generated: '0', title: 'Coding in a no code world', bio: 'Should we learn coding when we do not actually need to? I will go to le Wagon to learn (just to make sure) .', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.', genre: 'Tech')
+project_16.save!
 
+project_photo_17 = URI.open('https://www.mondedesgrandesecoles.fr/wp-content/uploads/capture-911.jpg')
+project_17 = Project.new(user: user_9, status: 'fundraising', goal_amount: '5000', number_of_views: '0', revenue_split: '10%', deadline: DateTime.now + 38, revenue_generated: '0', title: 'Is Le Wagon worth it?', bio: 'I want to go to Le Wagon and then create a video about my experiences. It seems like many people are looking for this type of video.', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.', genre: 'Tech')
+project_17.save!
 
+project_photo_18 = URI.open('https://www.leparisien.fr/resizer/PlS6JY8_dfx8HMnQ7fXU1o37saA=/932x582/cloudfront-eu-central-1.images.arcpublishing.com/leparisien/MCUZPBWQVD7YVF5UNHTIVAKO5Q.jpg')
+project_18 = Project.new(user: user_10, status: 'fundraising', goal_amount: '2000', number_of_views: '0', revenue_split: '30%', deadline: DateTime.now + 28, revenue_generated: '0', title: 'A conversation with Naomi Osaka', bio: 'What can a tennis giant teach us about navigating the world of coding and tech? I am sure all of my followers and new fans would love to see this video', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.', genre: 'Tutorials')
+project_18.save!
 
-
-
-
-
-
-
-
-
-
-
-
-project_photo_11 = URI.open('')
-project_10 = Project.new(user: user_4, status: 'fundraising', goal_amount: '500', number_of_views: '0', revenue_split: '30%', deadline: DateTime.now + 23, revenue_generated: '0', title: '', bio: '', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.', genre: '')
-project_10.save!
-
-project_photo_11 = URI.open('')
-project_10 = Project.new(user: user_4, status: 'fundraising', goal_amount: '500', number_of_views: '0', revenue_split: '30%', deadline: DateTime.now + 23, revenue_generated: '0', title: '', bio: '', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.', genre: '')
-project_10.save!
-
-project_photo_11 = URI.open('')
-project_10 = Project.new(user: user_4, status: 'fundraising', goal_amount: '500', number_of_views: '0', revenue_split: '30%', deadline: DateTime.now + 23, revenue_generated: '0', title: '', bio: '', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.', genre: '')
-project_10.save!
+project_photo_19 = URI.open('https://media.timeout.com/images/102747490/1372/772/image.jpg')
+project_19 = Project.new(user: user_10, status: 'fundraising', goal_amount: '2000', number_of_views: '0', revenue_split: '30%', deadline: DateTime.now + 28, revenue_generated: '0', title: 'Can fast food be eaten every day?', bio: 'We all love packet ramen in Silicon Valley. What happens if we eat this every day? I want to create a video about this. ', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.', genre: 'WTF')
+project_19.save!
 
