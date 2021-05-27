@@ -42,18 +42,19 @@
 <% end %>
 
 
+
 <div class="container">
   <div class="cards-index">
     <% @users.each do |user| %>
       <div class="card-product">
-          <div class="card-product-infos mt-2">
+          <%# <div class="card-product-infos"> %>
             <h2><%= user.first_name %></h2>
             <p><%= user.last_name %></p>
             <p><%= user.pseudo %></p>
             <p><%= user.bio%></p>
           <div class="avatar-bordered">
           </div>
-        </div>
+        <%# </div> %>
       </div>
     <% end %>
   </div>
