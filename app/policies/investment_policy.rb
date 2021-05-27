@@ -15,4 +15,8 @@ class InvestmentPolicy < ApplicationPolicy
   def checkout?
   true
   end
+
+  def destroy?
+    true
+  end
 end
