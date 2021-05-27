@@ -1,0 +1,105 @@
+<div class="headerprojectsshow">
+  <h2> Checkout </h2>
+</div>
+
+<div class = "containerspe">
+ <div class="col-25">
+          <div class="containerspe">
+            <h4>Cart
+              <span class="price" style="color:black">
+                <i class="fa fa-shopping-cart"></i>
+                <b>4</b>
+              </span>
+            </h4>
+            <p><a href="#">Project 1</a> <span class="price">$15</span></p>
+            <p><a href="#">Project 2</a> <span class="price">$5</span></p>
+            <hr>
+            <p>Total <span class="price" style="color:black"><b>$30</b></span></p>
+          </div>
+      </div>
+<div class="headerprojectsshow">
+  <h2> My project</h2>
+</div>
+<div class= "container">
+  <h2>Project 1</h2>
+  <div class="row">
+    <div class="leftcolumn">
+        <div class="fakeimg" style="height:250px;">Project video</div>
+    </div>
+      <div class="rightcolumn">
+       <div class="row">
+            <div class="col">
+              <p><strong>  Investor’s share  </strong></p>
+            </div>
+            <div class="col">
+              <p><strong> YouTuber’s share </strong></p>
+            </div>
+          </div>
+        <div id="myProgress">
+            <div id="myBar"></div>
+        </div>
+      </div>
+    </div>
+</div>
+<div class= "container">
+  <h2>Project 1</h2>
+  <div class="row">
+    <div class="leftcolumn">
+        <div class="fakeimg" style="height:250px;">Project video</div>
+    </div>
+      <div class="rightcolumn">
+        <div id="myProgress">
+            <div id="myBar"></div>
+        </div>
+          <div class="row">
+            <div class="col">
+              <p><strong>  @project.investments.count  </strong> backers.</p>
+            </div>
+            <div class="col">
+              <p><strong> @project.deadline </strong></p>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+<div class="headerprojectsshow">
+  <h2> Paiement</h2>
+</div>
+  <div class="row">
+    <div class="col-75">
+      <div class="containerspe">
+        <form action="/action_page.php">
+            <div class="col-50">
+              <h3>Payment</h3>
+              <label for="fname">Accepted Cards</label>
+              <div class="icon-container">
+                <i class="fa fa-cc-visa" style="color:navy;"></i>
+                <i class="fa fa-cc-amex" style="color:blue;"></i>
+                <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                <i class="fa fa-cc-discover" style="color:orange;"></i>
+              </div>
+              <label for="cname">Name on Card</label>
+              <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+              <label for="ccnum">Credit card number</label>
+              <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+              <label for="expmonth">Exp Month</label>
+              <input type="text" id="expmonth" name="expmonth" placeholder="September">
+
+              <div class="row">
+                <div class="col-50">
+                  <label for="expyear">Exp Year</label>
+                  <input type="text" id="expyear" name="expyear" placeholder="2018">
+                </div>
+                <div class="col-50">
+                  <label for="cvv">CVV</label>
+                  <input type="text" id="cvv" name="cvv" placeholder="352">
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <input type="submit" value="Continue to checkout" class="btnchkout">
+        </form>
+      </div>
+    </div>
+</div>

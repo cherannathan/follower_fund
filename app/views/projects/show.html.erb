@@ -11,24 +11,25 @@
   <div class="rightcolumn">
     <div class="container">
       <div class="cardprojectsshow">
-          <p><strong><%= @project.investments.first.price %></strong> Out of <strong><%= @project.goal_amount %></strong></p>
+          <p><strong><%= @project.total_investments %></strong> Out of <strong><%= @project.goal_amount %></strong></p>
         <div id="myProgress">
             <div id="myBar"></div>
         </div>
           <div class="row">
             <div class="col">
-              <p><strong> X</strong> packers.</p>
+              <p><strong>  <%= @project.investments.count %> </strong> backers.</p>
             </div>
             <div class="col">
-              <p><strong> X</strong>  days remaining</p>
+              <p><strong> <%=@project.deadline  %> </strong></p>
             </div>
           </div>
           <p>Total revenue split: <strong><%= @project.revenue_split %> % </strong> for my investors.</p>
           <div class="slidecontainer">
-          <input id="ex6" type="range" data-min="-5" data-max="20" data-step="1" data-value="3"/&t
-            <span id="ex6CurrentRangePickerValLabel">Your Invest: <span id="ex6RangePickerVal">3</span></span>
+            <%= simple_form_for [@project, Investment.new] do |f| %>
+            <%= f.input :price_cents, as: :range, placeholder: "Amount" %>
+            <%= f.submit "add to cart", class: "btn2 btn-dark" %>
+            <% end %>
           </div>
-            <button class="btnshow addcartbutton">Add to cart</button>
       </div>
     </div>
   </div>
@@ -80,7 +81,20 @@
 </div>
 
 
-<%= @project.investments.first.price %>
+<div class="col-25">
+  <div class="containercheckout">
+    <h4>Cart
+      <span class="price" style="color:black">
+        <i class="fa fa-shopping-cart"></i>
+      </span>
+    </h4>
+    <p><a href="#"> @project.title </a> <span class="price"><%= @project.investments.first.price %></span></p>
+    <input type="submit" value="Continue to checkout" class="btn2 btn-dark">
+    <input type="submit" value="Continue shopping" class="btn2 btn-dark">
+  </div>
+</div>
+
+
 <%= @project.revenue_split %>
 <%= @project.revenue_generated %>
 

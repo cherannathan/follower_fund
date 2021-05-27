@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :investments, only: [:new, :create, :index]
     end
     resources :users, only: [:index, :show]
+    get 'checkout', to: 'investments#checkout'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
