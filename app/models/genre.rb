@@ -1,3 +1,4 @@
 class Genre < ApplicationRecord
-  belongs_to :project_genre
+  has_many :project_genres
+  has_many :projects, through: :projects_genres
 end
