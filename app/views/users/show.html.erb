@@ -33,7 +33,7 @@
     <h3>My projects you can invest in</h3>
       <% @ongoing_projects.each do |project| %>
       <div class="row project-card">
-        <%= cl_image_tag project.photos.first&.key  %>
+        <%= cl_image_tag project.photo.key  %>
         <div> <%= project.title %></div>
         <% end %>
       </div>

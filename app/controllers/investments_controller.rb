@@ -1,4 +1,5 @@
 class InvestmentsController < ApplicationController
+  before_action :skip_authorization
 
   def new
     @investment = Investment.new
@@ -24,18 +25,20 @@ class InvestmentsController < ApplicationController
   end
 
   def checkout
-    @investments = Investment.where(status: 'pending', user: current_user)
-    authorize @investments.first
+    @investments = policy_scope(Investment).where(status: 'pending', user: current_user)
   end
 
   def destroy
-    @investments = Investment.find(params[:id])
+    @investment = Investment.find(params[:id])
     authorize(@investment)
-      @investment.destroy
-      respond_to do |format|
-        format.html { redirect_to checkout_path, notice: 'investment was successfully destroyed.' }
-        format.json { head :no_content }
-    end
+    @investment.destroy
+    redirect_to checkout_path, notice: 'investment was successfully destroyed.'
+  end
+
+  def payment
+    @investments = Investment.where(status: 'pending', user: current_user)
+    @investments.update_all(status: 'done')
+    redirect_to users_path
   end
   # def show
   # @investment = Investment.find(params[:id])
