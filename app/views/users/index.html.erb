@@ -31,14 +31,15 @@
 </ul>
 
   <h1 class="d-flex justify-content-center mt-5 mb-2"><%= @genre.presence || "all" %></h1>
-  <%= form_tag users_path, method: :get, class: '', data: { turbo: true } do %>
-    <%= text_field_tag :query,
-    params[:query],
-    id: "",
-    placeholder: "Recherchez par nom..."
-    %>
+<div class="d-flex align-items-center mx-5 mb-3" id="form-search">
+  <%= form_tag users_path, method: :get, class: 'search-form-control', data: { turbo: true } do %>
+    <%= text_field_tag :query, params[:query], id: "", placeholder: "Search for creator/genre..." %>
     <%= submit_tag "Search", style: "display: none;" %>
   <% end %>
+  <button id="search-button" type="button" class="btn btn-search">
+    <i class="fas fa-search"></i>
+  </button>
+  </div>
   <%#= simple_form_for :search, url: root_path, method: :get do |f| %>
     <%#= f.input :email,
                 required: true,
