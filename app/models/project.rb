@@ -7,20 +7,20 @@ class Project < ApplicationRecord
   validates :revenue_split, presence: true
   validates :deadline, presence: true
   has_one_attached :photo
-  has_many_attached :videos
+  has_one_attached :videos
   has_many :investments
   has_many :investors, through: :investments, source: :user
-
+  
   def total_investments
     investments.where(status: 'done').pluck(:price_cents).sum
   end
 
   include PgSearch::Model
   pg_search_scope :global_search,
-    against: [:title, :bio ],
+    against: [:title, :bio],
     associated_against: {
       user: [:pseudo],
-      genres: [:name ]
+      genres: [:name]
     },
     using: {
       tsearch: { prefix: true }
