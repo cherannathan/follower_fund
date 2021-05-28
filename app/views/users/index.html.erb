@@ -56,18 +56,19 @@
 <div class="container">
   <div class="cards-index">
     <% @users.each do |user| %>
-      <div class="card-product">
-      <%# <%= link_to "check profile, "users[:id]_path %>
-            <h2><%= user.first_name %></h2>
-            <p><%= user.last_name %></p>
-            <p><%= user.pseudo %></p>
-            <p><%= user.bio%></p>
-          <div>
-            <% if user.photo.attached? %>
-              <%= cl_image_tag user.photo.key, class: "avatar-bordered"%>
-            <% end %>
-          </div>
+        <%= link_to user_path(user), class: 'text-decoration-none text-dark' do %>
+        <div class="card-product">
+          <h2><%= user.first_name %></h2>
+          <p><%= user.last_name %></p>
+          <p><%= user.pseudo %></p>
+          <p><%= user.bio%></p>
+        <div>
+          <% if user.photo.attached? %>
+            <%= cl_image_tag user.photo.key, class: "avatar-bordered"%>
+          <% end %>
+        </div>
       </div>
+      <% end %>
     <% end %>
   </div>
 </div>
