@@ -14,9 +14,10 @@ class UsersController < ApplicationController
   def show
     @creator = User.find(params[:id])
     @creator_projects = @creator.projects
-    @ongoing_projects = @creator_projects.where(status: 'on going')
+    @ongoing_projects = @creator_projects.where(status: 'fundraising')
     @done_projects = @creator_projects.where(status: 'done')
     @investors = @creator.investors
     @creator_bio = @creator.bio
+
   end
 end

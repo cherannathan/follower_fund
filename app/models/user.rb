@@ -28,4 +28,8 @@ class User < ApplicationRecord
     using: {
       tsearch: { prefix: true }
     }
+
+      def pendingamount
+        investments.where(status: 'pending').pluck(:price_cents).sum
+      end
 end

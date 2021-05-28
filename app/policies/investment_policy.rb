@@ -7,4 +7,16 @@ class InvestmentPolicy < ApplicationPolicy
   def index?
     true
   end
+
+  def create?
+    true
+  end
+
+  def checkout?
+  true
+  end
+
+  def destroy?
+    true
+  end
 end
