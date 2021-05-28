@@ -10,7 +10,7 @@ class Project < ApplicationRecord
   has_one_attached :videos
   has_many :investments
   has_many :investors, through: :investments, source: :user
-
+  
   def total_investments
     investments.pluck(:price_cents).sum/100
   end

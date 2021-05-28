@@ -31,15 +31,27 @@
 </ul>
 
   <h1 class="d-flex justify-content-center mt-5 mb-2"><%= @genre.presence || "all" %></h1>
-
-<%= simple_form_for :search, url: root_path, method: :get do |f| %>
-  <div class="search-form-control form-group px-5 mt-5">
+  <%= form_tag users_path, method: :get, class: '', data: { turbo: true } do %>
+    <%= text_field_tag :query,
+    params[:query],
+    id: "",
+    placeholder: "Recherchez par nom..."
+    %>
+    <%= submit_tag "Search", style: "display: none;" %>
+  <% end %>
+  <%#= simple_form_for :search, url: root_path, method: :get do |f| %>
+    <%#= f.input :email,
+                required: true,
+                autofocus: true,
+                value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email),
+                input_html: { autocomplete: "email" } %>
+  <%# <div class="search-form-control form-group px-5 mt-5">
     <input class="form-control string required" type="text" name="search[query]" id="search_query" placeholder="Search for a creator/genre"/>
     <button name="button" type="submit" class="btn btn-flat">
       <i class="fas fa-search d-flex justify-content-between"></i> Search
     </button>
-  </div>
-<% end %>
+  </div> %>
+<%# end %>
 
 <div class="container">
   <div class="cards-index">
