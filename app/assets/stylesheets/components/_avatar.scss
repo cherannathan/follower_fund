@@ -22,9 +22,10 @@
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  border-color: whitesmoke;
+  border-color: whitesmoke 2px;
   position: absolute;
   left: 16px;
   bottom: -50px;
   top: auto;
+  object-fit: cover;
 }
