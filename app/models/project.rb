@@ -12,7 +12,7 @@ class Project < ApplicationRecord
   has_many :investors, through: :investments, source: :user
   
   def total_investments
-    investments.pluck(:price_cents).sum/100
+    investments.where(status: 'done').pluck(:price_cents).sum
   end
 
   include PgSearch::Model

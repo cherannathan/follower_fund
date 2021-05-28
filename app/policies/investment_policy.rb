@@ -12,11 +12,11 @@ class InvestmentPolicy < ApplicationPolicy
     true
   end
 
-  def checkout?
-  true
+  def destroy?
+    true
   end
 
-  def destroy?
+  def payment?
     true
   end
 end
