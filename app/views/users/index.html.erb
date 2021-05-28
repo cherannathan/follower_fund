@@ -62,9 +62,7 @@
     <% @users.each do |user| %>
         <%= link_to user_path(user), class: 'text-decoration-none text-dark' do %>
         <div class="card-product">
-          <h2><%= user.first_name %></h2>
-          <p><%= user.last_name %></p>
-          <p><%= user.pseudo %></p>
+          <h1><%= user.pseudo %></h1>
           <p><%= user.bio%></p>
         <div>
           <% if user.photo.attached? %>
