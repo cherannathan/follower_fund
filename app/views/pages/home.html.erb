@@ -1,6 +1,6 @@
 <ul class="navbar-universe list-inline tabs-underlined mb-0">
   <li>
-  <%= link_to users_path(params: { genre: 'All' }) do %>
+  <%= link_to users_path do %>
     <div class="tab-underlined <% params[:all] ? 'active' : '' %> ">All</div>
     <% end %>
   </li>
@@ -25,13 +25,13 @@
     <% end %>
   </li>
   <li>
-    <%= link_to users_path(params: { genre: 'Wtf' }) do %>
-    <div class="tab-underlined <% params[:wtf] ? 'active' : '' %>  ">WTF</div>
+    <%= link_to users_path(params: { genre: 'Makeup' }) do %>
+    <div class="tab-underlined <% params[:makeup] ? 'active' : '' %>  ">Makeup</div>
     <% end %>
 </ul>
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1530712024539-ecd73dfb1c9d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);">
-  <div class="container">
+  <div class="mx-auto w-75">
     <h1><strong>Invest in your favorite creators</strong>!</h1>
     <p>Be part of the new creators funding movement</p>
     <a class="btn btn-outline-light px-5 py-2 rounded-pill " href="/users">Invest</a>
@@ -39,8 +39,8 @@
 </div>
 <div>
   <h1 class="d-flex justify-content-center mt-5 mb-2"> <strong>What we do</strong></h1>
-  <p class="d-flex justify-content-center mx-5"> On Follower Fund, you can let your fans become active participants in the work they love by offering them a monthly membership.</p>
-  <p class="d-flex justify-content-center mx-5">You give them access to exclusive content, community, and insight into your creative process. In exchange, you get the freedom to do your best work.</p>
+  <p class="d-flex justify-content-center mx-5"> Follower Fund allows fans to invest directly in their favourite YouTubers' projects.</p>
+  <p class="d-flex justify-content-center mx-5">In return, fans take direct equity in a video. If a YouTuber wins, you win! 🏆</p>
 </div>
 <div>
   <h1 class="d-flex justify-content-center mt-5 mb-2"><strong>Win together</strong></h1>
@@ -53,7 +53,7 @@
   </div>
 </div>
 <div>
-  <h1 class="d-flex justify-content-center mt-5 mb-4"> <strong>How it works</strong></h1>
+  <h1 id="anchor" class="d-flex justify-content-center mt-5 mb-4"> <strong>How it works</strong></h1>
   <div class="cards">
     <div class="card-home mx-3 mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
       Choose a universe
