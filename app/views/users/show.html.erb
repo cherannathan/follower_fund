@@ -1,5 +1,5 @@
 <div class="creator-banner" style="background-image: url('https://images.unsplash.com/photo-1601907234174-e7a575b47753?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1189&q=80')">
- <%= cl_image_tag @creator.photo.key, class:"avatar-creator-page" %>
+ <%= cl_image_tag(@creator.photo.key, crop: :thumb, gravity: :face, class:"avatar-creator-page") %>
 </div>
 <div class="container">
   <div>
@@ -12,10 +12,9 @@
         <iframe class="embed-responsive-item" src="<%= @creator.youtube_link %>" allowfullscreen></iframe>
       </div>
     </div>
-    <div class="col-sm-5 border border-secondary position-relative text-center" style="height: 400px padding: 88px">
+    <div class="whoami-box col-sm-5 border border-secondary position-relative text-center">
       <h2>Who am I ?</h2>
-      <a><%= @creator.youtube_link %></a>
-      quote
+      <br>
       <p><%= @creator.bio %></p>
       <div class="data ml-50px border border-secondary">
         <h3 > Creator data</h3>
@@ -24,7 +23,7 @@
           <li>Number of followers :<%= @creator.number_suscribers.nil? ? " 0" : @creator.number_suscribers %></li>
           <li>Number of projects done : <%= @done_projects.count %></li>
           <li>On going projects : <%= @ongoing_projects.count %></li>
-          <li>Number of investors : <%#= @investors %></li>
+          <li>Number of investors : <%= @investors.count %></li>
         </ul>
       </div>
     </div>
@@ -32,11 +31,11 @@
   <div class="newproject container">
     <h3>My projects you can invest in</h3>
       <% @ongoing_projects.each do |project| %>
-      <div class="row project-card">
-        <%= cl_image_tag project.photos.first&.key  %>
-        <div> <%= project.title %></div>
-        <% end %>
-      </div>
+        <div class="row mt-2 project-card">
+          <%= cl_image_tag project.photo.key  %>
+          <div> <%= project.title %></div>
+        </div>
+      <% end %>
   </div>
 </div>
 
