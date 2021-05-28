@@ -2,35 +2,53 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 240px 0;
 }
 
 .banner h1 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
+  font-size: 60px;
   font-weight: bold;
 }
 
+.mb-2, .my-2 {
+    margin-bottom: 2.5rem !important;
+}
+
+.mt-5, .my-5 {
+    margin-top: 6rem !important;
+}
+
+.mb-4, .my-4 {
+    margin-bottom: 3.5rem !important;
+}
+
+.p-3 {
+    padding: 1rem !important;
+    color: white;
+}
+
 .banner p {
-  font-size: 20px;
+  font-size: 23px;
   color: white;
-  opacity: .7;
+  opacity: .9;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
 
 .card-win {
   height: 300px;
   width: 720px;
-  background-color:#994B17;
+  background-color:#2e2a28;
   border-radius: 10px;
+  margin: 0 auto;
 
 }
 
 .image-win {
   height: 360px;
-  width: 960px;
+  width: 1500px;
   background-size: cover;
   padding: 112px;
   border-radius: 10px;
