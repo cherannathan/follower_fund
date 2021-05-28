@@ -1,33 +1,40 @@
 <div class="headerprojectsshow">
-  <h2>PROJECT NAME</h2>
+  <h2><%= @project.title %></h2>
 </div>
 
 <div class="row">
   <div class="leftcolumn">
     <div class="cardprojectsshow">
-      <div class="fakeimg" style="height:250px;">Project video</div>
+      <div> <% if @project.photo.attached? %>
+      <%= cl_image_tag @project.photo.key, class: "image-show" %>
+      <% end %></div>
     </div>
   </div>
   <div class="rightcolumn">
     <div class="container">
       <div class="cardprojectsshow">
-          <p><strong>€3,348</strong> Out of <strong>€5,400</strong></p>
+          <p><strong><%= @project.total_investments %></strong> Out of <strong><%= @project.goal_amount %></strong></p>
+          <%= @project.currentamountinvestment %>
         <div id="myProgress">
-            <div id="myBar"></div>
+            <div id="myBar" style="width:<%= @project.currentamountinvestment %>%" ></div>
         </div>
           <div class="row">
             <div class="col">
-              <p><strong>13</strong> packers.</p>
+              <p><strong>  <%= @project.investments.count %> </strong> backers.</p>
             </div>
             <div class="col">
-              <p><strong>8</strong>  days remaining</p>
+              <p><strong> <%=@project.deadline  %> </strong></p>
             </div>
           </div>
-          <p>Total revenue split: 20% for my investors.</p>
-          <div class="slidecontainer">
-              <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+          <p>Total revenue split: <strong><%= @project.revenue_split %> % </strong> for my investors.</p>
+          <div class="slidecontainer" data-controller="display-amount">
+            <%= simple_form_for [@project, Investment.new] do |f| %>
+            <%= f.input :price_cents, as: :range, collection: (1..@project.goal_amount).to_a, placeholder: "Amount", input_html:{type: "range", min: 0, max: @project.goal_amount, step: 5, data: {action: "change->display-amount#display", display_amount_target: "value"}}%>
+            <%#= @project.investments.first.place %>
+            <div data-display-amount-target='amount'> </div>
+            <%= f.submit "add to cart", class: "btn2 btn-dark" %>
+            <% end %>
           </div>
-            <button class="btn addcartbutton">Add to cart</button>
       </div>
     </div>
   </div>
@@ -36,7 +43,7 @@
   <div class="leftcolumn">
     <div class="cardprojectsshow">
       <h2>Project slogan</h2>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+      <p> <%= @project.bio %> </p>
     </div>
   </div>
   <div class="rightcolumn">
@@ -79,7 +86,21 @@
 </div>
 
 
-<%= @project.investments.first.price %>
+<div class="col-25">
+  <div class="containercheckout">
+    <h4>Cart
+      <span class="price" style="color:black">
+        <i class="fa fa-shopping-cart"></i>
+      </span>
+    </h4>
+    <p><a href="#"> <%= @project.title %> </a> <span class="price"><%= @project.investments.first&.price %></span></p>
+    <input type="submit" value="Continue to checkout" class="btn2 btn-dark">
+    <input type="submit" value="Continue shopping" class="btn2 btn-dark">
+  </div>
+</div>
+
+
 <%= @project.revenue_split %>
 <%= @project.revenue_generated %>
+
 

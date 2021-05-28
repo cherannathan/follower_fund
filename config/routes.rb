@@ -3,9 +3,12 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
     resources :projects, only: [:index, :show] do
-      resources :investments, only: [:new, :create]
+      resources :investments, only: [:new, :create, :index, :destroy]
     end
     resources :users, only: [:index, :show]
+    get 'checkout', to: 'investments#checkout'
+    post 'payment', to: 'investments#payment'
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
