@@ -23,53 +23,53 @@ p "Genres created"
 
 p "Creating users"
 file_1 = URI.open('https://i.ytimg.com/vi/-gYQYEcbS_g/maxresdefault.jpg')
-user_1 = User.new(last_name: 'Johnson', first_name: 'Seb', email: 'thirdlegstudios@gmail.com', password: '123456', bio: 'One of the UKs most successful and prolific independent production companies. Please give us work, we will quite literally do anything for money.', role: 'creator', pseudo: 'Third Leg Studios', youtube_link: 'https://www.youtube.com/watch?v=ot5TgvvOYdA', number_suscribers: 45500)
+user_1 = User.new(last_name: 'Johnson', first_name: 'Seb', email: 'thirdlegstudios@gmail.com', password: '123456', bio: 'One of the UKs most successful and prolific independent production companies. Please give us work, we will quite literally do anything for money.', role: 'creator', pseudo: 'Third Leg Studios', youtube_link: 'https://www.youtube.com/embed/ot5TgvvOYdA', number_suscribers: 45500)
 user_1.photo.attach(io: file_1, filename: 'nes.png', content_type: 'image/png')
 user_1.save!
 
 
 file_2 = URI.open ('https://i.pinimg.com/originals/d1/9d/81/d19d817ebe7d4aeaf4a0b9d8884e7e65.png')
-user_2 = User.new(last_name: 'sinbad', first_name: 'captain', email: 'nrajapandey@gmail.com', password: '123456', bio: 'A combination of funny and serious with the creative entrepreneur in mind. ', role: 'creator', pseudo: 'Captain Sinbad', youtube_link: 'https://www.youtube.com/watch?v=2fcWGB-RABM', number_suscribers: 433000 )
+user_2 = User.new(last_name: 'sinbad', first_name: 'captain', email: 'nrajapandey@gmail.com', password: '123456', bio: 'A combination of funny and serious with the creative entrepreneur in mind. ', role: 'creator', pseudo: 'Captain Sinbad', youtube_link: 'https://www.youtube.com/embed/2fcWGB-RABM', number_suscribers: 433000 )
 user_2.photo.attach(io: file_2, filename: 'nes.png', content_type: 'image/png')
 user_2.save!
 
 file_3 = URI.open ('https://www.chortle.co.uk/images/photos/small/the-pin-2020.jpg')
-user_3 = User.new(last_name: 'majendie', first_name: 'rupert', email: 'rupert.majendie@gmail.com', password: '123456', bio: 'MR BOX provides the viewer with the newbies, the prevalent, the avant-garde, the broadest spectrum but best quality comedy all in one place.  It not only is a showcase for new talent but also somewhere for popular comedians to try out new ideas and see how they are received.', role: 'creator', pseudo: 'Mr Box', youtube_link: 'https://www.youtube.com/watch?v=uuUiFeDphRg', number_suscribers: 50000)
+user_3 = User.new(last_name: 'majendie', first_name: 'rupert', email: 'rupert.majendie@gmail.com', password: '123456', bio: 'MR BOX provides the viewer with the newbies, the prevalent, the avant-garde, the broadest spectrum but best quality comedy all in one place.  It not only is a showcase for new talent but also somewhere for popular comedians to try out new ideas and see how they are received.', role: 'creator', pseudo: 'Mr Box', youtube_link: 'https://www.youtube.com/embed/uuUiFeDphRg', number_suscribers: 50000)
 user_3.photo.attach(io: file_3, filename: 'nes.png', content_type: 'image/png')
 user_3.save!
 
 file_4 = URI.open('https://healthyceleb.com/wp-content/uploads/2019/09/Lauren-Mae-in-an-Instagram-post-as-seen-in-August-2019.jpg')
-user_4 = User.new(last_name: 'Mae', first_name: 'Lauren', email: 'laurenmaebeauty@gmail.com', password: '123456', bio: 'Why hello there! My name is Lauren and welcome to my channel! I love makeup and all things beauty so my channel is primarily centered on those topics but there are no limits so dont be surprised if you see something else pop up on here! Please do not be shy and come say hello!', role: 'creator', pseudo: 'Lauren Mae Beauty', youtube_link: 'https://www.youtube.com/watch?v=TKSnWLxghT0', number_suscribers: 100000 )
+user_4 = User.new(last_name: 'Mae', first_name: 'Lauren', email: 'laurenmaebeauty@gmail.com', password: '123456', bio: 'Why hello there! My name is Lauren and welcome to my channel! I love makeup and all things beauty so my channel is primarily centered on those topics but there are no limits so dont be surprised if you see something else pop up on here! Please do not be shy and come say hello!', role: 'creator', pseudo: 'Lauren Mae Beauty', youtube_link: 'https://www.youtube.com/embed/TKSnWLxghT0', number_suscribers: 100000 )
 user_4.photo.attach(io: file_4, filename: 'nes.png', content_type: 'image/png')
 user_4.save!
 
 file_5 = URI.open('https://i.pinimg.com/736x/3b/b5/f7/3bb5f78b881f8508b199dca705ce95bf.jpg')
-user_5 = User.new(last_name: 'Makeup', first_name: 'Ray', email: 'disisreyrey@influint.co', password: '123456', bio: 'Hi ! Welcome to my beauty channel ! Im here to share some of the things I love such as makeup, hair and fashion. I hope you guys enjoy and please subscribe to see new uploads.', role: 'creator', pseudo: 'DisisReyRey', youtube_link: 'https://www.youtube.com/watch?v=TFI7cq_Kp_E', number_suscribers: 137000)
+user_5 = User.new(last_name: 'Makeup', first_name: 'Ray', email: 'disisreyrey@influint.co', password: '123456', bio: 'Hi ! Welcome to my beauty channel ! Im here to share some of the things I love such as makeup, hair and fashion. I hope you guys enjoy and please subscribe to see new uploads.', role: 'creator', pseudo: 'DisisReyRey', youtube_link: 'https://www.youtube.com/embed/TFI7cq_Kp_E', number_suscribers: 137000)
 user_5.photo.attach(io: file_5, filename: 'nes.png', content_type: 'image/png')
 user_5.save!
 
 
 file_6 = URI.open('http://videogamekraken.com/wp-content/uploads/2020/03/MyLife.png')
-user_6 = User.new(last_name: 'Garlson', first_name: 'Coury', email: 'mylifeinvideogames@gmail.com', password: '123456', bio: 'Join  Coury Carlson and Marc "Try4ce" Duddleson as they recollect their experiences with video games over the years, explain how to get the best picture from your retro consoles, and occasionally mash up new video games with VHS technology from the 80s and 90s. ', role: 'creator', pseudo: 'My Life in Gaming', youtube_link: 'https://www.youtube.com/channel/UCYpjSJsH65ffZXdTfQHHpWA', number_suscribers: 192000)
+user_6 = User.new(last_name: 'Garlson', first_name: 'Coury', email: 'mylifeinvideogames@gmail.com', password: '123456', bio: 'Join  Coury Carlson and Marc "Try4ce" Duddleson as they recollect their experiences with video games over the years, explain how to get the best picture from your retro consoles, and occasionally mash up new video games with VHS technology from the 80s and 90s. ', role: 'creator', pseudo: 'My Life in Gaming', youtube_link: 'https://www.youtube.com/embed/q4_TsXE-T68', number_suscribers: 192000)
 user_6.photo.attach(io: file_6, filename: 'nes.png', content_type: 'image/png')
 user_6.save!
 
 file_7 = URI.open('https://i.pinimg.com/originals/4f/28/eb/4f28ebb0323a47bfb86556f0ef56e96f.jpg')
-user_7 = User.new(last_name: 'Garlsonn', first_name: 'Justin', email: 'JustDrawCats@gmail.com', password: '123456', bio: 'Do you like games? I do too. I hope you like my channel; I hope to get more investment to grow a lot more! ', role: 'creator', pseudo: 'JustDrawCats', youtube_link: 'https://www.youtube.com/watch?v=q4_TsXE-T68', number_suscribers: 25000)
+user_7 = User.new(last_name: 'Garlsonn', first_name: 'Justin', email: 'JustDrawCats@gmail.com', password: '123456', bio: 'Do you like games? I do too. I hope you like my channel; I hope to get more investment to grow a lot more! ', role: 'creator', pseudo: 'JustDrawCats', youtube_link: 'https://www.youtube.com/embed/hoVE5tJBFHw', number_suscribers: 25000)
 user_7.photo.attach(io: file_7, filename: 'nes.png', content_type: 'image/png')
 user_7.save!
 
 
 
 file_8 = URI.open('https://i.dailymail.co.uk/1s/2021/05/07/22/42710566-9555329-image-m-131_1620422404811.jpg')
-user_8 = User.new(last_name: 'Shekh', first_name: 'Irina', email: 'irina.tech@gmail.com', password: '123456', bio: 'Hey, guys! My name is Irina and I am happy to see you on my channel😊 Stay tuned for more of my tech reviews! ', role: 'creator', pseudo: 'Irina Tech', youtube_link: 'https://www.youtube.com/watch?v=oNzfD67A6CM', number_suscribers: 26000)
+user_8 = User.new(last_name: 'Shekh', first_name: 'Irina', email: 'irina.tech@gmail.com', password: '123456', bio: 'Hey, guys! My name is Irina and I am happy to see you on my channel😊 Stay tuned for more of my tech reviews! ', role: 'creator', pseudo: 'Irina Tech', youtube_link: 'https://www.youtube.com/embed/oNzfD67A6CM', number_suscribers: 26000)
 user_8.photo.attach(io: file_8, filename: 'nes.png', content_type: 'image/png')
 user_8.save!
 
 
 
 file_9 = URI.open('https://mma.prnewswire.com/media/1075986/Tips_on_TV.jpg?p=publish&w=650')
-user_9 = User.new(last_name: 'Taki', first_name: 'Paul', email: 'Sandimas206@gmail.com', password: '123456', bio: ' I provide unboxings, reviews with tutorials so you can get the most out of your smartphone! ', role: 'creator', pseudo: 'Paul Tech', number_suscribers: 56000, youtube_link: 'https://www.youtube.com/watch?v=YvFBxx76nLg' )
+user_9 = User.new(last_name: 'Taki', first_name: 'Paul', email: 'Sandimas206@gmail.com', password: '123456', bio: ' I provide unboxings, reviews with tutorials so you can get the most out of your smartphone! ', role: 'creator', pseudo: 'Paul Tech', number_suscribers: 56000, youtube_link: 'https://www.youtube.com/embed/YvFBxx76nLg' )
 user_9.photo.attach(io: file_9, filename: 'nes.png', content_type: 'image/png')
 user_9.save!
 
@@ -81,30 +81,30 @@ user_10.save!
 
 
 file_11 = URI.open('https://comoto.imgix.net/blog_content_image/image/32694/gallery/Capturesfsfs.jpg?w=796&dpr=2&auto=format')
-user_11 = User.new(last_name: 'Noob', first_name: 'Yammie', email: '232gmas206@gmail.com', password: '123456', bio: 'Where internet culture and motorcycle culture collide. We provide motorcycle edutainment in the hopes of creating more motorcyclists. Join us!', pseudo: 'Yammie Noob', role: 'creator', number_suscribers:888000, youtube_link: 'https://www.youtube.com/watch?v=UTp6Md-5--o' )
+user_11 = User.new(last_name: 'Noob', first_name: 'Yammie', email: '232gmas206@gmail.com', password: '123456', bio: 'Where internet culture and motorcycle culture collide. We provide motorcycle edutainment in the hopes of creating more motorcyclists. Join us!', pseudo: 'Yammie Noob', role: 'creator', number_suscribers:888000, youtube_link: 'https://www.youtube.com/embed/uD27CZEiuGk' )
 user_11.photo.attach(io: file_11, filename: 'nes.png', content_type: 'image/png')
 user_11.save!
 
 
 file_12 = URI.open('https://99designs-blog.imgix.net/blog/wp-content/dist/images/subscribe/dinos-large.svg?auto=format&q=60&fit=max&w=930')
-user_12 = User.new(last_name: 'May', first_name: 'James', email: 'jamesmay@gmail.com', password: '123456', bio: 'We create tutorials about anything and everything. Fro paper airplanes to japanese swords!', pseudo: 'Crazy Tutorials', role: 'creator', youtube_link: 'https://www.youtube.com/watch?v=j35JDZvP3eI', number_suscribers: 217000)
+user_12 = User.new(last_name: 'May', first_name: 'James', email: 'jamesmay@gmail.com', password: '123456', bio: 'We create tutorials about anything and everything. Fro paper airplanes to japanese swords!', pseudo: 'Crazy Tutorials', role: 'creator', youtube_link: 'https://www.youtube.com/embed/j35JDZvP3eI', number_suscribers: 217000)
 user_12.photo.attach(io: file_12, filename: 'nes.png', content_type: 'image/png')
 user_12.save!
 
 file_13 = URI.open('https://datastandard.blob.core.windows.net/botimg/59fd8e47525d5d12288245ab.png')
-user_13 = User.new(last_name: 'Lasope', first_name: 'Tyler', email: 'devslopes@gmail.com', password: '123456', bio: 'Devslopes is the worlds most affordable and effective platform to learn how to code.', pseudo: 'Devslopes', role: 'creator', youtube_link: 'https://www.youtube.com/watch?v=sO1ctUNQ1k8', number_suscribers: 112000)
+user_13 = User.new(last_name: 'Lasope', first_name: 'Tyler', email: 'devslopes@gmail.com', password: '123456', bio: 'Devslopes is the worlds most affordable and effective platform to learn how to code.', pseudo: 'Devslopes', role: 'creator', youtube_link: 'https://www.youtube.com/embed/sO1ctUNQ1k8', number_suscribers: 112000)
 user_13.photo.attach(io: file_13, filename: 'nes.png', content_type: 'image/png')
 user_13.save!
 
 file_14 = URI.open('https://pianote.s3.amazonaws.com/sales/2021/fb-share-image.jpg')
-user_14 = User.new(last_name: 'Pianote', first_name: 'Mary', email: 'mary206@gmail.com', password: '123456', bio: 'Pianote combines the latest technology with the traditional teaching approach to deliver the best online learning experience around. Unlike “video-game learning” found in most other online methods, Pianote students get access to on-demand video lessons from real teachers, who are available to answer questions, provide feedback, and personal support throughout the learning journey. No connection between your piano and a computer is necessary. ', pseudo: 'Pianote', role: 'creator', youtube_link: 'https://www.youtube.com/watch?v=BwoY7WIJ_es', number_suscribers: 816000)
+user_14 = User.new(last_name: 'Pianote', first_name: 'Mary', email: 'mary206@gmail.com', password: '123456', bio: 'Pianote combines the latest technology with the traditional teaching approach to deliver the best online learning experience around. Unlike “video-game learning” found in most other online methods, Pianote students get access to on-demand video lessons from real teachers, who are available to answer questions, provide feedback, and personal support throughout the learning journey. No connection between your piano and a computer is necessary. ', pseudo: 'Pianote', role: 'creator', youtube_link: 'https://www.youtube.com/embed/BwoY7WIJ_es', number_suscribers: 816000)
 user_14.photo.attach(io: file_14, filename: 'nes.png', content_type: 'image/png')
 user_14.save!
 
 
 
 file_16 = URI.open('https://images.sk-static.com/images/media/img/col6/20161031-205544-247843.jpg')
-user_16 = User.new(last_name: 'Lauren', first_name: 'Mayhem', email: 'meyhemlauren@gmail.com', password: '123456', bio: 'Yo! I’m Meyhem Lauren. I make music. I make food. What more could you want? Catch me on my new cooking series, Fridge Diving, where I make meals from whatever is in my fridge. Simple as that.', pseudo: 'Meyhem Lauren', role: 'creator', youtube_link: 'https://www.youtube.com/watch?v=PR5CnNCtAp4', number_suscribers: 43000)
+user_16 = User.new(last_name: 'Lauren', first_name: 'Mayhem', email: 'meyhemlauren@gmail.com', password: '123456', bio: 'Yo! I’m Meyhem Lauren. I make music. I make food. What more could you want? Catch me on my new cooking series, Fridge Diving, where I make meals from whatever is in my fridge. Simple as that.', pseudo: 'Meyhem Lauren', role: 'creator', youtube_link: 'https://www.youtube.com/embed/PR5CnNCtAp4', number_suscribers: 43000)
 user_16.photo.attach(io: file_16, filename: 'nes.png', content_type: 'image/png')
 user_16.save!
 
