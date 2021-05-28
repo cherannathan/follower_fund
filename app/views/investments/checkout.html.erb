@@ -8,12 +8,12 @@
             <h4>Cart
               <span class="price" style="color:black">
                 <i class="fa fa-shopping-cart"></i>
-                <b>4</b>
+                <b><%= @investments.count %></b>
               </span>
             </h4>
             <% @investments.each do |investment| %>
             <p><a href="#"> <%= investment.project.title %> </a> <span class="price">  <%=investment.price_cents %> </span></p> <% if policy(@investments).destroy? %>
-              <div class = "btn btn-black"><%= link_to "Destroy", checkout_path, method: :delete, data: { confirm: "Are you sure?" }%></div>
+              <div class = "btn btn-black"><%= link_to "Destroy", project_investment_path(investment.project, investment), method: :delete, data: { confirm: "Are you sure?" }%></div>
                 <% end %>
             <%end %>
               <hr>
@@ -24,27 +24,29 @@
   <h2> My project</h2>
 </div>
 <div class= "container">
-  <% @investments.each do |investment| %>
-  <h2><%= investment.project.title %></h2>
-  <div class="row">
-    <div class="leftcolumn">
-        <div class="fakeimg" style="height:250px;">Project video</div>
-    </div>
-      <div class="rightcolumn">
-        <div id="myProgress">
-            <div id="myBar"></div>
-        </div>
-          <div class="row">
-            <div class="col">
-              <p><strong>   </strong> backers.</p>
-            </div>
-            <div class="col">
-              <p><strong></strong></p>
+    <% @investments.each do |investment| %>
+    <h2><%= investment.project.title %></h2>
+    <div class="row">
+      <div class="leftcolumn">
+          <div> <% if investment.project.photo.attached? %>
+            <%= cl_image_tag project.photo.key, class: "image-show" %>
+            <% end %></div>
+      </div>
+        <div class="rightcolumn">
+          <div id="myProgress">
+              <div id="myBar"></div>
+          </div>
+            <div class="row">
+              <div class="col">
+                <p><strong>   </strong> backers.</p>
+              </div>
+              <div class="col">
+                <p><strong></strong></p>
+              </div>
             </div>
           </div>
-        </div>
-    </div>
-    <%end %>
+      </div>
+      <%end %>
 </div>
 
 <div class="headerprojectsshow">
@@ -83,7 +85,7 @@
             </div>
 
           </div>
-          <input type="submit" value="Continue to checkout" class="btnchkout">
+          <%= link_to "Continue to checkout", {controller: :investments, action: :payment}, method: :post, class: "btnchkout" %>
         </form>
       </div>
     </div>

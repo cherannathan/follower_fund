@@ -30,7 +30,6 @@
 .container {
   background-color: #f2f2f2;
   padding: 5px 20px 15px 20px;
-  border: 1px solid lightgrey;
   border-radius: 3px;
 }
 
@@ -82,4 +81,8 @@ span.price {
   .col-25 {
     margin-bottom: 20px;
   }
+}
+
+body {
+  background-color: white;
 }
