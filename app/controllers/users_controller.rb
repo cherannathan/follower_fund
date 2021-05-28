@@ -6,6 +6,9 @@ class UsersController < ApplicationController
       @users = @users.joins(projects: :genres).where('genres.name = ?', @genre)
       # @users = User.joins(projects: :genres).where(users: {role: 'creator'}, projects: { 'projects.genre.name = ?', params[:genre] })
     end
+    if params[:query].present?
+      @users = User.global_search(params[:query])
+    end
   end
 
   def show
