@@ -17,10 +17,10 @@ class Project < ApplicationRecord
 
   include PgSearch::Model
   pg_search_scope :global_search,
-    against: [:title, :bio ],
+    against: [:title, :bio],
     associated_against: {
       user: [:pseudo],
-      genres: [:name ]
+      genres: [:name]
     },
     using: {
       tsearch: { prefix: true }

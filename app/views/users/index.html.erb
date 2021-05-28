@@ -1,6 +1,6 @@
 <ul class="navbar-universe list-inline tabs-underlined mb-0">
   <li>
-  <%= link_to users_path(params: { genre: 'All' }) do %>
+  <%= link_to users_path do %>
     <div class="tab-underlined <% params[:all] ? 'active' : '' %> ">All</div>
     <% end %>
   </li>
@@ -25,8 +25,8 @@
     <% end %>
   </li>
   <li>
-    <%= link_to users_path(params: { genre: 'Wtf' }) do %>
-    <div class="tab-underlined <% params[:wtf] ? 'active' : '' %>  ">WTF</div>
+    <%= link_to users_path(params: { genre: 'Makeup' }) do %>
+    <div class="tab-underlined <% params[:makeup] ? 'active' : '' %>  ">Makeup</div>
     <% end %>
 </ul>
 
@@ -41,20 +41,20 @@
   </div>
 <% end %>
 
-
-
 <div class="container">
   <div class="cards-index">
     <% @users.each do |user| %>
       <div class="card-product">
-          <%# <div class="card-product-infos"> %>
+      <%# <%= link_to "check profile, "users[:id]_path %>
             <h2><%= user.first_name %></h2>
             <p><%= user.last_name %></p>
             <p><%= user.pseudo %></p>
             <p><%= user.bio%></p>
-          <div class="avatar-bordered">
+          <div>
+            <% if user.photo.attached? %>
+              <%= cl_image_tag user.photo.key, class: "avatar-bordered"%>
+            <% end %>
           </div>
-        <%# </div> %>
       </div>
     <% end %>
   </div>

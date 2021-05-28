@@ -15,6 +15,5 @@ class UsersController < ApplicationController
     @done_projects = @creator_projects.where(status: 'done')
     @investors = @creator.investors
     @creator_bio = @creator.bio
-
   end
 end
