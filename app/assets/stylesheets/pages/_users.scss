@@ -2,7 +2,9 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   height: 400px;
-  padding: 88px;
+  padding: 48px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
 }
 
 .data {
@@ -14,6 +16,8 @@
   transform: translateX(-50%);
   background-color: whitesmoke;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  padding-top: 4px;
 }
 
 .data ul {
@@ -27,6 +31,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  border-radius: 10px;
 }
 
 .project-card img {
@@ -39,4 +44,8 @@
 
 .newproject{
   margin-top: 170px;
+}
+
+.creator{
+  margin-top: 24px;
 }
