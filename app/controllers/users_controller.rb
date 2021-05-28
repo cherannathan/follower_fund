@@ -3,7 +3,8 @@ class UsersController < ApplicationController
     @users = User.where(role: 'creator')
     @genre = params[:genre]
     if @genre.present?
-      @users = @users.joins(projects: :genres).where('genres.name = ?', @genre)
+      # raise
+      @users = @users.joins(projects: :genres).where('genres.name = ?', @genre).distinct
       # @users = User.joins(projects: :genres).where(users: {role: 'creator'}, projects: { 'projects.genre.name = ?', params[:genre] })
     end
     if params[:query].present?
