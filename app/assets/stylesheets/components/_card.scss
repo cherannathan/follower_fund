@@ -9,7 +9,7 @@
   font-weight: bold;
   border-radius: 5px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 16px;
   // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -21,7 +21,7 @@
   background: white;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
   padding: 16px;
-  min-height: 355px;
+  min-height: 300px;
     border-radius: 2%;
 
   // display: flex;
@@ -29,8 +29,8 @@
 }
 
 .card-product img {
-  height: 120px;
-  width: 120px;
+  height: 100px;
+  width: 100px;
   object-fit: cover;
   object-position: top;
   margin-top: 45px;
