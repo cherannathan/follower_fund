@@ -9,19 +9,26 @@
   font-weight: bold;
   border-radius: 5px;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 
 }
 
+
+  .card-hover:hover{
+     transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+
 .card-product {
   overflow: hidden;
   background: white;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  padding: 16px;
-  min-height: 300px;
+  // box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  padding: 8px;
+  // min-height: 300px;
     border-radius: 2%;
 
   // display: flex;
@@ -29,8 +36,8 @@
 }
 
 .card-product img {
-  height: 100px;
-  width: 100px;
+  height: 300px;
+  width: 300px;
   object-fit: cover;
   object-position: top;
   margin-top: 45px;
@@ -58,4 +65,6 @@
   padding: 16px;
 }
 
-
+ul {
+    list-style-type: none;
+}

@@ -23,16 +23,16 @@
 <div class="headerprojectsshow">
   <h2> My project</h2>
 </div>
-<div class= "container">
+<div class= "container bg-white">
     <% @investments.each do |investment| %>
     <h2><%= investment.project.title %></h2>
     <div class="row">
       <div class="leftcolumn">
           <div> <% if investment.project.photo.attached? %>
-            <%= cl_image_tag investment.project.photo.key, class: "image-show" %>
+            <%= cl_image_tag investment.project.photo.key, class: "image-show w-50" %>
             <% end %></div>
       </div>
-        <div class="rightcolumn">
+        <div class="rightcolumn border border-secondary">
           <div id="myProgress">
               <div id="myBar"></div>
           </div>
@@ -73,7 +73,7 @@
               <input type="text" id="expmonth" name="expmonth" placeholder="September">
 
               <div class="row">
-                <div class="col-50">
+                <div class="col-50 ">
                   <label for="expyear">Exp Year</label>
                   <input type="text" id="expyear" name="expyear" placeholder="2018">
                 </div>

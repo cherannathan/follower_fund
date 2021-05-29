@@ -2,7 +2,7 @@
  <%= cl_image_tag(@creator.photo.key, crop: :thumb, gravity: :face, class:"avatar-creator-page") %>
 </div>
 
-<div class="creator container">
+<div class="creator container mt-5 bg-white">
   <div>
     <h1><%= @creator.pseudo %></h1>
     <h3><%= @creator.first_name%> <%= @creator.last_name %></h3>
@@ -18,18 +18,19 @@
       <br>
       <p><%= @creator.bio %></p>
       <div class="data ml-50px border border-secondary">
-        <h3 > Creator data</h3>
-        <p><%= @creator.email %></p>
-        <ul>
-          <li>Number of followers :<%= @creator.number_suscribers.nil? ? " 0" : @creator.number_suscribers %></li>
-          <li>Number of projects done : <%= @done_projects.count %></li>
-          <li>On going projects : <%= @ongoing_projects.count %></li>
-          <li>Number of investors : <%= @investors.count %></li>
+        <div class="card-header">
+          <h3 > Creator data</h3>
+        </div>
+        <ul class="list-group list-group-flush text-center">
+          <li>Number of followers : <strong><%= @creator.number_suscribers.nil? ? " 0" : @creator.number_suscribers %></li></strong>
+          <li>Number of projects done : <strong><%= @done_projects.count %></li></strong>
+          <li>On going projects : <strong><%= @ongoing_projects.count %></li></strong>
+          <li>Number of investors : <strong><%= @investors.count %></li></strong>
         </ul>
       </div>
     </div>
   </div>
-  <div class="newproject container">
+  <div class="newproject container bg-white">
     <h3>My projects you can invest in</h3>
       <% @ongoing_projects.each do |project| %>
       <%= link_to project_path(project), class: 'text-decoration-none text-dark' do %>
@@ -41,3 +42,90 @@
     <% end %>
   </div>
 </div>
+
+
+<!-- Footer -->
+<footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container-footer">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Form -->
+    <section class="">
+      <form action="">
+        <!--Grid row-->
+        <div class="row d-flex justify-content-center">
+          <!--Grid column-->
+          <div class="col-auto">
+            <p class="pt-2">
+              <strong>Sign up for our newsletter</strong>
+            </p>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-5 col-12">
+            <!-- Email input -->
+            <div class="form-outline form-white mb-4">
+              <input type="email" id="form5Example2" class="form-control" />
+              <label class="form-label" for="form5Example2">Email address</label>
+            </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-auto">
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-outline-light mb-4">
+              Subscribe
+            </button>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </form>
+    </section>
+
+    <!-- Section: Links -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: black;">
+    © 2021 Copyright:
+    <a class="text-white" href="https://mdbootstrap.com/">www.followerfund.me</a>
+  </div>
+  <!-- Copyright -->
+</footer>
