@@ -1,6 +1,6 @@
 .search-form-control {
   position: relative;
-  border-radius: 15px;
+  border-radius: 30px;
   width: 1250%;
 }
 
@@ -26,5 +26,8 @@
 #form-search {
   input[type=text] {
     margin-bottom: 0px;
+    border-radius: 30px;
+    width: 100%;
+    text-align:center;
   }
 }
