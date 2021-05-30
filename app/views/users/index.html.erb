@@ -30,8 +30,8 @@
     <% end %>
 </ul>
 
-<div class="banner-index justify-content-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1605211419780-4f71a6227d21?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80);">
-  <h1 class="d-flex justify-content-center mt-5 mb-2 text-white font-weight-bold"><%= @genre.presence || "All" %></h1>
+<div class="banner-index justify-content-center" style="background-image: url(https://images.unsplash.com/photo-1605211419780-4f71a6227d21?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80);">
+  <h1 class="d-flex justify-content-center mt-3 mb-3 text-white font-weight-bold"><%= @genre.presence || "All" %></h1>
 </div>
 
 <div class="d-flex align-items-center mx-5 mb-3 mt-3" id="form-search">
@@ -61,19 +61,107 @@
   <div class="cards-index">
     <% @users.each do |user| %>
         <%= link_to user_path(user), class: 'text-decoration-none text-dark' do %>
-        <div class="card-product">
-          <h1><%= user.pseudo %></h1>
-          <p><%= user.bio%></p>
-        <div>
-          <% if user.photo.attached? %>
-            <%= cl_image_tag user.photo.key, class: "avatar-bordered"%>
-          <% end %>
+
+        <div class=" card-product card-hover">
+            <% if user.photo.attached? %>
+              <%= cl_image_tag user.photo.key, class: "avatar-bordered"%>
+            <h4 class="text-center mt-2"><%= user.pseudo %></h4>
+            <% end %>
         </div>
-      </div>
+
       <% end %>
     <% end %>
   </div>
 </div>
 
 
+<<<<<<< HEAD
 <a> Front page </a>
+=======
+<!-- Footer -->
+<footer class="bg-dark text-center text-white">
+  <!-- Grid container -->
+  <div class="container-footer">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Form -->
+    <section class="">
+      <form action="">
+        <!--Grid row-->
+        <div class="row d-flex justify-content-center">
+          <!--Grid column-->
+          <div class="col-auto">
+            <p class="pt-2">
+              <strong>Sign up for our newsletter</strong>
+            </p>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-md-5 col-12">
+            <!-- Email input -->
+            <div class="form-outline form-white mb-4">
+              <input type="email" id="form5Example2" class="form-control" />
+              <label class="form-label" for="form5Example2">Email address</label>
+            </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-auto">
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-outline-light mb-4">
+              Subscribe
+            </button>
+          </div>
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </form>
+    </section>
+
+    <!-- Section: Links -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: black;">
+    © 2021 Copyright:
+    <a class="text-white" href="https://mdbootstrap.com/">www.followerfund.me</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+
+>>>>>>> master

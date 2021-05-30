@@ -6,13 +6,13 @@
   <div class="leftcolumn">
     <div class="cardprojectsshow">
       <div> <% if @project.photo.attached? %>
-      <%= cl_image_tag @project.photo.key, class: "image-show" %>
+      <%= cl_image_tag @project.photo.key, class: "image-show w-100" %>
       <% end %></div>
     </div>
   </div>
   <div class="rightcolumn">
-    <div class="container">
-      <div class="cardprojectsshow">
+    <div class="container bg-white border border-secondary">
+      <div class="cardprojectsshow ">
           <p><strong><%= @project.total_investments %></strong> Out of <strong><%= @project.goal_amount %></strong></p>
           <%= @project.currentamountinvestment %>
         <div id="myProgress">
@@ -39,15 +39,15 @@
     </div>
   </div>
 </div>
-<div class="row">
-  <div class="leftcolumn">
-    <div class="cardprojectsshow">
+<div class="row ">
+  <div class="leftcolumn ">
+    <div class="cardprojectsshow bg-white">
       <h2>Project slogan</h2>
       <p> <%= @project.bio %> </p>
     </div>
   </div>
   <div class="rightcolumn">
-    <div class="cardprojectsshowsharecalculator">
+    <div class="cardprojectsshowsharecalculator bg-white">
       <h2 class="under">Revenue share calculator</h2>
         <div class="row">
           <div class="col">
