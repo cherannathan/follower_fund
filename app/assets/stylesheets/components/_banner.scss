@@ -9,6 +9,17 @@
   height: 360px;
   background-repeat: no-repeat;
   background-color: #5353ec;
+
+}
+
+.creator-banner.img {
+position: absolute;
+height: 600px;
+right: 80px;
+transform: rotate(10deg);
+z-index: 2;
+top: -73px;
+
 }
 
 .creator-banner h1{
