@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_27_112220) do
+ActiveRecord::Schema.define(version: 2021_05_31_105628) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -51,8 +51,22 @@ ActiveRecord::Schema.define(version: 2021_05_27_112220) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "price_cents", default: 0, null: false
     t.string "price_currency", default: "USD", null: false
+    t.string "sku"
     t.index ["project_id"], name: "index_investments_on_project_id"
     t.index ["user_id"], name: "index_investments_on_user_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "state"
+    t.string "investment_sku"
+    t.integer "amount_cents", default: 0, null: false
+    t.string "checkout_session_id"
+    t.bigint "user_id", null: false
+    t.bigint "investment_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["investment_id"], name: "index_orders_on_investment_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
@@ -111,6 +125,8 @@ ActiveRecord::Schema.define(version: 2021_05_27_112220) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "investments", "projects"
   add_foreign_key "investments", "users"
+  add_foreign_key "orders", "investments"
+  add_foreign_key "orders", "users"
   add_foreign_key "project_genres", "genres"
   add_foreign_key "project_genres", "projects"
   add_foreign_key "projects", "users"
