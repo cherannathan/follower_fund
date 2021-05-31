@@ -1,6 +1,6 @@
 <h1 class="text-center mt-4">Dashboard</h1>
 
-<div class="container mt-4">
+<div class="container mt-4 bg-blue">
 
   <% @investments.each do |investment|%>
     <div class="d-flex justify-content-between">
@@ -16,17 +16,17 @@
         <div class="card-header text-center">
           Project
         </div>
-        <%= cl_image_tag investment.project.photo.key, width: "150px", height: "100px" %>
+        <%= cl_image_tag investment.project.photo.key, width: "250px", height: "150px" %>
       </div>
       <div class="d-flex my-3 ">
-        <div class="border border-secondary d-flex align-items">
-          <div class="<%= "colored" if investment.project.status == "fundraising"%> w-100 h-20 fundraising d-flex justify-content-center align-items-center border border-secondary px-3">
+        <div class="border border-light d-flex align-items ">
+          <div class="<%= "colored" if investment.project.status == "fundraising"%> w-100 h-20 fundraising d-flex justify-content-center align-items-center border border-dark px-3">
           Fundrainsing
           </div>
-          <div class="<%= "colored" if investment.project.status == "pending"%> w-100 h-20 pending align-middle d-flex justify-content-center align-items-center border border-secondary px-3">
+          <div class="<%= "colored" if investment.project.status == "pending"%> w-100 h-20 pending align-middle d-flex justify-content-center align-items-center border border-dark px-3">
           Pending
           </div>
-          <div class="<%= "colored" if investment.project.status == "done"%> w-100 h-20 done d-flex justify-content-center align-items-center border border-secondary px-3">
+          <div class="<%= "colored" if investment.project.status == "done"%> w-100 h-20 done d-flex justify-content-center align-items-center border border-dark px-3">
           Done
           </div>
         </div>
@@ -40,7 +40,10 @@
     </div>
     <div> <%= simple_form_for [investment.project, investment] do |f| %>
     <%= f.input :user_thankyou %>
-    <%=  f.submit "submit"%>
+    <div class="d-flex justify-content-center">
+    <%=  f.submit "submit" %>
+    </div>
+
     <% end %>
       </div>
   <% end %>
