@@ -1,0 +1,15 @@
+.colored {
+ &.pending {
+   background-color: #F7F06D;
+ }
+ &.fundraising {
+   background-color: #6369D1;
+ }
+  &.done {
+    background-color: #9EE493;
+  }
+}
+
+.profit-tag {
+  margin-right: 40px;
+}

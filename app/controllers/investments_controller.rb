@@ -24,6 +24,11 @@ class InvestmentsController < ApplicationController
     authorize @investment
   end
 
+  def update
+    @investment = Investment.find(params[:id])
+    @investment.update(investment_params)
+  end
+
   def checkout
     @investments = policy_scope(Investment).where(status: 'pending', user: current_user)
   end
@@ -47,7 +52,7 @@ class InvestmentsController < ApplicationController
   private
 
   def investment_params
-    params.require(:investment).permit(:price_cents)
+    params.require(:investment).permit(:price_cents, :user_thankyou)
   end
 end
 
