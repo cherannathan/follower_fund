@@ -12,11 +12,19 @@
 
 
 .banner-index{
-  height: 300px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 360px;
+  overflow: visible;
+  //box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   position: relative;
   align-items: center;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: $purple;
   background-position: center;
+  background-position-x: 50vw;
+}
+
+.fas.fa-search {
+  color: $purple;
 }
