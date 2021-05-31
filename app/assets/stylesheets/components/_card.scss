@@ -19,35 +19,80 @@
 
 
 .card-hover:hover{
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+  transform: scale(1.03);
+
+  //box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .card-product {
   overflow: hidden;
   // box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  padding: 30px;
-  // min-height: 300px;
-    border-radius: 2%;
-    background-color: white;
-
-  // display: flex;
-  // align-items: center;
-}
-
-.card-product img {
+  border-radius: 6%;
   height: 300px;
-  width: 300px;
-  object-fit: cover;
-  object-position: top;
-  // margin-top: 45px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  background-size: cover;
+  background-position: center;
+
+  &:hover {
+    border: 2px solid $purple;
+    h2 {
+      animation: slideName .3s ease forwards;
+    }
+  }
+
+
 }
+
 
 .card-product h2 {
-  font-size: 16px;
+  font-size: 24px;
   font-weight: bold;
   margin: 0;
+  color: white;
+  position: relative;
+  z-index: 6;
+  padding: 12px;
+  transform: translateX(-330%);
+
+  &:before {
+    border-top: 134px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-right: 0px solid $purple;
+    border-left: 330px solid $purple;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+  }
+}
+
+@keyframes slideName {
+  0% {
+    transform: translateX(-330%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 .card-product p {
