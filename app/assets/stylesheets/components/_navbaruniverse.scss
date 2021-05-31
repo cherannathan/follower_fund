@@ -1,7 +1,8 @@
 
 .navbar-universe{
   // border: 3px solid white;
-  background-color: rgba(0, 0, 0, 0.904);
+  background-color: $purple;
+  height: $navbar-universe-height;
 
 }
 
@@ -11,19 +12,30 @@
 
 }
 
-.tabs-underlined .tab-underlined {
-  color: white;
-  padding: 8px;
-  margin: 8px 16px;
-  // opacity: .4;
-  cursor: pointer;
-  text-decoration: none;
-  border-bottom: 4px solid transparent;
+//.tabs-underlined .tab-underlined {
+  // padding: 8px;
+  // margin: 8px 16px;
+  // // opacity: .4;
+  // border-bottom: 4px solid transparent;
+//}
+.tabs-links {
+  &:hover{
+    text-decoration: none !important;
+  }
 }
-
-.tabs-underlined .tab-underlined.active {
-  opacity: 1;
-  border-bottom: 3px solid #555555;
+.tab-underlined {
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  //background-color: rgba(255,255,255,0.4);
+  //border-radius: 5px;
+  //padding: 9px 22px 6px 22px;
+  transition: all ease 0.2s;
+  &:hover{
+    background-color: rgba(255,255,255,0.6);
+    border-radius: 5px;
+    padding: 9px 22px 6px 22px;
+  }
 }
 
 .list-inline{

@@ -1,8 +1,14 @@
 // Specific CSS for your home-page
 .banner {
-  background-size: cover;
-  background-position: center;
-  padding: 200px 0;
+  background-color: $purple;
+  align-items: center;
+  max-height: calc(100vh - #{$navbar-height} - #{$navbar-universe-height} - #{$container-info-height})
+}
+
+.banner-img {
+  width: 50%;
+  object-fit: contain;
+  max-height: calc(100vh - #{$navbar-height} - #{$navbar-universe-height} - #{$container-info-height})
 }
 
 .banner h1 {
@@ -11,6 +17,7 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 60px;
   font-weight: bold;
+  width: 60%;
 }
 
 .mb-2, .my-2 {
@@ -29,6 +36,7 @@
     padding: 1rem !important;
     color: white;
 }
+
 
 .banner p {
   font-size: 23px;
@@ -74,6 +82,28 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.container-info {
+  background-color: $purple;
+  border-color: white;
+  border-width: 5px;
+  font-size: 30px;
+  color: white;
+  height: $container-info-height;
+}
+
+.homepage-card {
+  width: 200px;
+  p {
+    margin-top: 10px;
+  }
+}
+
+.homepage-cards {
+  min-width: 600px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 // Smallest device
