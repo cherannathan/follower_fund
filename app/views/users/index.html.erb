@@ -1,4 +1,5 @@
-<ul class="navbar-universe list-inline tabs-underlined mb-0">
+<div class="purple-background">
+<ul class="navbar-universe list-inline tabs-underlined mb-0" style="z-index: 3; position: relative;">
   <li>
   <%= link_to users_path do %>
     <div class="tab-underlined <% params[:all] ? 'active' : '' %> ">All</div>
@@ -30,19 +31,22 @@
     <% end %>
 </ul>
 
-<div class="banner-index justify-content-center" style="background-image: url(https://images.unsplash.com/photo-1605211419780-4f71a6227d21?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80);">
-  <h1 class="d-flex justify-content-center mt-3 mb-3 text-white font-weight-bold"><%= @genre.presence || "All" %></h1>
+<div class="banner-index justify-content-start">
+   <%= image_tag "Saly-12.png", style: "position: absolute; height: 600px; right: 80px; transform: rotate(10deg); z-index: 2; top: -73px;" %>
+  <div class="d-flex flex-column align-items-start justify-content-start w-50" style='margin-left: 10vw;'>
+    <h1 class="d-flex justify-content-center mt-3 mb-3 text-white font-weight-bold"><%= @genre.presence || "All" %></h1>
+    <div class="d-flex align-items-center mb-3 mt-3 w-100 position-relative" id="form-search" style="z-index: 10;">
+      <%= form_tag users_path, method: :get, class: 'search-form-control', data: { turbo: true } do %>
+        <%= text_field_tag :query, params[:query], id: "", placeholder: "Search for creator/genre..." %>
+        <%= submit_tag "Search", style: "display: none;" %>
+      <% end %>
+      <button id="search-button" type="button" class="btn btn-search position-absolute" style="right: 0;">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+  </div>
 </div>
 
-<div class="d-flex align-items-center mx-5 mb-3 mt-3" id="form-search">
-  <%= form_tag users_path, method: :get, class: 'search-form-control', data: { turbo: true } do %>
-    <%= text_field_tag :query, params[:query], id: "", placeholder: "Search for creator/genre..." %>
-    <%= submit_tag "Search", style: "display: none;" %>
-  <% end %>
-  <button id="search-button" type="button" class="btn btn-search">
-    <i class="fas fa-search"></i>
-  </button>
-  </div>
   <%#= simple_form_for :search, url: root_path, method: :get do |f| %>
     <%#= f.input :email,
                 required: true,
@@ -57,7 +61,7 @@
   </div>
 <% end %>
 
-<div class="container bg-white">
+<div class="container purple-background bg-white mt-5 pt-5" >
   <div class="cards-index">
     <% @users.each do |user| %>
         <%= link_to user_path(user), class: 'text-decoration-none text-dark' do %>
@@ -159,3 +163,4 @@
   </div>
   <!-- Copyright -->
 </footer>
+</div>
