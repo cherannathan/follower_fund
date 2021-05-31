@@ -1,0 +1,47 @@
+<h1 class="text-center mt-4">Dashboard</h1>
+
+<div class="container mt-4">
+
+  <% @investments.each do |investment|%>
+    <div class="d-flex justify-content-between">
+      <div class="card" style="width: 9rem;">
+          <div class="card-header">
+            Investment
+          </div>
+        <div class="card-body text-center">
+          $<%= investment.price_cents / 100.0 %>
+        </div>
+      </div>
+      <div>
+        <div class="card-header text-center">
+          Project
+        </div>
+        <%= cl_image_tag investment.project.photo.key, width: "150px", height: "100px" %>
+      </div>
+      <div class="d-flex my-3 ">
+        <div class="border border-secondary d-flex align-items">
+          <div class="<%= "colored" if investment.project.status == "fundraising"%> w-100 h-20 fundraising d-flex justify-content-center align-items-center border border-secondary px-3">
+          Fundrainsing
+          </div>
+          <div class="<%= "colored" if investment.project.status == "pending"%> w-100 h-20 pending align-middle d-flex justify-content-center align-items-center border border-secondary px-3">
+          Pending
+          </div>
+          <div class="<%= "colored" if investment.project.status == "done"%> w-100 h-20 done d-flex justify-content-center align-items-center border border-secondary px-3">
+          Done
+          </div>
+        </div>
+        <div class="profit-tag d-flex justify-content-center align-items-center mx-4">
+        Profit (coming soon)
+        </div>
+        <div class="d-flex justify-content-center align-items-center">
+        <a class="btn btn-primary btn-lg btn-block" href="/users">Cash out</a>
+        </div>
+      </div>
+    </div>
+    <div> <%= simple_form_for [investment.project, investment] do |f| %>
+    <%= f.input :user_thankyou %>
+    <%=  f.submit "submit"%>
+    <% end %>
+      </div>
+  <% end %>
+</div>
