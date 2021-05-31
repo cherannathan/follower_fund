@@ -1,50 +1,115 @@
-<h1 class="text-center mt-4">Dashboard</h1>
-
-<div class="container mt-4 bg-blue">
-
-  <% @investments.each do |investment|%>
-    <div class="d-flex justify-content-between">
-      <div class="card" style="width: 9rem;">
-          <div class="card-header">
-            Investment
-          </div>
-        <div class="card-body text-center">
+<div class="banner d-flex h-200px mb-5" >
+  <div>
+  <h1 class="mx-auto"><strong>My profile </strong></h1>
+  </div>
+  <div class="d-flex justify-content-end">
+  <%= image_tag "dashboard", class:"banner-img " %>
+  </div>
+</div>
+<div class="container mt-4 mb-5">
+  <div class="card-header text-center">
+    <h4 class="font-weight-bold">Your investments</h4>
+  </div>
+    <div class="investment-row header">
+      <div class="investment-row__img"></div>
+      <div class="investment-row__name">Project name</div>
+      <div class="investment-row__amount">Investment</div>
+      <div class="investment-row__status">Status</div>
+      <div class="investment-row__profit">Profit</div>
+      <div class="investment-row__cta"></div>
+    </div>
+    <% @investments.each do |investment|%>
+      <div class="investment-row">
+        <%= cl_image_tag investment.project.photo.key, width: "250px", height: "150px", class: "investment-row__img" %>
+        <div class="investment-row__name">
+          <%= investment.project.title %>
+        </div>
+        <div class="investment-row__amount">
           $<%= investment.price_cents / 100.0 %>
         </div>
-      </div>
-      <div>
-        <div class="card-header text-center">
-          Project
+        <div class="investment-row__status status-badge <%= investment.project.status %>">
+          <%= investment.project.status %>
         </div>
-        <%= cl_image_tag investment.project.photo.key, width: "250px", height: "150px" %>
-      </div>
-      <div class="d-flex my-3 ">
-        <div class="border border-light d-flex align-items ">
-          <div class="<%= "colored" if investment.project.status == "fundraising"%> w-100 h-20 fundraising d-flex justify-content-center align-items-center border border-dark px-3">
-          Fundrainsing
-          </div>
-          <div class="<%= "colored" if investment.project.status == "pending"%> w-100 h-20 pending align-middle d-flex justify-content-center align-items-center border border-dark px-3">
-          Pending
-          </div>
-          <div class="<%= "colored" if investment.project.status == "done"%> w-100 h-20 done d-flex justify-content-center align-items-center border border-dark px-3">
-          Done
-          </div>
-        </div>
-        <div class="profit-tag d-flex justify-content-center align-items-center mx-4">
-        Profit (coming soon)
-        </div>
-        <div class="d-flex justify-content-center align-items-center">
-        <a class="btn btn-primary btn-lg btn-block" href="/users">Cash out</a>
+        <div class="investment-row__profit">$4</div>
+        <div class="investment-row__cta">
+          <%= link_to "cash out", '', class: "btn btn-primary"  %>
         </div>
       </div>
-    </div>
-    <div> <%= simple_form_for [investment.project, investment] do |f| %>
-    <%= f.input :user_thankyou %>
-    <div class="d-flex justify-content-center">
-    <%=  f.submit "submit" %>
-    </div>
 
-    <% end %>
+      <p class="text-center">
+        <button class="btn btn-outline-primary btn-sm" type="button" data-toggle="collapse" data-target="#message-<%= investment.id %>" aria-expanded="false" aria-controls="collapseExample">
+          Write a message
+        </button>
+      </p>
+      <div class="collapse" id="message-<%= investment.id %>">
+        <%= simple_form_for [investment.project, investment] do |f| %>
+          <%= f.input :user_thankyou, label: false, placeholder: "Leave a message to your creator" %>
+          <div class="d-flex justify-content-center">
+            <%=  f.submit "submit", class: 'btn btn-sm btn-outline-primary' %>
+          </div>
+        <% end %>
       </div>
-  <% end %>
-</div>
+
+      <div class="mx-5 mb-5">
+      </div>
+    <% end %>
+  </div>
+
+<!-- Footer -->
+<footer class="bg-dark text-center text-white mt-5">
+  <!-- Grid container -->
+  <div class="container-footer">
+    <!-- Section: Social media -->
+    <section class="mb-4">
+      <!-- Facebook -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+
+      <!-- Linkedin -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-linkedin-in"></i
+      ></a>
+
+      <!-- Github -->
+      <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+        ><i class="fab fa-github"></i
+      ></a>
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Form -->
+    <section class="">
+      <form action="">
+        <!--Grid row-->
+        <div class="row d-flex justify-content-center">
+          <!--Grid column-->
+
+          <!--Grid column-->
+
+          <!--Grid column-->
+
+          <!--Grid column-->
+        </div>
+        <!--Grid row-->
+      </form>
+    </section>
+
+    <!-- Section: Links -->
+  </div>
+  <!-- Grid container -->
