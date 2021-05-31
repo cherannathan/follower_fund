@@ -68,8 +68,8 @@
 
         <div class=" card-product card-hover">
             <% if user.photo.attached? %>
-              <%= cl_image_tag user.photo.key, class: "avatar-bordered"%>
-            <h4 class="text-center mt-2"><%= user.pseudo %></h4>
+              <%= cl_image_tag user.photo.key, class: "avatar-bordered "%>
+            <h4 class="text-center"><%= user.pseudo %></h4>
             <% end %>
         </div>
 
