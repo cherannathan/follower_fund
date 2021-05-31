@@ -9,7 +9,7 @@
   </div>
   <div class="row d-flex justify-content-between align-items">
     <div class="col-sm-6" style="height: 400px padding: 88px">
-      <div class="embed-responsive embed-responsive-16by9">
+      <div class="embed-responsive embed-responsive-16by9" style="height: 400px">
         <iframe class="embed-responsive-item" src="<%= @creator.youtube_link %>" allowfullscreen></iframe>
       </div>
     </div>
@@ -21,7 +21,7 @@
         <div class="card-header">
           <h3 > Creator data</h3>
         </div>
-        <ul class="list-group list-group-flush text-center">
+        <ul class="list-group list-group-flush text-center mt-3">
           <li>Number of followers : <strong><%= @creator.number_suscribers.nil? ? " 0" : @creator.number_suscribers %></li></strong>
           <li>Number of projects done : <strong><%= @done_projects.count %></li></strong>
           <li>On going projects : <strong><%= @ongoing_projects.count %></li></strong>
