@@ -8,6 +8,10 @@ Rails.application.routes.draw do
     resources :users, only: [:index, :show]
     get 'checkout', to: 'investments#checkout'
     post 'payment', to: 'investments#payment'
+    resources :orders, only: [:show, :create] do
+      resources :payments, only: :new
+    end
+
 
     resource :profile, only: :show
 

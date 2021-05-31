@@ -9,98 +9,78 @@
       <%= cl_image_tag @project.photo.key, class: "image-show w-100 mx-3" %>
       <% end %></div>
     </div>
-  </div>
-  <div class="rightcolumn">
-    <div class="container bg-white border border-secondary">
-      <div class="cardprojectsshow ">
-          <p><strong><%= @project.total_investments %></strong> Out of <strong><%= @project.goal_amount %></strong></p>
-          <%= @project.currentamountinvestment %>
-        <div id="myProgress">
-            <div id="myBar" style="width:<%= @project.currentamountinvestment %>%" ></div>
-        </div>
-          <div class="row">
-            <div class="col">
-              <p><strong>  <%= @project.investments.count %> </strong> backers.</p>
-            </div>
+    <div class="rightcolumn" data-controller="display-amount">
+      <div class="container bg-white border border-secondary">
+        <div class="cardprojectsshow ">
+            <h2>Project avancement</h2>
+          <p><strong><%= @project.total_investments %> $ </strong> Out of <span data-display-amount-target="goalAmount"><strong><%= @project.goal_amount %></strong></span> $ </p>
+            <% @project.currentamountinvestment %>
+          <div id="myProgress">
+              <div id="myBar" style="width:<%= @project.currentamountinvestment >= 100 ? 100 : @project.currentamountinvestment %>%" ></div>
+          </div>
+            <div class="row">
+              <div class="col">
+                <p><strong>  <%= @project.investments.count %> </strong> backer(s)</p>
+              </div>
             <div class="col">
               <p><strong> <%=@project.deadline  %> </strong></p>
             </div>
           </div>
-          <p>Total revenue split: <strong><%= @project.revenue_split %> % </strong> for my investors.</p>
-          <div class="slidecontainer" data-controller="display-amount">
-            <%= simple_form_for [@project, Investment.new] do |f| %>
-            <%= f.input :price_cents, as: :range, collection: (1..@project.goal_amount).to_a, placeholder: "Amount", input_html:{type: "range", min: 0, max: @project.goal_amount, step: 5, data: {action: "change->display-amount#display", display_amount_target: "value"}}%>
-            <%#= @project.investments.first.place %>
-            <div data-display-amount-target='amount'> </div>
-            <%= f.submit "add to cart", class: "btn2 btn-dark" %>
-            <% end %>
-          </div>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row ">
-  <div class="leftcolumn ">
-    <div class="cardprojectsshow bg-white">
-      <h2>Project slogan</h2>
-      <p> <%= @project.bio %> </p>
-    </div>
-  </div>
-  <div class="rightcolumn">
-    <div class="cardprojectsshowsharecalculator bg-white">
-      <h2 class="under">Revenue share calculator</h2>
-        <div class="row">
-          <div class="col">
-            <p><strong>Your investment</strong></p>
-          </div>
-          <div class="col">
-            <p><strong>Profit at 1 millions</strong></p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <p>5 balles</p>
-          </div>
-          <div class="col">
-            <p>$100</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <p>10 balles</p>
-          </div>
-          <div class="col">
-            <p>$200</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col">
-            <p>15 balles</p>
-          </div>
-          <div class="col">
-            <p>$400</p>
+            <p>Total revenue split: <strong><span data-display-amount-target="revenuSplit"><%= @project.revenue_split %></span> % </strong> for my investors.</p>
+          <div class="cardprojectsshowsharecalculator bg-white">
+            <h2 class="under">Revenue share calculator</h2>
+              <div class="slidecontainer">
+              <%= simple_form_for [@project, Investment.new] do |f| %>
+              <%= f.input :price_cents, as: :range, collection: (1..@project.goal_amount).to_a, placeholder: "Amount", input_html:{type: "range", min: 0, max: @project.goal_amount, step: 5, data: {action: "change->display-amount#display", display_amount_target: "value"}}%>
+              <%#= @project.investments.first.place %>
+              <div data-display-amount-target='amount'> </div>
+              <%= f.submit "add to cart", class: "btn2 btn-dark #{'d-none' if @project.currentamountinvestment >= 100}" %>
+              <% end %>
+              <div class="row">
+                <div class="col">
+                  <p><strong>Profit at 100 000 views</strong></p>
+                </div>
+                <div class="col">
+                  <p><strong>Profit at 200 000 views</strong></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <p>$<span data-display-amount-target="for100000">0</span></p>
+                </div>
+                <div class="col">
+                  <p>$<span data-display-amount-target="for200000">0</span></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <p><strong>Profit at 500 000 views</strong></p>
+                </div>
+                <div class="col">
+                  <p><strong>Profit at 1 millions views</strong></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <p>$<span data-display-amount-target="for500000">0</span></p>
+                </div>
+                <div class="col">
+                  <p>$<span data-display-amount-target="for1000000">0</span></p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="row ">
+    <div class="leftcolumn ">
+      <div class="cardprojectsshow bg-white">
+        <h2>Project slogan</h2>
+        <p> <%= @project.bio %> </p>
+      </div>
+    </div>
+    <div class="rightcolumn">
   </div>
 </div>
-
-
-<div class="col-25">
-  <div class="containercheckout">
-    <h4>Cart
-      <span class="price" style="color:black">
-        <i class="fa fa-shopping-cart"></i>
-      </span>
-    </h4>
-    <p><a href="#"> <%= @project.title %> </a> <span class="price"><%= @project.investments.first&.price %></span></p>
-    <input type="submit" value="Continue to checkout" class="btn2 btn-dark">
-    <input type="submit" value="Continue shopping" class="btn2 btn-dark">
-  </div>
-</div>
-
-
-<%= @project.revenue_split %>
-<%= @project.revenue_generated %>
-
-

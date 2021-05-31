@@ -16,6 +16,7 @@ class InvestmentsController < ApplicationController
     @investment.project = Project.find(params[:project_id])
     @investment.user = current_user
     @investment.status = "pending"
+    @investment.sku = "investment-#{Investment.last.id.to_i+1}"
     if @investment.save
       redirect_to checkout_path
     else

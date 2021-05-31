@@ -61,16 +61,18 @@
   </div>
 <% end %>
 
-<div class="container purple-background bg-white mt-5 pt-5" >
+<div class="container bg-white mt-5 pt-5" >
   <div class="cards-index">
     <% @users.each do |user| %>
         <%= link_to user_path(user), class: 'text-decoration-none text-dark' do %>
 
-        <div class=" card-product card-hover">
-            <% if user.photo.attached? %>
-              <%= cl_image_tag user.photo.key, class: "avatar-bordered "%>
-            <h4 class="text-center"><%= user.pseudo %></h4>
-            <% end %>
+        <% if user.photo.attached? %>
+          <div class="card-product" style="background-image: url(<%= cl_image_path user.photo.key %>)">
+        <% else %>
+          <div class="card-product" style="background-image: url(<%= asset_path "FakeAvatar" %>)">
+        <% end %>
+            <h2 class="text-center mt-2"><%= user.pseudo %></h2>
+
         </div>
 
       <% end %>
