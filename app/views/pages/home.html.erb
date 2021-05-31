@@ -1,79 +1,68 @@
 <ul class="navbar-universe list-inline tabs-underlined mb-0" >
   <li>
-  <%= link_to users_path do %>
-    <div class="tab-underlined <% params[:all] ? 'active' : '' %> ">All</div>
+  <%= link_to users_path, class: 'tabs-links' do %>
+    <div class="tab-underlined <% params[:all] ? 'active' : '' %>">All</div>
     <% end %>
   </li>
   <li>
-  <%= link_to users_path(params: { genre: 'Comedy' }) do %>
-    <div class="tab-underlined <% params[:comedy] ? 'active' : '' %>  ">Comedy</div>
+  <%= link_to users_path(params: { genre: 'Comedy' }), class: 'tabs-links' do %>
+    <div class="tab-underlined <% params[:comedy] ? 'active' : '' %>">Comedy</div>
     <% end %>
   </li>
   <li>
-  <%= link_to users_path(params: { genre: 'Gaming' }) do %>
-    <div class="tab-underlined <% params[:gaming] ? 'active' : '' %>  ">Gaming</div>
+  <%= link_to users_path(params: { genre: 'Gaming' }), class: 'tabs-links' do %>
+    <div class="tab-underlined <% params[:gaming] ? 'active' : '' %>">Gaming</div>
     <% end %>
   </li>
   <li>
-    <%= link_to users_path(params: { genre: 'Tech' }) do %>
-    <div class="tab-underlined <% params[:tech] ? 'active' : '' %>  ">Tech</div>
+    <%= link_to users_path(params: { genre: 'Tech' }), class: 'tabs-links' do %>
+    <div class="tab-underlined <% params[:tech] ? 'active' : '' %>">Tech</div>
     <% end %>
   </li>
   <li>
-    <%= link_to users_path(params: { genre: 'Tutorials' }) do %>
-    <div class="tab-underlined <% params[:tutorials] ? 'active' : '' %>  ">Tutorials</div>
+    <%= link_to users_path(params: { genre: 'Tutorials' }), class: 'tabs-links' do %>
+    <div class="tab-underlined <% params[:tutorials] ? 'active' : '' %>">Tutorials</div>
     <% end %>
   </li>
   <li>
-    <%= link_to users_path(params: { genre: 'Makeup' }) do %>
-    <div class="tab-underlined <% params[:makeup] ? 'active' : '' %>  ">Makeup</div>
+    <%= link_to users_path(params: { genre: 'Makeup' }), class: 'tabs-links' do %>
+    <div class="tab-underlined <% params[:makeup] ? 'active' : '' %>">Makeup</div>
     <% end %>
 </ul>
 
-<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://caphe.sfo2.cdn.digitaloceanspaces.com/assets/images/saly-free-3D-illustration-pack-for-figma.jpg);">
-  <div class="mx-auto w-75">
-    <h1><strong>Invest in your favorite creators</strong>!</h1>
-    <p>Be part of the new creators funding movement</p>
-    <a class="btn btn-outline-light px-5 py-2 rounded-pill " href="/users">Invest</a>
+<div class="banner d-flex" >
+  <div>
+  <h1 class="mx-auto"><strong>Be a YouTuber's favorite investor </strong></h1>
   </div>
+  <%= image_tag "Saly-10", class:"banner-img" %>
 </div>
 
-<img src = "../images/Backgroundpic.png">
 
-<div class="container bg-white">
-
-<div>
-  <h1 class="d-flex justify-content-center mt-5 mb-2"> <strong>What we do</strong></h1>
-  <p class="d-flex justify-content-center mx-5 font-24px text-center"> Follower Fund allows fans to invest directly in their favourite YouTubers' projects.</p>
-  <p class="d-flex justify-content-center mx-5 font-24px text-center">In return, fans take direct equity in a video. If a YouTuber wins, you win! 🏆</p>
+<div class="container-info text-center">
+  <p>Finance their videos as they make them, and share in the profits when they're successful! 🏆</p>
+  <a class="btn btn-outline-light px-5 py-2 rounded-pill" href="/users">Invest</a>
 </div>
-<div>
-  <h1 class="d-flex justify-content-center mt-5 mb-2"><strong>Win together</strong></h1>
-  <div class="row justify-content-center">
-    <div class="image-win" style="background-image: url('https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80')">
-      <div class="card-win d-flex justify-content-center align-items-center">
-        <p class="d-flex justify-content-center p-5 mb-0 text-white font-20px"> At Follower Fund, we've always thought that fans and YouTubers get a bad deal. They love watching content, but a model dependent on advertising means that content will need to be 'advertiser friendly' (whatever that means). What about we create a new model, where YouTubers AND Fans get paid? Invest in YouTubers here, and when their videos make revenue, so do you! </p>
-      </div>
-    </div>
-  </div>
-</div>
-<div>
-  <h1 id="anchor" class="d-flex justify-content-center mt-5 mb-4"> <strong>How it works</strong></h1>
-  <div class="cards">
-    <div class="card-home mx-3 mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-      Choose a universe
-    </div>
 
-    <div class="card-home mx-3 mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1605211419412-16e3f589e435?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1051&q=80)">
-      Discover creators
-    </div>
 
-    <div class="card-home mx-3 mb-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1579621970795-87facc2f976d?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80)">
-      Be part of the creator's succes
+<div class="container-homepage mx-auto w-80">
+  <h1 class="text-center mt-4 mb-2">How it Works </h1>
+  <div class="homepage-cards d-flex justify-content-around mb-6">
+    <div class="homepage-card">
+      <strong>Choose a creator</strong>
+      <p>Search and choose creators from your favourite genre</p>
+    </div>
+    <div class="homepage-card">
+      <strong> Invest in videos </strong>
+      <p>Finance the videos that interest you, and decide how much you'd like to invest</p>
+    </div>
+    <div class="homepage-card">
+      <strong>Reap the Rewards</strong>
+      <p>Once the video is launched, keep track of whether the video is successful and how much money you make</p>
     </div>
   </div>
 </div>
-</div>
+<div>
+
 
 
 <!-- Footer -->
@@ -120,30 +109,11 @@
         <!--Grid row-->
         <div class="row d-flex justify-content-center">
           <!--Grid column-->
-          <div class="col-auto">
-            <p class="pt-2">
-              <strong>Sign up for our newsletter</strong>
-            </p>
-          </div>
+
           <!--Grid column-->
 
           <!--Grid column-->
-          <div class="col-md-5 col-12">
-            <!-- Email input -->
-            <div class="form-outline form-white mb-4">
-              <input type="email" id="form5Example2" class="form-control" />
-              <label class="form-label" for="form5Example2">Email address</label>
-            </div>
-          </div>
-          <!--Grid column-->
 
-          <!--Grid column-->
-          <div class="col-auto">
-            <!-- Submit button -->
-            <button type="submit" class="btn btn-outline-light mb-4">
-              Subscribe
-            </button>
-          </div>
           <!--Grid column-->
         </div>
         <!--Grid row-->
@@ -154,10 +124,3 @@
   </div>
   <!-- Grid container -->
 
-  <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: black;">
-    © 2021 Copyright:
-    <a class="text-white" href="https://mdbootstrap.com/">www.followerfund.me</a>
-  </div>
-  <!-- Copyright -->
-</footer>
