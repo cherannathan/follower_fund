@@ -20,6 +20,12 @@
   width: 60%;
 }
 
+
+h3 {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+}
 .mb-2, .my-2 {
     margin-bottom: 2.5rem !important;
 }
