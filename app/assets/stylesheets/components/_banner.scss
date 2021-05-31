@@ -1,13 +1,14 @@
 .creator-banner{
-  height: 120px;
+  width: 100%;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   position: relative;
   align-items: center;
-  background-size: cover;
-  background-position: center;
-  height: 235px;
-
+  background-size: contain;
+  background-position: top;
+  height: 360px;
+  background-repeat: no-repeat;
+  background-color: #5353ec;
 }
 
 
