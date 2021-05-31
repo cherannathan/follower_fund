@@ -255,17 +255,17 @@ investor_1 = User.new(last_name: 'Nathan', first_name: 'Cheran', email: 'cheran.
 
 investor_2 = User.new(last_name: 'Gonzague', first_name: 'Louis', email: 'louis.gonzague@gmail.com', password: '123456', bio: 'I love investing in everything', role: 'investor', pseudo: 'Lgadam')
 
-Investment.create!(project: project_2, user: investor_2, price_cents: 2000, status: 'done', user_thankyou: 'you are the best and I wish you well')
+Investment.create!(project: project_2, user: investor_2, price_cents: 2000, status: 'done', user_thankyou: 'you are the best and I wish you well', sku: 'coucou')
 
 investor_3 = User.new(last_name: 'TheTA', first_name: 'Fred', email: 'fred@gmail.com', password: '123456', bio: 'I love investing in most things', role: 'investor', pseudo: 'Fred')
 
-Investment.create!(project: project_2, user: investor_3, price_cents: 100, status: 'done', user_thankyou: 'you are the best and I wish you well')
+Investment.create!(project: project_2, user: investor_3, price_cents: 100, status: 'done', user_thankyou: 'you are the best and I wish you well', sku: 'popo')
 
 investor_4 = User.new(last_name: 'Bruno', first_name: 'Seb', email: 'seb@gmail.com', password: '123456', bio: 'I love investing in videos', role: 'investor', pseudo: 'Seb')
 
-Investment.create!(project: project_3, user: investor_3, price_cents: 100000, status: 'done', user_thankyou: 'you are the best and I wish you well')
+Investment.create!(project: project_3, user: investor_3, price_cents: 100000, status: 'done', user_thankyou: 'you are the best and I wish you well',  sku: 'papa')
 
-Investment.create!(project: project_6, user: investor_3, price_cents: 100, status: 'done', user_thankyou: 'you are the best and I wish you well')
+Investment.create!(project: project_6, user: investor_3, price_cents: 100, status: 'done', user_thankyou: 'you are the best and I wish you well',   sku: 'papa')
 
 
 

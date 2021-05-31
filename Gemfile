@@ -32,6 +32,10 @@ gem 'devise'
 
 gem 'pundit'
 
+gem 'stripe'
+
+gem 'stripe_event'
+
 gem 'cloudinary', '~> 1.16.0'
 
 # gem 'dotenv-rails', groups: [:development, :test]

@@ -5,19 +5,26 @@
 <div class = "containerspe">
  <div class="col-25">
           <div class="containerspe">
-            <h4>Cart
+            <h3>Cart
               <span class="price" style="color:black">
                 <i class="fa fa-shopping-cart"></i>
-                <b><%= @investments.count %></b>
+                <b><strong><%= @investments.count %></strong> projects </b>
               </span>
             </h4>
             <% @investments.each do |investment| %>
-            <p><a href="#"> <%= investment.project.title %> </a> <span class="price">  <%=investment.price_cents %> </span></p> <% if policy(@investments).destroy? %>
-              <div class = "btn btn-black"><%= link_to "Destroy", project_investment_path(investment.project, investment), method: :delete, data: { confirm: "Are you sure?" }%></div>
+              <p><a href="#"> <%= investment.project.title %> </a> <span class="price">  <%=investment.price_cents %> $ </span></p>
+              <% if policy(@investments).destroy? %>
+                <div class = "btn btn-black">
+                  <%= link_to "Destroy", project_investment_path(investment.project, investment), method: :delete, data: { confirm: "Are you sure?" }%>
+                </div>
+                <%= form_tag orders_path do %>
+                  <%= hidden_field_tag 'investment_id', investment.id%>
+                  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
                 <% end %>
+              <% end %>
             <%end %>
               <hr>
-            <p>Total <span class="price" style="color:black"><b> <%= current_user.pendingamount %> </b></span></p>
+            <p>Total <span class="price" style="color:black"><b> <%= current_user.pendingamount %> $ </b></span></p>
           </div>
       </div>
 <div class="headerprojectsshow">
@@ -41,52 +48,10 @@
                 <p><strong>   </strong> backers.</p>
               </div>
               <div class="col">
-                <p><strong></strong></p>
+                <p>s<strong></strong></p>
               </div>
             </div>
           </div>
       </div>
       <%end %>
-</div>
-
-<div class="headerprojectsshow">
-  <h2> Paiement</h2>
-</div>
-  <div class="row">
-    <div class="col-75">
-      <div class="containerspe">
-        <form action="/action_page.php">
-            <div class="col-50">
-              <h3>Payment</h3>
-              <label for="fname">Accepted Cards</label>
-              <div class="icon-container">
-                <i class="fa fa-cc-visa" style="color:navy;"></i>
-                <i class="fa fa-cc-amex" style="color:blue;"></i>
-                <i class="fa fa-cc-mastercard" style="color:red;"></i>
-                <i class="fa fa-cc-discover" style="color:orange;"></i>
-              </div>
-              <label for="cname">Name on Card</label>
-              <input type="text" id="cname" name="cardname" placeholder="John More Doe">
-              <label for="ccnum">Credit card number</label>
-              <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
-              <label for="expmonth">Exp Month</label>
-              <input type="text" id="expmonth" name="expmonth" placeholder="September">
-
-              <div class="row">
-                <div class="col-50 ">
-                  <label for="expyear">Exp Year</label>
-                  <input type="text" id="expyear" name="expyear" placeholder="2018">
-                </div>
-                <div class="col-50">
-                  <label for="cvv">CVV</label>
-                  <input type="text" id="cvv" name="cvv" placeholder="352">
-                </div>
-              </div>
-            </div>
-
-          </div>
-          <%= link_to "Continue to checkout", {controller: :investments, action: :payment}, method: :post, class: "btnchkout" %>
-        </form>
-      </div>
-    </div>
 </div>

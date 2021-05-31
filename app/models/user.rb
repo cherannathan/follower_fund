@@ -4,6 +4,8 @@ class User < ApplicationRecord
   # has_many :project_genres, through: :projects
   # has_many :genres, through: :project_genres
   has_many :genres, through: :projects
+  has_many :orders
+
 
   has_many :investments, dependent: :destroy
   has_many :investors, -> { distinct }, through: :projects
