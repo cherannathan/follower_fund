@@ -74,14 +74,14 @@ user_9.photo.attach(io: file_9, filename: 'nes.png', content_type: 'image/png')
 user_9.save!
 
 file_10 = URI.open('https://i.playboard.app/p/AATXAJw0qZ41vP0c1-MuVov8r0OuJGt-MlpJ38L74NU63w/default.webp')
-user_10 = User.new(last_name: 'Lane', first_name: 'Tiffany', email: 'Sand23imas206@gmail.com', password: '123456', bio: ' Tiffany is a software developer who started her career in the modeling & fashion industry.  Tech can be very overwhelming for many at first as she experienced first hand entering into the industry. Tiff saw a gap to help ease people into what tech has to offer, to improve their day to day lives. She brings value and trust to her audience by maintaining authenticity through sharing her life through the lens. Her real and candid approach is why she has a very strong engagement with her community. Through sharing her day to day life, she has built a loyal audience that engages with her in tech, fashion, business and many other areas of everyday lifestyle.//Tiff', pseudo: 'Tiff In Tech', role: 'creator', youtube_link: 'https://www.youtube.com/watch?v=uD27CZEiuGk', number_suscribers: 72000)
+user_10 = User.new(last_name: 'Lane', first_name: 'Tiffany', email: 'Sand23imas206@gmail.com', password: '123456', bio: ' Tiffany is a software developer who started her career in the modeling & fashion industry.  Tech can be very overwhelming for many at first as she experienced first hand entering into the industry. Tiff saw a gap to help ease people into what tech has to offer, to improve their day to day lives. She brings value and trust to her audience by maintaining authenticity through sharing her life through the lens. Her real and candid approach is why she has a very strong engagement with her community. Through sharing her day to day life, she has built a loyal audience that engages with her in tech, fashion, business and many other areas of everyday lifestyle.//Tiff', pseudo: 'Tiff In Tech', role: 'creator',number_suscribers: 72000, youtube_link: 'https://www.youtube.com/embed/uD27CZEiuGk' )
 user_10.photo.attach(io: file_10, filename: 'nes.png', content_type: 'image/png')
 user_10.save!
 
 
 
 file_11 = URI.open('https://comoto.imgix.net/blog_content_image/image/32694/gallery/Capturesfsfs.jpg?w=796&dpr=2&auto=format')
-user_11 = User.new(last_name: 'Noob', first_name: 'Yammie', email: '232gmas206@gmail.com', password: '123456', bio: 'Where internet culture and motorcycle culture collide. We provide motorcycle edutainment in the hopes of creating more motorcyclists. Join us!', pseudo: 'Yammie Noob', role: 'creator', number_suscribers:888000, youtube_link: 'https://www.youtube.com/embed/uD27CZEiuGk' )
+user_11 = User.new(last_name: 'Noob', first_name: 'Yammie', email: '232gmas206@gmail.com', password: '123456', bio: 'Where internet culture and motorcycle culture collide. We provide motorcycle edutainment in the hopes of creating more motorcyclists. Join us!', pseudo: 'Yammie Noob', role: 'creator', number_suscribers:888000, youtube_link: 'https://www.youtube.com/embed/UCkegEsZItEPQNItECCZA' )
 user_11.photo.attach(io: file_11, filename: 'nes.png', content_type: 'image/png')
 user_11.save!
 

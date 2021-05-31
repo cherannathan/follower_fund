@@ -1,6 +1,6 @@
 .creator-banner{
   width: 100%;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-top: white 1px;
   display: flex;
   position: relative;
   align-items: center;
@@ -10,6 +10,12 @@
   background-repeat: no-repeat;
   background-color: #5353ec;
 }
+
+.creator-banner h1{
+  color: white;
+  margin-left: 160px;
+}
+
 
 
 .banner-index{
@@ -28,4 +34,18 @@
 
 .fas.fa-search {
   color: $purple;
+}
+
+.banner-dashboard {
+    height: 300px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  position: relative;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.banner-img {
+  height: 200px;
 }
