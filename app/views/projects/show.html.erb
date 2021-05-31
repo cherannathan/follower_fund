@@ -1,14 +1,13 @@
 <div class="headerprojectsshow">
   <h2><%= @project.title %></h2>
 </div>
-<div class = container >
-  <div class="row">
-    <div class="leftcolumn">
-      <div class="cardprojectsshow">
-        <div> <% if @project.photo.attached? %>
-        <%= cl_image_tag @project.photo.key, class: "image-show w-100" %>
-        <% end %></div>
-      </div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="cardprojectsshow">
+      <div> <% if @project.photo.attached? %>
+      <%= cl_image_tag @project.photo.key, class: "image-show w-100 mx-3" %>
+      <% end %></div>
     </div>
     <div class="rightcolumn" data-controller="display-amount">
       <div class="container bg-white border border-secondary">
