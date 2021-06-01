@@ -27,11 +27,6 @@
   padding: 0 16px;
 }
 
-.container {
-  // background-color: #f2f2f2;
-  // padding: 5px 20px 35px 20px;
-  // border-radius: 3px;
-}
 
 input[type=text] {
   width: 100%;
@@ -85,4 +80,32 @@ span.price {
 
 body {
   background-color: white;
+}
+
+.checkout-project-title {
+  font-size: 1.3em;
+  color: $purple;
+}
+
+.span-class{
+    font-size: 1.3em;
+}
+
+.fa-trash-alt{
+color: red;
+}
+
+.purchase-button{
+  background-color: $purple !important;
+  color: white;
+  border-radius: 5px;
+  padding: 0.38rem 2.75rem;
+}
+
+.purchase-button:hover{
+  background-color: #3f3fd3!important;
+  color: white;
+  border-radius: 5px;
+  padding: 0.38rem 2.75rem;
+
 }
