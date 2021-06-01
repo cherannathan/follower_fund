@@ -1,11 +1,13 @@
-<div class="banner-index justify-content-start">
-   <%= image_tag "Saly-project-show.png", style: "position: absolute; height: 400px; right: 80px; transform: rotate(10deg); z-index: 2; top: -73px;" %>
-  <div class="d-flex flex-column align-items-start justify-content-start w-50" style='margin-left: 10vw;'>
-    <h1 class="d-flex justify-content-center mt-3 mb-3 text-white font-weight-bold"><%= @project.title || "All" %></h1>
-    </div>
-     <%= cl_image_tag(@project.user.photo.key, crop: :thumb, gravity: :face, class:"avatar-creator-page") %>
+<div class="creator-banner" >
+  <%= image_tag "Saly-project-show.png", style: "position: absolute; height: 400px; right: 120px; transform: rotate(16deg); z-index: 2; top: 70px;" %>
+
+  <div class="container d-flex align-items-center justify-content-start" style="background-color: transparent;">
+    <%= cl_image_tag(@project.user.photo.key, crop: :thumb, gravity: :face, class:"avatar-creator-page") %>
+    <h1 class="ml-4"><strong><%= @project.title %></strong></h1>
+    <h4 class="ml-4"><strong><%= @project.title %></strong></h4>
   </div>
 </div>
+
 
 <div class="container">
   <div class="project-wrapper">
