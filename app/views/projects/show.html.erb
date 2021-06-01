@@ -42,33 +42,31 @@
 
         <div class="slidecontainer">
           <%= simple_form_for [@project, Investment.new] do |f| %>
-            <%= f.input :price_cents, as: :range, collection: (1..@project.goal_amount).to_a, label: "Your invest", placeholder: "Amount", input_html:{type: "range", min: 0, max: @project.goal_amount, step: 5, data: {action: "change->display-amount#display", display_amount_target: "value"}}%>
-            <div  class="display-amount-invest"><span data-display-amount-target='amount'>0</span> €</div>
-            <%= f.submit "add to cart", class: "btn btn-outline-light px-5 mt-4 py-2 rounded-pill #{'d-none' if @project.currentamountinvestment >= 100}" %>
-          <% end %>
+            <%= f.input :price_cents, as: :range, collection: (1..@project.goal_amount).to_a, label: "Your investment", placeholder: "Amount", input_html:{type: "range", min: 0, max: @project.goal_amount, step: 5, data: {action: "change->display-amount#display", display_amount_target: "value"}}%>
 
+
+          <div class = "display-amount-invest"> </div>
+            <div class="display-amount-invest"><span data-display-amount-target='amount' data-goal-amount="<%= @project.goal_amount %>">0</span></div>
           <div class="row mt-3">
+           <hr>
             <div class="col">
-              <p class="projects-amounts"><span data-display-amount-target="for100000">0</span> €</p>
-              <p><strong>Profit at 100 000 views</strong></p>
+              <p class="projects-amounts"><span data-display-amount-target="for100000">0</span>Profit at 100 000 views</p>
             </div>
             <div class="col">
-              <p class="projects-amounts"><span data-display-amount-target="for200000">0</span> €</p>
-              <p><strong>Profit at 200 000 views</strong></p>
+              <p class="projects-amounts"><span data-display-amount-target="for200000">0</span>Profit at 200 000 views</p>
             </div>
           </div>
 
           <div class="row">
             <div class="col">
-              <p class="projects-amounts"><span data-display-amount-target="for500000">0</span> €</p>
-              <p><strong>Profit at 500 000 views</strong></p>
+              <p class="projects-amounts"><span data-display-amount-target="for500000">0</span>Profit at 500 000 views</p>
             </div>
             <div class="col">
-              <p class="projects-amounts"><span data-display-amount-target="for1000000">0</span> €</p>
-              <p><strong>Profit at 1 millions views</strong></p>
+              <p class="projects-amounts"><span data-display-amount-target="for1000000">0</span>Profit at 1 millions views</p>
             </div>
           </div>
-
+          <%= f.submit "add to cart", class: "btn btn-outline-primary px-5 mt-4 py-2 rounded-pill #{'d-none' if @project.currentamountinvestment >= 100}" %>
+          <% end %>
         </div>
 
 

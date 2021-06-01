@@ -27,10 +27,12 @@ import "bootstrap";
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
+import { toggleRange } from '../components/toggle-range';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  toggleRange();
 });
 
 import "controllers"
