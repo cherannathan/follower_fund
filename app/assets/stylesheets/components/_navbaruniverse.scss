@@ -4,7 +4,9 @@
   border-bottom: 1px solid white;
   background-color: $purple;
   height: $navbar-universe-height;
-
+  font-size: 19px;
+  z-index: 13;
+  position: relative;
 }
 
 .tabs-underlined {
