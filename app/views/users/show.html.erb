@@ -1,5 +1,39 @@
 
-<div class="creator-banner" style="background-image: url('<%= image_path 'Saly-38.png' %>')">
+<ul class="navbar-universe list-inline tabs-underlined mb-0" >
+  <li>
+  <%= link_to users_path, class: 'tabs-links' do %>
+    <div class="tab-underlined <% params[:all] ? 'active' : '' %>">All</div>
+    <% end %>
+  </li>
+  <li>
+  <%= link_to users_path(params: { genre: 'Comedy' }), class: 'tabs-links' do %>
+    <div class="tab-underlined <% params[:comedy] ? 'active' : '' %>">Comedy</div>
+    <% end %>
+  </li>
+  <li>
+  <%= link_to users_path(params: { genre: 'Gaming' }), class: 'tabs-links' do %>
+    <div class="tab-underlined <% params[:gaming] ? 'active' : '' %>">Gaming</div>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to users_path(params: { genre: 'Tech' }), class: 'tabs-links' do %>
+    <div class="tab-underlined <% params[:tech] ? 'active' : '' %>">Tech</div>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to users_path(params: { genre: 'Tutorials' }), class: 'tabs-links' do %>
+    <div class="tab-underlined <% params[:tutorials] ? 'active' : '' %>">Tutorials</div>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to users_path(params: { genre: 'Makeup' }), class: 'tabs-links' do %>
+    <div class="tab-underlined <% params[:makeup] ? 'active' : '' %>">Makeup</div>
+    <% end %>
+</ul>
+
+<div class="creator-banner" >
+  <%= image_tag "Saly-38.png", style: "position: absolute; height: 600px; right: 80px; transform: rotate(10deg); z-index: 2; top: -73px;" %>
+
   <div>
     <h1><strong><%= @creator.pseudo %></strong></h1>
   </div>
@@ -32,14 +66,18 @@
   </div>
   <div class="newproject container bg-white">
     <h3>My projects you can invest in</h3>
-      <% @ongoing_projects.each do |project| %>
-      <%= link_to project_path(project), class: 'text-decoration-none text-dark' do %>
-        <div class="row mt-2 project-card">
-          <%= cl_image_tag project.photo.key  %>
-          <div> <%= project.title %></div>
-        </div>
-      <% end %>
-    <% end %>
+      <div class="row mt-2">
+        <% @ongoing_projects.each do |project| %>
+          <div class="col-6">
+            <%= link_to project_path(project), class: 'text-decoration-none text-dark' do %>
+              <div class="d-flex project-card">
+                <%= cl_image_tag project.photo.key, height: 120, width: 120, crop: "fill"  %>
+                <div> <%= project.title %></div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
   </div>
 </div>
 
