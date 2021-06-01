@@ -32,19 +32,20 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  border-radius: 10px;
+  border-radius: 30px;
 }
 .project-card:hover{
   box-shadow: 0 0 15px #5353EC;
 }
 
-.project-card img {
-  height: 100%;
-  width: 160px;
-  object-fit: cover;
-  margin-right: 24px;
+.project-card {
+  img {
+    height: 100%;
+    width: 160px;
+    object-fit: cover;
+    margin-right: 24px;
+  }
 }
-
 
 .newproject{
   margin-top: 170px;
