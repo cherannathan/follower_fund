@@ -14,8 +14,8 @@
   left: 50%;
   bottom: -25%;
   transform: translateX(-50%);
-  background-color: rgb(230, 228, 255);
-  box-shadow: 0 0 5px #5353EC;
+  background-color: white;
+  box-shadow: 0 0 1px #5353EC;
   border-radius: 30px;
   padding-top: 4px;
 }
@@ -35,7 +35,7 @@
   border-radius: 30px;
 }
 .project-card:hover{
-  box-shadow: 0 0 15px #5353EC;
+  box-shadow: 0 0 10px #5353EC;
 }
 
 .project-card {
