@@ -44,7 +44,7 @@
           <%= simple_form_for [@project, Investment.new] do |f| %>
             <%= f.input :price_cents, as: :range, collection: (1..@project.goal_amount).to_a, label: "Your invest", placeholder: "Amount", input_html:{type: "range", min: 0, max: @project.goal_amount, step: 5, data: {action: "change->display-amount#display", display_amount_target: "value"}}%>
             <div  class="display-amount-invest"><span data-display-amount-target='amount'>0</span> €</div>
-            <%= f.submit "add to cart", class: "btn btn-outline-light px-5 mt-4 py-2 rounded-pill #{'d-none' if @project.currentamountinvestment >= 100}" %>
+            <%= f.submit "add to cart", class: "btn btn-primary px-5 mt-4 py-2 rounded-pill #{'d-none' if @project.currentamountinvestment >= 100}" %>
           <% end %>
 
           <div class="row mt-3">
