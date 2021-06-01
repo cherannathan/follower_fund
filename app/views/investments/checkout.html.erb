@@ -1,5 +1,9 @@
-<div class="headerprojectsshow">
-  <h2> Checkout </h2>
+<div class="banner-index justify-content-start">
+   <%= image_tag "Saly-19-checkout.png", style: "position: absolute; height: 400px; right: 80px; transform: rotate(10deg); z-index: 2; top: -73px;" %>
+  <div class="d-flex flex-column align-items-start justify-content-start w-50" style='margin-left: 10vw;'>
+    <h1 class="d-flex justify-content-center mt-3 mb-3 text-white font-weight-bold">Checkout<i class="fa fa-shopping-cart"></i></h1>
+    </div>
+  </div>
 </div>
 
 <div class = "containerspe">
@@ -17,14 +21,14 @@
                 <div class = "btn btn-black">
                   <%= link_to "Destroy", project_investment_path(investment.project, investment), method: :delete, data: { confirm: "Are you sure?" }%>
                 </div>
-                <%= form_tag orders_path do %>
-                  <%= hidden_field_tag 'investment_id', investment.id%>
-                  <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
-                <% end %>
               <% end %>
             <%end %>
               <hr>
             <p>Total <span class="price" style="color:black"><b> <%= current_user.pendingamount %> $ </b></span></p>
+            <%= form_tag orders_path do %>
+              <%= hidden_field_tag 'investment_id', @investments.first.id %>
+              <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+            <% end %>
           </div>
       </div>
 <div class="headerprojectsshow">

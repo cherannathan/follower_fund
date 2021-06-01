@@ -12,7 +12,7 @@ class OrdersController < ApplicationController
       line_items: [{
         name: investment.sku,
         # images: [teddy.photo_url],
-        amount: @investments.pluck(:price_cents).sum,
+        amount: (@investments.pluck(:price_cents).sum * 100 / 1.22).to_i,
         currency: 'eur',
         quantity: 1
       }],
