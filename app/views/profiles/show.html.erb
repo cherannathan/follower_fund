@@ -31,7 +31,11 @@
           <%= investment.project.status %>
         </div>
         <div class="investment-row__profit">
-          $<%= (10.0 / 1000 * investment.project.number_of_views * investment.project.revenue_split / 100 * investment.price_cents / investment.project.goal_amount).round(2) %>
+          <% if investment.project.status == 'done' %>
+            $<%= (10.0 / 1000 * investment.project.number_of_views * investment.project.revenue_split / 100 * investment.price_cents / investment.project.goal_amount).round(2) %>
+          <% else %>
+            <span class="text-center">Soon<br>🤲</span>
+          <% end %>
         </div>
         <div class="investment-row__cta">
           <%= link_to "cash out", '', class: "btn btn-primary"  %>
