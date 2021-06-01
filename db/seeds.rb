@@ -22,7 +22,7 @@ end
 p "Genres created"
 
 p "Creating users"
-file_1 = URI.open('https://i.ytimg.com/vi/-gYQYEcbS_g/maxresdefault.jpg')
+file_1 = URI.open('https://s3-eu-west-1.amazonaws.com/images.castcall.blue-compass.com/portfolioraw/1421/1421292.jpg')
 user_1 = User.new(last_name: 'Johnson', first_name: 'Seb', email: 'thirdlegstudios@gmail.com', password: '123456', bio: 'One of the UKs most successful and prolific independent production companies. Please give us work, we will quite literally do anything for money.', role: 'creator', pseudo: 'Third Leg Studios', youtube_link: 'https://www.youtube.com/embed/ot5TgvvOYdA', number_suscribers: 45500)
 user_1.photo.attach(io: file_1, filename: 'nes.png', content_type: 'image/png')
 user_1.save!
@@ -61,7 +61,7 @@ user_7.save!
 
 
 
-file_8 = URI.open('https://i.dailymail.co.uk/1s/2021/05/07/22/42710566-9555329-image-m-131_1620422404811.jpg')
+file_8 = URI.open('https://images.unsplash.com/photo-1617259945337-93a28f685c54?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')
 user_8 = User.new(last_name: 'Shekh', first_name: 'Irina', email: 'irina.tech@gmail.com', password: '123456', bio: 'Hey, guys! My name is Irina and I am happy to see you on my channel😊 Stay tuned for more of my tech reviews! ', role: 'creator', pseudo: 'Irina Tech', youtube_link: 'https://www.youtube.com/embed/oNzfD67A6CM', number_suscribers: 26000)
 user_8.photo.attach(io: file_8, filename: 'nes.png', content_type: 'image/png')
 user_8.save!
@@ -75,6 +75,7 @@ user_9.save!
 
 file_10 = URI.open('https://i.playboard.app/p/AATXAJw0qZ41vP0c1-MuVov8r0OuJGt-MlpJ38L74NU63w/default.webp')
 user_10 = User.new(last_name: 'Lane', first_name: 'Tiffany', email: 'Sand23imas206@gmail.com', password: '123456', bio: ' Tiffany is a software developer who started her career in the modeling & fashion industry.  Tech can be very overwhelming for many at first as she experienced first hand entering into the industry. Tiff saw a gap to help ease people into what tech has to offer, to improve their day to day lives.//Tiff', pseudo: 'Tiff In Tech', role: 'creator',number_suscribers: 72000, youtube_link: 'https://www.youtube.com/embed/uD27CZEiuGk' )
+
 user_10.photo.attach(io: file_10, filename: 'nes.png', content_type: 'image/png')
 user_10.save!
 
@@ -86,7 +87,7 @@ user_11.photo.attach(io: file_11, filename: 'nes.png', content_type: 'image/png'
 user_11.save!
 
 
-file_12 = URI.open('https://99designs-blog.imgix.net/blog/wp-content/dist/images/subscribe/dinos-large.svg?auto=format&q=60&fit=max&w=930')
+file_12 = URI.open('https://images.unsplash.com/photo-1556037757-40496ad2fbc4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')
 user_12 = User.new(last_name: 'May', first_name: 'James', email: 'jamesmay@gmail.com', password: '123456', bio: 'We create tutorials about anything and everything. Fro paper airplanes to japanese swords!', pseudo: 'Crazy Tutorials', role: 'creator', youtube_link: 'https://www.youtube.com/embed/j35JDZvP3eI', number_suscribers: 217000)
 user_12.photo.attach(io: file_12, filename: 'nes.png', content_type: 'image/png')
 user_12.save!
@@ -97,10 +98,9 @@ user_13.photo.attach(io: file_13, filename: 'nes.png', content_type: 'image/png'
 user_13.save!
 
 file_14 = URI.open('https://pianote.s3.amazonaws.com/sales/2021/fb-share-image.jpg')
-user_14 = User.new(last_name: 'Pianote', first_name: 'Mary', email: 'mary206@gmail.com', password: '123456', bio: 'Pianote combines the latest technology with the traditional teaching approach to deliver the best online learning experience around. Unlike “video-game learning” found in most other online methods, Pianote students get access to on-demand video lessons from real teachers, who are available to answer questions, provide feedback, and personal support throughout the learning journey. No connection between your piano and a computer is necessary. ', pseudo: 'Pianote', role: 'creator', youtube_link: 'https://www.youtube.com/embed/BwoY7WIJ_es', number_suscribers: 816000)
+user_14 = User.new(last_name: 'Pianote', first_name: 'Mary', email: 'mary206@gmail.com', password: '123456', bio: 'Pianote combines the latest technology with the traditional teaching approach to deliver the best online learning experience around.', pseudo: 'Pianote', role: 'creator', youtube_link: 'https://www.youtube.com/embed/BwoY7WIJ_es', number_suscribers: 816000)
 user_14.photo.attach(io: file_14, filename: 'nes.png', content_type: 'image/png')
 user_14.save!
-
 
 
 file_16 = URI.open('https://images.sk-static.com/images/media/img/col6/20161031-205544-247843.jpg')
