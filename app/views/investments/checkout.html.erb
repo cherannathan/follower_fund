@@ -1,61 +1,43 @@
 <div class="banner-index justify-content-start">
    <%= image_tag "Saly-19-checkout.png", style: "position: absolute; height: 400px; right: 80px; transform: rotate(10deg); z-index: 2; top: -73px;" %>
   <div class="d-flex flex-column align-items-start justify-content-start w-50" style='margin-left: 10vw;'>
-    <h1 class="d-flex justify-content-center mt-3 mb-3 text-white font-weight-bold">Checkout<i class="fa fa-shopping-cart"></i></h1>
+    <h1 class="d-flex justify-content-center mt-3 mb-3 text-white font-weight-bold">Checkout 🛒</h1>
     </div>
   </div>
 </div>
 
 <div class = "containerspe">
  <div class="col-25">
-          <div class="containerspe">
-            <h3>Cart
-              <span class="price" style="color:black">
-                <i class="fa fa-shopping-cart"></i>
-                <b><strong><%= @investments.count %></strong> projects </b>
-              </span>
-            </h4>
-            <% @investments.each do |investment| %>
-              <p><a href="#"> <%= investment.project.title %> </a> <span class="price">  <%=investment.price_cents %> $ </span></p>
-              <% if policy(@investments).destroy? %>
-                <div class = "btn btn-black">
-                  <%= link_to "Destroy", project_investment_path(investment.project, investment), method: :delete, data: { confirm: "Are you sure?" }%>
-                </div>
-              <% end %>
-            <%end %>
-              <hr>
-            <p>Total <span class="price" style="color:black"><b> <%= current_user.pendingamount %> $ </b></span></p>
-            <%= form_tag orders_path do %>
-              <%= hidden_field_tag 'investment_id', @investments.first.id %>
-              <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+  <div class="container">
+    <h3>
+      <span class="mt-4 mb-3 price" style="color:black">
+        <b><strong><%= pluralize(@investments.count, 'project', 'projects') %></strong></b>
+      </span>
+    </h3>
+
+    <div class="">
+      <% @investments.each do |investment| %>
+        <div class="d-flex align-items-center justify-content-between p-2">
+          <div>
+            <%= link_to project_investment_path(investment.project, investment), class: "mr-4" do %>
+              <i class="far fa-trash-alt"></i>
             <% end %>
+            <%= link_to investment.project.title, project_path(investment.project), class: "checkout-project-title" %>
           </div>
-      </div>
-<div class="headerprojectsshow">
-  <h2> My project</h2>
-</div>
-<div class= "container bg-white">
-    <% @investments.each do |investment| %>
-    <h2><%= investment.project.title %></h2>
-    <div class="row">
-      <div class="leftcolumn">
-          <div> <% if investment.project.photo.attached? %>
-            <%= cl_image_tag investment.project.photo.key, class: "image-show w-100" %>
-            <% end %></div>
-      </div>
-        <div class="rightcolumn border border-secondary">
-          <div id="myProgress">
-              <div id="myBar"></div>
-          </div>
-            <div class="row">
-              <div class="col">
-                <p><strong>   </strong> backers.</p>
-              </div>
-              <div class="col">
-                <p>s<strong></strong></p>
-              </div>
-            </div>
-          </div>
-      </div>
+          <span class="investment-price"><%= investment.price_cents %> $</span>
+        </div>
       <%end %>
+    </div>
+    <hr>
+    <div class="d-flex align-items-center justify-content-between p-2">
+      <span class="span-class">Total</span>
+      <span><%= current_user.pendingamount %> $ </span>
+    </div>
+
+    <%= form_tag orders_path, class: "text-right mt-3" do %>
+      <%= hidden_field_tag 'investment_id', @investments.first.id %>
+      <%= submit_tag 'Purchase', class: 'btn purchase-button' %>
+    <% end %>
+
+  </div>
 </div>
