@@ -2,13 +2,23 @@
   width: 100%;
   border-top: white 1px;
   display: flex;
-  position: relative;
   align-items: center;
   background-size: contain;
   background-position: top;
   height: 360px;
   background-repeat: no-repeat;
   background-color: #5353ec;
+
+}
+
+.creator-banner.img {
+position: absolute;
+height: 600px;
+right: 80px;
+transform: rotate(10deg);
+z-index: 2;
+top: -73px;
+
 }
 
 .creator-banner h1{
@@ -37,15 +47,16 @@
 }
 
 .banner-dashboard {
-    height: 300px;
+  height: 300px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   position: relative;
   align-items: center;
   background-size: cover;
   background-position: center;
+  background-color: #5353ec;
 }
 
-.banner-img {
-  height: 200px;
+.banner-dash-img {
+  width: 53%;
 }

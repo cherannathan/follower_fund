@@ -1,17 +1,39 @@
 // Specific CSS for your home-page
+mark.purple {
+  color: $purple;
+  background-color: white;
+}
+
 .banner {
   background-color: $purple;
   align-items: center;
-  max-height: calc(100vh - #{$navbar-height} - #{$navbar-universe-height} - #{$container-info-height})
+  height: 60vh;
+}
+
+.banner-home {
+  background-color: $purple;
+  align-items: center;
+  height: 51vh;
 }
 
 .banner-img {
-  width: 50%;
+  width: 45%;
   object-fit: contain;
-  max-height: calc(100vh - #{$navbar-height} - #{$navbar-universe-height} - #{$container-info-height})
+  max-height: 650px;
+  z-index: 1;
+  // max-height: calc(100vh - #{$navbar-height} - #{$navbar-universe-height} - #{$container-info-height})
 }
 
 .banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 60px;
+  font-weight: bold;
+  width: 60%;
+}
+
+.banner-home h1 {
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -45,6 +67,13 @@ h3 {
 
 
 .banner p {
+  font-size: 23px;
+  color: white;
+  opacity: .9;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.banner-home p {
   font-size: 23px;
   color: white;
   opacity: .9;
@@ -99,8 +128,17 @@ h3 {
   height: $container-info-height;
 }
 
+.container-homepage {
+  color: black
+}
+
+
 .homepage-card {
-  width: 200px;
+  width: 30%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
   p {
     margin-top: 10px;
   }

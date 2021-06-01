@@ -44,7 +44,6 @@
           <%= simple_form_for [@project, Investment.new] do |f| %>
             <%= f.input :price_cents, as: :range, collection: (1..@project.goal_amount).to_a, label: "Your investment", placeholder: "Amount", input_html:{type: "range", min: 0, max: @project.goal_amount, step: 5, data: {action: "change->display-amount#display", display_amount_target: "value"}}%>
 
-
           <div class = "display-amount-invest"> </div>
             <div class="display-amount-invest"><span data-display-amount-target='amount' data-goal-amount="<%= @project.goal_amount %>">0</span></div>
           <div class="row mt-3">

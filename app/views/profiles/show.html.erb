@@ -1,17 +1,19 @@
-<div class="banner d-flex h-200px mb-5" >
-  <div>
-  <h1 class="mx-auto"><strong>My profile </strong></h1>
+
+<div class="banner-dashboard d-flex h-200px mb-5" >
+  <div class="w-100">
+  <h1 class="mx-5 px-5 text-white"><strong>My profile </strong></h1>
   </div>
   <div class="d-flex justify-content-end">
-  <%= image_tag "dashboard", class:"banner-img " %>
+  <%= image_tag "dashboard", class:"banner-dash-img mx-5 px-5" %>
   </div>
 </div>
-<div class="container mt-4 mb-5">
-  <div class="card-header text-center" style="background-color:#5353ec; color: white;">
-    <h4 class="font-weight-bold">Your investments</h4>
+<div class="container mt-4 mb-5 rounded" style="background-color:#f9f9f9;">
+  <div class="card-header text-center rounded" style="background-color:#5353ec; color: white;">
+    <h4 class="font-weight-bold text-white">Your investments</h4>
   </div>
     <div class="investment-row header">
-      <div class="investment-row__img"></div>
+      <div class="investment-row__img">
+      </div>
       <div class="investment-row__name">Project name</div>
       <div class="investment-row__amount">Investment</div>
       <div class="investment-row__status">Status</div>
@@ -20,7 +22,9 @@
     </div>
     <% @investments.each do |investment|%>
       <div class="investment-row">
+        <%= link_to user_path(investment.project.user) do %>
         <%= cl_image_tag investment.project.photo.key, width: "250px", height: "150px", class: "investment-row__img" %>
+        <% end %>
         <div class="investment-row__name">
           <%= investment.project.title %>
         </div>
@@ -30,9 +34,15 @@
         <div class="investment-row__status status-badge <%= investment.project.status %>">
           <%= investment.project.status %>
         </div>
-        <div class="investment-row__profit">$4</div>
-        <div class="investment-row__cta">
-          <%= link_to "cash out", '', class: "btn btn-primary"  %>
+        <div class="investment-row__profit">
+          <% if investment.project.status == 'done' %>
+            $<%= (10.0 / 1000 * investment.project.number_of_views * investment.project.revenue_split / 100 * investment.price_cents / investment.project.goal_amount).round(2) %>
+          <% else %>
+            <span class="text-center">Soon<br>🤲</span>
+          <% end %>
+        </div>
+        <div class="investment-row__cta align-middle">
+          <%= link_to "cash out", '', class: "btn btn-primary rounded-pill px-8 " %>
         </div>
       </div>
 
@@ -41,11 +51,12 @@
           Write a message
         </button>
       </p>
+      <hr>
       <div class="collapse" id="message-<%= investment.id %>">
         <%= simple_form_for [investment.project, investment] do |f| %>
           <%= f.input :user_thankyou, label: false, placeholder: "Leave a message to your creator" %>
-          <div class="d-flex justify-content-center">
-            <%=  f.submit "submit", class: 'btn btn-sm btn-outline-primary' %>
+          <div class="d-flex justify-content-center" style='width: 115px'>
+            <%=  f.submit "submit", class: 'btn btn-sm btn-outline-primary text-center'%>
           </div>
         <% end %>
       </div>

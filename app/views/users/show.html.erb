@@ -1,9 +1,12 @@
+<%= render 'shared/navbar_univers' %>
 
-<div class="creator-banner" style="background-image: url('<%= image_path 'Frame 4.png' %>')">
-  <div>
-    <h1><strong><%= @creator.pseudo %></strong></h1>
+<div class="creator-banner" >
+  <%= image_tag "Saly-38.png", style: "position: absolute; height: 550px; right: 120px; transform: rotate(16deg); z-index: 2; top: 120px;" %>
+
+  <div class="container d-flex align-items-center justify-content-start" style="background-color: transparent;">
+    <%= cl_image_tag(@creator.photo.key, crop: :thumb, gravity: :face, class:"avatar-creator-page") %>
+    <h1 class="ml-4"><strong><%= @creator.pseudo %></strong></h1>
   </div>
- <%= cl_image_tag(@creator.photo.key, crop: :thumb, gravity: :face, class:"avatar-creator-page") %>
 </div>
 
 <div class="creator container mt-5 bg-white">
@@ -30,15 +33,23 @@
       </div>
     </div>
   </div>
-  <div class="newproject container bg-white">
-    <h3>My projects you can invest in</h3>
-      <% @ongoing_projects.each do |project| %>
-      <%= link_to project_path(project), class: 'text-decoration-none text-dark' do %>
-        <div class="row mt-2 project-card">
-          <%= cl_image_tag project.photo.key  %>
-          <div> <%= project.title %></div>
+  <div class="newproject container bg-white mb-5">
+    <% if @ongoing_projects.empty? %>
+      <h3>New project coming soon...</h3>
+    <% else %>
+      <h3>My projects you can invest in</h3>
+        <div class="row mt-2">
+          <% @ongoing_projects.each do |project| %>
+            <div class="col-6">
+              <%= link_to project_path(project), class: 'text-decoration-none text-dark' do %>
+                <div class="d-flex project-card">
+                  <%= cl_image_tag project.photo.key, height: 120, width: 120, crop: "fill"  %>
+                  <div><h5><%= project.title %></h5></div></h5>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
         </div>
-      <% end %>
     <% end %>
   </div>
 </div>
