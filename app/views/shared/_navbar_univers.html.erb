@@ -1,32 +1,32 @@
 <div class="bg-purple-follower-fund w-100 container-navbar-universe">
   <ul class="navbar-universe list-inline tabs-underlined mb-0 mx-auto" style="z-index: 3; position: relative;">
     <li>
-    <%= link_to users_path do %>
-      <div class="tab-underlined<% params[:all] ? 'active' : '' %> ">All</div>
+    <%= link_to users_path, class: 'text-decoration-none' do %>
+      <div class="tab-underlined <% params[:all] ? 'active' : '' %> ">All</div>
       <% end %>
     </li>
     <li>
-    <%= link_to users_path(params: { genre: 'Comedy' }) do %>
+    <%= link_to users_path(params: { genre: 'Comedy' }), class: 'text-decoration-none' do %>
       <div class="tab-underlined <% params[:comedy] ? 'active' : '' %>  ">Comedy</div>
       <% end %>
     </li>
     <li>
-    <%= link_to users_path(params: { genre: 'Gaming' }) do %>
+    <%= link_to users_path(params: { genre: 'Gaming' }), class: 'text-decoration-none' do %>
       <div class="tab-underlined <% params[:gaming] ? 'active' : '' %>  ">Gaming</div>
       <% end %>
     </li>
     <li>
-      <%= link_to users_path(params: { genre: 'Tech' }) do %>
+      <%= link_to users_path(params: { genre: 'Tech' }), class: 'text-decoration-none' do %>
       <div class="tab-underlined <% params[:tech] ? 'active' : '' %>  ">Tech</div>
       <% end %>
     </li>
     <li>
-      <%= link_to users_path(params: { genre: 'Tutorials' }) do %>
+      <%= link_to users_path(params: { genre: 'Tutorials' }), class: 'text-decoration-none' do %>
       <div class="tab-underlined <% params[:tutorials] ? 'active' : '' %>  ">Tutorials</div>
       <% end %>
     </li>
     <li>
-      <%= link_to users_path(params: { genre: 'Makeup' }) do %>
+      <%= link_to users_path(params: { genre: 'Makeup' }), class: 'text-decoration-none' do %>
       <div class="tab-underlined <% params[:makeup] ? 'active' : '' %>  ">Makeup</div>
       <% end %>
   </ul>
