@@ -1,41 +1,12 @@
 <div class="purple-background">
-<ul class="navbar-universe list-inline tabs-underlined mb-0" style="z-index: 3; position: relative;">
-  <li>
-  <%= link_to users_path do %>
-    <div class="tab-underlined <% params[:all] ? 'active' : '' %> ">All</div>
-    <% end %>
-  </li>
-  <li>
-  <%= link_to users_path(params: { genre: 'Comedy' }) do %>
-    <div class="tab-underlined <% params[:comedy] ? 'active' : '' %>  ">Comedy</div>
-    <% end %>
-  </li>
-  <li>
-  <%= link_to users_path(params: { genre: 'Gaming' }) do %>
-    <div class="tab-underlined <% params[:gaming] ? 'active' : '' %>  ">Gaming</div>
-    <% end %>
-  </li>
-  <li>
-    <%= link_to users_path(params: { genre: 'Tech' }) do %>
-    <div class="tab-underlined <% params[:tech] ? 'active' : '' %>  ">Tech</div>
-    <% end %>
-  </li>
-  <li>
-    <%= link_to users_path(params: { genre: 'Tutorials' }) do %>
-    <div class="tab-underlined <% params[:tutorials] ? 'active' : '' %>  ">Tutorials</div>
-    <% end %>
-  </li>
-  <li>
-    <%= link_to users_path(params: { genre: 'Makeup' }) do %>
-    <div class="tab-underlined <% params[:makeup] ? 'active' : '' %>  ">Makeup</div>
-    <% end %>
-</ul>
+
+<%= render 'shared/navbar_univers' %>
 
 <div class="banner-index justify-content-start">
    <%= image_tag "Saly-12.png", style: "position: absolute; height: 600px; right: 80px; transform: rotate(10deg); z-index: 2; top: -73px;" %>
-  <div class="d-flex flex-column align-items-start justify-content-start w-50" style='margin-left: 10vw;'>
+  <div class="d-flex flex-column align-items-start justify-content-start container" style="background-color: transparent;">
     <h1 class="d-flex justify-content-center mt-3 mb-3 text-white font-weight-bold"><%= @genre.presence || "All" %></h1>
-    <div class="d-flex align-items-center mb-3 mt-3 w-100 position-relative" id="form-search" style="z-index: 10;">
+    <div class="d-flex align-items-center mb-3 mt-3 w-50 position-relative" id="form-search" style="z-index: 10;">
       <%= form_tag users_path, method: :get, class: 'search-form-control', data: { turbo: true } do %>
         <%= text_field_tag :query, params[:query], id: "", placeholder: "Search for creator/genre..." %>
         <%= submit_tag "Search", style: "display: none;" %>
