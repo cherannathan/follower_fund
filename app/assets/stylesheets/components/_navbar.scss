@@ -3,9 +3,13 @@
   background: $purple;
   text-decoration: none;
   height: $navbar-height;
-
+  z-index: 20;
+  position: relative;
 }
 
+.nav-link {
+  white-space: nowrap;
+}
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
