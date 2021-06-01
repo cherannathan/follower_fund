@@ -1,12 +1,21 @@
+.bg-purple-follower-fund {
+  background-color: $purple;
+}
 
-.navbar-universe{
+.container-navbar-universe {
   border-top: 1px solid white;
   border-bottom: 1px solid white;
+}
+
+.navbar-universe{
   background-color: $purple;
   height: $navbar-universe-height;
   font-size: 19px;
   z-index: 13;
   position: relative;
+  max-width: 1140px;
+  padding: 0px 20px;
+  justify-content: space-between !important;
 }
 
 .tabs-underlined {

@@ -1,37 +1,7 @@
-<ul class="navbar-universe list-inline tabs-underlined mb-0" >
-  <li>
-  <%= link_to users_path, class: 'tabs-links' do %>
-    <div class="tab-underlined <% params[:all] ? 'active' : '' %>">All</div>
-    <% end %>
-  </li>
-  <li>
-  <%= link_to users_path(params: { genre: 'Comedy' }), class: 'tabs-links' do %>
-    <div class="tab-underlined <% params[:comedy] ? 'active' : '' %>">Comedy</div>
-    <% end %>
-  </li>
-  <li>
-  <%= link_to users_path(params: { genre: 'Gaming' }), class: 'tabs-links' do %>
-    <div class="tab-underlined <% params[:gaming] ? 'active' : '' %>">Gaming</div>
-    <% end %>
-  </li>
-  <li>
-    <%= link_to users_path(params: { genre: 'Tech' }), class: 'tabs-links' do %>
-    <div class="tab-underlined <% params[:tech] ? 'active' : '' %>">Tech</div>
-    <% end %>
-  </li>
-  <li>
-    <%= link_to users_path(params: { genre: 'Tutorials' }), class: 'tabs-links' do %>
-    <div class="tab-underlined <% params[:tutorials] ? 'active' : '' %>">Tutorials</div>
-    <% end %>
-  </li>
-  <li>
-    <%= link_to users_path(params: { genre: 'Makeup' }), class: 'tabs-links' do %>
-    <div class="tab-underlined <% params[:makeup] ? 'active' : '' %>">Makeup</div>
-    <% end %>
-</ul>
+<%= render 'shared/navbar_univers' %>
 
 <div class="banner-home d-flex p-5" >
-  <div class="mr-auto ml-2">
+  <div class="container" style="background-color:transparent;">
   <h1 ><strong>Be a YouTuber's favorite investor </strong></h1>
   <br>
   <p>Finance their videos, and share profits when they're successful! 🏆</p>
@@ -40,9 +10,9 @@
   <%= image_tag "Homepage-transparent", class:"banner-img", style:"position:absolute; right:0; top: 0;" %>
 </div>
 
-<div class="container-homepage mb-5 mx-auto w-80 mt-5">
+<div class="container mb-5 mx-auto w-80 mt-5">
   <h1 id='anchor', class="text-center mt-4 mb-2 text-center">How it <mark class = "purple"> Works</mark> </h1>
-  <div class="homepage-cards d-flex justify-content-around mb-6">
+  <div class="homepage-cards d-flex justify-content-between mb-6">
     <div class="homepage-card">
       <h3><strong>Choose a<mark class = "purple"> creator</mark></strong></h3>
       <p class="text-center">Search and choose creators from your favourite genre</p>
