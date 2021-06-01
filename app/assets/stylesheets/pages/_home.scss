@@ -20,7 +20,7 @@ mark.purple {
   width: 45%;
   object-fit: contain;
   max-height: 650px;
-  z-index: 8;
+  z-index: 1;
   // max-height: calc(100vh - #{$navbar-height} - #{$navbar-universe-height} - #{$container-info-height})
 }
 
