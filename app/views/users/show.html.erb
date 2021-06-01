@@ -1,43 +1,12 @@
-
-<ul class="navbar-universe list-inline tabs-underlined mb-0" >
-  <li>
-  <%= link_to users_path, class: 'tabs-links' do %>
-    <div class="tab-underlined <% params[:all] ? 'active' : '' %>">All</div>
-    <% end %>
-  </li>
-  <li>
-  <%= link_to users_path(params: { genre: 'Comedy' }), class: 'tabs-links' do %>
-    <div class="tab-underlined <% params[:comedy] ? 'active' : '' %>">Comedy</div>
-    <% end %>
-  </li>
-  <li>
-  <%= link_to users_path(params: { genre: 'Gaming' }), class: 'tabs-links' do %>
-    <div class="tab-underlined <% params[:gaming] ? 'active' : '' %>">Gaming</div>
-    <% end %>
-  </li>
-  <li>
-    <%= link_to users_path(params: { genre: 'Tech' }), class: 'tabs-links' do %>
-    <div class="tab-underlined <% params[:tech] ? 'active' : '' %>">Tech</div>
-    <% end %>
-  </li>
-  <li>
-    <%= link_to users_path(params: { genre: 'Tutorials' }), class: 'tabs-links' do %>
-    <div class="tab-underlined <% params[:tutorials] ? 'active' : '' %>">Tutorials</div>
-    <% end %>
-  </li>
-  <li>
-    <%= link_to users_path(params: { genre: 'Makeup' }), class: 'tabs-links' do %>
-    <div class="tab-underlined <% params[:makeup] ? 'active' : '' %>">Makeup</div>
-    <% end %>
-</ul>
+<%= render 'shared/navbar_univers' %>
 
 <div class="creator-banner" >
   <%= image_tag "Saly-38.png", style: "position: absolute; height: 550px; right: 120px; transform: rotate(16deg); z-index: 2; top: 120px;" %>
 
-  <div>
-    <h1><strong><%= @creator.pseudo %></strong></h1>
+  <div class="container d-flex align-items-center justify-content-start" style="background-color: transparent;">
+    <%= cl_image_tag(@creator.photo.key, crop: :thumb, gravity: :face, class:"avatar-creator-page") %>
+    <h1 class="ml-4"><strong><%= @creator.pseudo %></strong></h1>
   </div>
- <%= cl_image_tag(@creator.photo.key, crop: :thumb, gravity: :face, class:"avatar-creator-page") %>
 </div>
 
 <div class="creator container mt-5 bg-white">
