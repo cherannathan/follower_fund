@@ -74,7 +74,7 @@ user_9.photo.attach(io: file_9, filename: 'nes.png', content_type: 'image/png')
 user_9.save!
 
 file_10 = URI.open('https://i.playboard.app/p/AATXAJw0qZ41vP0c1-MuVov8r0OuJGt-MlpJ38L74NU63w/default.webp')
-user_10 = User.new(last_name: 'Lane', first_name: 'Tiffany', email: 'Sand23imas206@gmail.com', password: '123456', bio: ' Tiffany is a software developer who started her career in the modeling & fashion industry.  Tech can be very overwhelming for many at first as she experienced first hand entering into the industry. Tiff saw a gap to help ease people into what tech has to offer, to improve their day to day lives. She brings value and trust to her audience by maintaining authenticity through sharing her life through the lens. Her real and candid approach is why she has a very strong engagement with her community. Through sharing her day to day life, she has built a loyal audience that engages with her in tech, fashion, business and many other areas of everyday lifestyle.//Tiff', pseudo: 'Tiff In Tech', role: 'creator',number_suscribers: 72000, youtube_link: 'https://www.youtube.com/embed/uD27CZEiuGk' )
+user_10 = User.new(last_name: 'Lane', first_name: 'Tiffany', email: 'Sand23imas206@gmail.com', password: '123456', bio: ' Tiffany is a software developer who started her career in the modeling & fashion industry.  Tech can be very overwhelming for many at first as she experienced first hand entering into the industry. Tiff saw a gap to help ease people into what tech has to offer, to improve their day to day lives.//Tiff', pseudo: 'Tiff In Tech', role: 'creator',number_suscribers: 72000, youtube_link: 'https://www.youtube.com/embed/uD27CZEiuGk' )
 user_10.photo.attach(io: file_10, filename: 'nes.png', content_type: 'image/png')
 user_10.save!
 

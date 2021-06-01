@@ -44,7 +44,7 @@
               <%= link_to project_path(project), class: 'text-decoration-none text-dark' do %>
                 <div class="d-flex project-card">
                   <%= cl_image_tag project.photo.key, height: 120, width: 120, crop: "fill"  %>
-                  <div> <%= project.title %></div>
+                  <div><h5><%= project.title %></h5></div></h5>
                 </div>
               <% end %>
             </div>
