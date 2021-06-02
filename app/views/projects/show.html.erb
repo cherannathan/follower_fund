@@ -3,8 +3,10 @@
 
   <div class="container d-flex align-items-center justify-content-start" style="background-color: transparent;">
     <%= cl_image_tag(@project.user.photo.key, crop: :thumb, gravity: :face, class:"avatar-creator-page") %>
-    <h1 class="ml-4"><strong><%= @project.title %></strong></h1>
-    <h4 class="ml-4"><strong><%= @project.title %></strong></h4>
+    <div>
+      <h1 class="ml-4"><strong><%= @project.title %></strong>
+      <h3 class="ml-4 text-grey"><strong><%= @project.user.pseudo %></strong></h3>
+    </div>
   </div>
 </div>
 
@@ -35,7 +37,7 @@
 
             <p class="projects-amounts"><span>  <%= @project.investments.count %> </span> backer(s)</p>
 
-            <p class="projects-amounts"><span> <%=@project.deadline  %> </span>days lefts</p>
+            <p class="projects-amounts"><span> <%= (@project.deadline.to_date - Time.current.to_date).to_i %> </span>days left</p>
 
         <hr>
         <%# <h2>Revenue Share Calculator</h2> %>
@@ -48,8 +50,10 @@
 
           <div class = "display-amount-invest"> </div>
             <div class="display-amount-invest"><span data-display-amount-target='amount' data-goal-amount="<%= @project.goal_amount %>">0</span></div>
-          <div class="row mt-3">
+          <div class="row margin-top-2">
            <hr>
+             <hr>
+               <hr>
             <div class="col">
               <p class="projects-amounts"><span data-display-amount-target="for100000">0</span>Profit at 100 000 views</p>
             </div>
@@ -66,7 +70,9 @@
               <p class="projects-amounts"><span data-display-amount-target="for1000000">0</span>Profit at 1 millions views</p>
             </div>
           </div>
-          <%= f.submit "add to cart", class: "btn btn-outline-primary px-5 mt-4 py-2 rounded-pill #{'d-none' if @project.currentamountinvestment >= 100}" %>
+          <div class="d-flex justify-content-center">
+            <%= f.submit "add to cart", class: "btn purchase-button px-5 mt-4 py-2 rounded-pill #{'d-none' if @project.currentamountinvestment >= 100}" %>
+          </div>
           <% end %>
         </div>
 
