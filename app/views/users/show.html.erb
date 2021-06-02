@@ -38,7 +38,7 @@
       <h3>New project coming soon...</h3>
     <% else %>
       <h3>My projects you can invest in</h3>
-        <div class="row mt-2">
+        <div class="row mt-4">
           <% @ongoing_projects.each do |project| %>
             <div class="col-6">
               <%= link_to project_path(project), class: 'text-decoration-none text-dark' do %>
