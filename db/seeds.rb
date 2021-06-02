@@ -38,7 +38,7 @@ user_3 = User.new(last_name: 'majendie', first_name: 'rupert', email: 'rupert.ma
 user_3.photo.attach(io: file_3, filename: 'nes.png', content_type: 'image/png')
 user_3.save!
 
-file_4 = URI.open('https://healthyceleb.com/wp-content/uploads/2019/09/Lauren-Mae-in-an-Instagram-post-as-seen-in-August-2019.jpg')
+file_4 = URI.open('https://images.unsplash.com/photo-1610067762007-1ca5a93f72b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80')
 user_4 = User.new(last_name: 'Mae', first_name: 'Lauren', email: 'laurenmaebeauty@gmail.com', password: '123456', bio: 'Why hello there! My name is Lauren and welcome to my channel! I love makeup and all things beauty so my channel is primarily centered on those topics but there are no limits so dont be surprised if you see something else pop up on here! Please do not be shy and come say hello!', role: 'creator', pseudo: 'Lauren Mae Beauty', youtube_link: 'https://www.youtube.com/embed/TKSnWLxghT0', number_suscribers: 100000 )
 user_4.photo.attach(io: file_4, filename: 'nes.png', content_type: 'image/png')
 user_4.save!
@@ -103,7 +103,7 @@ user_14.photo.attach(io: file_14, filename: 'nes.png', content_type: 'image/png'
 user_14.save!
 
 
-file_16 = URI.open('https://images.unsplash.com/photo-1610067762007-1ca5a93f72b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80')
+file_16 = URI.open('https://images.sk-static.com/images/media/profile_images/artists/4697648/huge_avatar')
 user_16 = User.new(last_name: 'Lauren', first_name: 'Mayhem', email: 'meyhemlauren@gmail.com', password: '123456', bio: 'Yo! I’m Meyhem Lauren. I make music. I make food. What more could you want? Catch me on my new cooking series, Fridge Diving, where I make meals from whatever is in my fridge. Simple as that.', pseudo: 'Meyhem Lauren', role: 'creator', youtube_link: 'https://www.youtube.com/embed/PR5CnNCtAp4', number_suscribers: 43000)
 user_16.photo.attach(io: file_16, filename: 'nes.png', content_type: 'image/png')
 user_16.save!
