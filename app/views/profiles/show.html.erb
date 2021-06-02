@@ -29,7 +29,7 @@
           <%= investment.project.title %>
         </div>
         <div class="investment-row__amount">
-          $<%= investment.price %>
+          $<%= investment.price_cents / 100 %>
         </div>
         <div class="investment-row__status status-badge <%= investment.project.status %>">
           <%= investment.project.status %>
