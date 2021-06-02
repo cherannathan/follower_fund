@@ -34,7 +34,7 @@ user_2.photo.attach(io: file_2, filename: 'nes.png', content_type: 'image/png')
 user_2.save!
 
 file_3 = URI.open ('https://www.chortle.co.uk/images/photos/small/the-pin-2020.jpg')
-user_3 = User.new(last_name: 'majendie', first_name: 'rupert', email: 'rupert.majendie@gmail.com', password: '123456', bio: 'MR BOX provides the viewer with the newbies, the prevalent, the avant-garde, the broadest spectrum but best quality comedy all in one place.  It not only is a showcase for new talent but also somewhere for popular comedians to try out new ideas and see how they are received.', role: 'creator', pseudo: 'Mr Box', youtube_link: 'https://www.youtube.com/embed/uuUiFeDphRg', number_suscribers: 50000)
+user_3 = User.new(last_name: 'majendie', first_name: 'rupert', email: 'rupert.majendie@gmail.com', password: '123456', bio: 'MR BOX provides the viewer with the newbies, the prevalent, the avant-garde, the broadest spectrum but best quality comedy all in one place.  It not only is a showcase for new talent but also somewhere for popular comedians to try out new ideas.', role: 'creator', pseudo: 'Mr Box', youtube_link: 'https://www.youtube.com/embed/uuUiFeDphRg', number_suscribers: 50000)
 user_3.photo.attach(io: file_3, filename: 'nes.png', content_type: 'image/png')
 user_3.save!
 
