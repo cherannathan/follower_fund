@@ -1,0 +1,5 @@
+meta_product_name: "Follower Fund"
+meta_title: "Follower Fund - Be a YouTuber's favorite investor"
+meta_description: "Finance their videos, and share profits when they're successful! 🏆"
+meta_image: "cover.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
