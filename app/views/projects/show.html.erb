@@ -1,11 +1,13 @@
-<div class="banner-index justify-content-start">
-   <%= image_tag "Saly-project-show.png", style: "position: absolute; height: 400px; right: 80px; transform: rotate(10deg); z-index: 2; top: -73px;" %>
-  <div class="d-flex flex-column align-items-start justify-content-start w-50" style='margin-left: 10vw;'>
-    <h1 class="d-flex justify-content-center mt-3 mb-3 text-white font-weight-bold"><%= @project.title || "All" %></h1>
-    </div>
-     <%= cl_image_tag(@project.user.photo.key, crop: :thumb, gravity: :face, class:"avatar-creator-page") %>
+<div class="creator-banner" >
+  <%= image_tag "Saly-project-show.png", style: "position: absolute; height: 400px; right: 120px; transform: rotate(16deg); z-index: 2; top: 70px;" %>
+
+  <div class="container d-flex align-items-center justify-content-start" style="background-color: transparent;">
+    <%= cl_image_tag(@project.user.photo.key, crop: :thumb, gravity: :face, class:"avatar-creator-page") %>
+    <h1 class="ml-4"><strong><%= @project.title %></strong></h1>
+    <h4 class="ml-4"><strong><%= @project.title %></strong></h4>
   </div>
 </div>
+
 
 <div class="container">
   <div class="project-wrapper">
@@ -42,33 +44,30 @@
 
         <div class="slidecontainer">
           <%= simple_form_for [@project, Investment.new] do |f| %>
-            <%= f.input :price_cents, as: :range, collection: (1..@project.goal_amount).to_a, label: "Your invest", placeholder: "Amount", input_html:{type: "range", min: 0, max: @project.goal_amount, step: 5, data: {action: "change->display-amount#display", display_amount_target: "value"}}%>
-            <div  class="display-amount-invest"><span data-display-amount-target='amount'>0</span> €</div>
-            <%= f.submit "add to cart", class: "btn btn-primary px-5 mt-4 py-2 rounded-pill #{'d-none' if @project.currentamountinvestment >= 100}" %>
-          <% end %>
+            <%= f.input :price_cents, as: :range, collection: (1..@project.goal_amount).to_a, label: "Your investment", placeholder: "Amount", input_html:{type: "range", min: 0, max: @project.goal_amount, step: 5, data: {action: "change->display-amount#display", display_amount_target: "value"}}%>
 
+          <div class = "display-amount-invest"> </div>
+            <div class="display-amount-invest"><span data-display-amount-target='amount' data-goal-amount="<%= @project.goal_amount %>">0</span></div>
           <div class="row mt-3">
+           <hr>
             <div class="col">
-              <p class="projects-amounts"><span data-display-amount-target="for100000">0</span> €</p>
-              <p><strong>Profit at 100 000 views</strong></p>
+              <p class="projects-amounts"><span data-display-amount-target="for100000">0</span>Profit at 100 000 views</p>
             </div>
             <div class="col">
-              <p class="projects-amounts"><span data-display-amount-target="for200000">0</span> €</p>
-              <p><strong>Profit at 200 000 views</strong></p>
+              <p class="projects-amounts"><span data-display-amount-target="for200000">0</span>Profit at 200 000 views</p>
             </div>
           </div>
 
           <div class="row">
             <div class="col">
-              <p class="projects-amounts"><span data-display-amount-target="for500000">0</span> €</p>
-              <p><strong>Profit at 500 000 views</strong></p>
+              <p class="projects-amounts"><span data-display-amount-target="for500000">0</span>Profit at 500 000 views</p>
             </div>
             <div class="col">
-              <p class="projects-amounts"><span data-display-amount-target="for1000000">0</span> €</p>
-              <p><strong>Profit at 1 millions views</strong></p>
+              <p class="projects-amounts"><span data-display-amount-target="for1000000">0</span>Profit at 1 millions views</p>
             </div>
           </div>
-
+          <%= f.submit "add to cart", class: "btn btn-outline-primary px-5 mt-4 py-2 rounded-pill #{'d-none' if @project.currentamountinvestment >= 100}" %>
+          <% end %>
         </div>
 
 
