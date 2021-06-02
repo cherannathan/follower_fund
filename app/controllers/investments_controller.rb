@@ -12,7 +12,7 @@ class InvestmentsController < ApplicationController
 
   def create
     @investment = Investment.new(investment_params)
-    @investment.price_cents = params[:investment][:price_cents].to_i
+    @investment.price_cents = params[:investment][:price_cents].to_i * 100
     @investment.project = Project.find(params[:project_id])
     @investment.user = current_user
     @investment.status = "pending"
