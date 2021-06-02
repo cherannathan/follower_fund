@@ -168,7 +168,7 @@ form#new_investment {
   content: '';
   height: 100%;
   width: 100%;
-  background: #664AFF;
+  background: #5353ec;
   border: 3px solid #fff;
   z-index: -1;
   left: 50%;
@@ -188,7 +188,7 @@ form#new_investment {
 .field .value{
   position: absolute;
   font-size: 18px;
-  color: #664AFF;
+  color: #5353ec;
   font-weight: 600;
 }
 .field .value.left{
@@ -213,8 +213,8 @@ form#new_investment {
   height: 20px;
   background: red;
   border-radius: 50%;
-  background: #664AFF;
-  border: 1px solid #664AFF;
+  background: #5353ec;
+  border: 1px solid #5353ec;
   cursor: pointer;
 }
 .range input::-moz-range-thumb{
@@ -223,11 +223,19 @@ form#new_investment {
   height: 20px;
   background: red;
   border-radius: 50%;
-  background: #664AFF;
-  border: 1px solid #664AFF;
+  background: #5353ec;
+  border: 1px solid #5353ec;
   cursor: pointer;
 }
 .range input::-moz-range-progress{
-  background: #664AFF; //this progress background is only shown on Firefox
+  background: #5353ec; //this progress background is only shown on Firefox
 }
+}
+
+.margin-top-2 {
+  margin-top: 2.5rem !important;
+}
+
+.text-grey {
+  color: #adb5bd;
 }
