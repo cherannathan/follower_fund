@@ -2,7 +2,7 @@
   <ul class="navbar-universe list-inline tabs-underlined mb-0 mx-auto" style="z-index: 3; position: relative;">
     <li>
     <%= link_to users_path, class: 'text-decoration-none' do %>
-      <div class="tab-underlined <%= 'active' unless params[:genre].present? || controller_name == "pages" && action_name == "home" %>">All Creators</div>
+      <div class="tab-underlined <%= 'active' if !params[:genre].present? && (controller_name == "users" && action_name == "index") %>">All Creators</div>
       <% end %>
     </li>
     <li>
