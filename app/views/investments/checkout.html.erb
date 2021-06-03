@@ -1,4 +1,4 @@
-<div class="banner-index justify-content-start">
+<div class="banner-index justify-content-start" style="z-index: -1;">
    <%= image_tag "Saly-19-checkout.png", style: "position: absolute; height: 400px; right: 80px; transform: rotate(10deg); z-index: 2; top: -73px;" %>
   <div class="d-flex flex-column align-items-start justify-content-start w-50" style='margin-left: 10vw;'>
     <h1 class="d-flex justify-content-center mt-3 mb-3 text-white font-weight-bold">Checkout 🛒</h1>
@@ -6,38 +6,44 @@
   </div>
 </div>
 
-<div class = "containerspe">
+<div class = "cecilecontainerspe">
  <div class="col-25">
   <div class="container">
-    <h3>
-      <span class="mt-4 mb-3 price" style="color:black">
-        <b><strong><%= pluralize(@investments.count, 'project', 'projects') %></strong></b>
-      </span>
-    </h3>
-
-    <div class="">
-      <% @investments.each do |investment| %>
-        <div class="d-flex align-items-center justify-content-between p-2">
-          <div>
-            <%= link_to project_investment_path(investment.project, investment), method: :delete, data: { confirm: "Are you sure you want to delete this investment?" },class: "mr-4" do %>
-              <i class="far fa-trash-alt"></i>
-            <% end %>
-            <%= link_to investment.project.title, project_path(investment.project), class: "checkout-project-title" %>
+    <% unless @checkout%>
+      <h3>
+        <span class="mt-4 mb-3 price">
+          <b><strong><%= pluralize(@investments.count, 'project', 'projects') %></strong></b>
+        </span>
+      </h3>
+      <div class="">
+        <% @investments.each do |investment| %>
+          <div class="d-flex align-items-center justify-content-between p-2">
+            <div>
+              <%= link_to investment.project.title, project_path(investment.project), class: "checkout-project-title" %>
+              <%= link_to project_investment_path(investment.project, investment), method: :delete, data: { confirm: "Are you sure you want to delete this investment?" },class: "mr-4" do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
+            </div>
+            <span class="investment-price"><%= investment.price %> $</span>
           </div>
-          <span class="investment-price"><%= investment.price %> $</span>
-        </div>
-      <%end %>
-    </div>
-    <hr>
-    <div class="d-flex align-items-center justify-content-between p-2">
-      <span class="span-class">Total</span>
-      <span><%= current_user.pendingamount %> $ </span>
-    </div>
-
-    <%= form_tag orders_path, class: "text-right mt-3" do %>
-      <%= hidden_field_tag 'investment_id', @investments.first.id %>
-      <%= submit_tag 'Purchase', class: 'btn purchase-button mb-5' %>
+        <%end %>
+      </div>
+      <hr>
+      <div class="d-flex align-items-center justify-content-between p-2">
+        <span class="span-class">Total</span>
+        <span class="total-price"><%= current_user.pendingamount %> $ </span>
+      </div>
     <% end %>
-
+    <%# if @checkout %>
+      <%= render 'payments/stripe_checkout' %>
+    <%# else %>
+      <%#= form_tag orders_path, class: "text-right mt-3" do %>
+        <%#= hidden_field_tag 'investment_id', @investments.first.id %>
+        <%#= submit_tag 'Purchase', class: 'btn purchase-button mb-5', id: "pay" %>
+      <%# end %>
+    <%# end %>
   </div>
 </div>
+
+
+

@@ -42,7 +42,7 @@
         <hr>
         <%# <h2>Revenue Share Calculator</h2> %>
 
-          <p>Total revenue split: <span><span data-display-amount-target="revenuSplit"><%= @project.revenue_split %></span> % </span> for my investors.</p>
+          <p class="projects-amounts"><span data-display-amount-target="revenuSplit"><%= @project.revenue_split %> % </span> total revenue split for my investors.</p>
 
         <div class="slidecontainer">
           <%= simple_form_for [@project, Investment.new] do |f| %>
@@ -70,8 +70,8 @@
               <p class="projects-amounts"><span data-display-amount-target="for1000000">0</span>Profit at 1 millions views</p>
             </div>
           </div>
-          <div class="d-flex justify-content-center">
-            <%= f.submit "add to cart", class: "btn purchase-button px-5 mt-4 py-2 rounded-pill #{'d-none' if @project.currentamountinvestment >= 100}" %>
+          <div class=" d-flex justify-content-center">
+            <%= f.submit "add to cart", class: "btn purchase-button px-5 mt-4 py-2 rounded-pill d-block w-100  #{'d-none' if @project.currentamountinvestment >= 100}" %>
           </div>
           <% end %>
         </div>
