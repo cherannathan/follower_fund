@@ -5,10 +5,10 @@
 <div class="banner-index justify-content-start">
    <%= image_tag "Saly-12.png", style: "position: absolute; height: 600px; right: 80px; transform: rotate(10deg); z-index: 2; top: -73px;" %>
   <div class="d-flex flex-column align-items-start justify-content-start container" style="background-color: transparent;">
-    <h1 class="d-flex justify-content-center mt-3 mb-3 text-white font-weight-bold"><%= @genre.presence || "All" %></h1>
+    <h1 class="d-flex justify-content-center mt-3 mb-3 text-white font-weight-bold"><%= @genre.presence || "Discover Creators" %></h1>
     <div class="d-flex align-items-center mb-3 mt-3 w-50 position-relative" id="form-search" style="z-index: 10;">
       <%= form_tag users_path, method: :get, class: 'search-form-control', data: { turbo: true } do %>
-        <%= text_field_tag :query, params[:query], id: "", placeholder: "Search for creator/genre..." %>
+        <%= text_field_tag :query, params[:query], id: "", placeholder: "e.g. PewDiePie" %>
         <%= submit_tag "Search", style: "display: none;" %>
       <% end %>
       <button id="search-button" type="button" class="btn btn-search position-absolute" style="right: 0;">
