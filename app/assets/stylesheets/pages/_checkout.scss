@@ -109,3 +109,44 @@ color: red;
   padding: 0.38rem 2.75rem;
 
 }
+
+.cecilecontainerspe {
+    width: 55%;
+    background: white;
+    margin-top: -54px;
+    z-index: 1;
+    margin-left: 110px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    margin-bottom: 100px;
+
+    h3 {
+      span.price {
+        color: #5353eb;
+      }
+    }
+
+    .fa-trash-alt {
+      color: grey;
+      margin-left: 8px;
+    }
+
+    .checkout-project-title {
+      font-size: 1em;
+      color: #0e0000;
+      &:hover {
+        text-decoration: none;
+        color: $purple;
+      }
+    }
+
+    span.investment-price {
+      font-size: 1.1rem;
+      color: black;
+    }
+
+    .total-price {
+      font-size: 1.3rem;
+      color: $purple;
+    }
+}
