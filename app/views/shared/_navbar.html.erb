@@ -17,7 +17,9 @@
           <%= image_tag "avatarphoto.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
           <div class="dropdown-menu dropdown-menu-right rounded" aria-labelledby="navbarDropdown">
             <%= link_to "Dashboard", profile_path, class: "dropdown-item" %>
+            <%= link_to "Checkout", checkout_path, class: "dropdown-item" %>
             <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+
           </div>
         </li>
       <% else %>

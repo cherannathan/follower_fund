@@ -32,6 +32,6 @@ class User < ApplicationRecord
     }
 
       def pendingamount
-        investments.where(status: 'pending').pluck(:price_cents).sum / 100
+        investments.where(status: 'pending').pluck(:price_cents).sum / 100.000
       end
 end
