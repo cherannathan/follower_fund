@@ -59,8 +59,13 @@ class InvestmentsController < ApplicationController
   def destroy
     @investment = Investment.find(params[:id])
     authorize(@investment)
+    Order.where(investment: @investment).destroy_all
     @investment.destroy
-    redirect_to checkout_path, notice: 'investment was successfully destroyed.'
+    if Investment.where(status: "pending", user: current_user).empty?
+      redirect_to users_path, notice: "You don't have any investments anymore 🤷🏾‍♂️ "
+    else
+      redirect_to checkout_path, notice: 'investment was successfully destroyed.'
+    end
   end
 
   def payment
