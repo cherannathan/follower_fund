@@ -25,17 +25,17 @@
           <h3 > Creator data</h3>
         </div>
         <ul class="list-group list-group-flush text-center mt-3">
-          <li>Number of followers : <strong><%= @creator.number_suscribers.nil? ? " 0" : number_with_delimiter(@creator.number_suscribers, delimiter: ',') %></li></strong>
-          <li>Number of projects done : <strong><%= @done_projects.count %></li></strong>
-          <li>On going projects : <strong><%= @ongoing_projects.count %></li></strong>
-          <li>Number of investors : <strong><%= @investors.count %></li></strong>
+          <li><mark class = "black bg-white">Number of followers : </mark><strong><%= @creator.number_suscribers.nil? ? " 0" : number_with_delimiter(@creator.number_suscribers, delimiter: ',') %></li></strong>
+          <li><mark class = "black bg-white">Number of projects done : </mark><strong><%= @done_projects.count %></li></strong>
+          <li><mark class = "black bg-white">On going projects : </mark><strong><%= @ongoing_projects.count %></li></strong>
+          <li><mark class = "black bg-white">Number of investors : </mark><strong><%= @investors.count %></li></strong>
         </ul>
       </div>
     </div>
   </div>
   <div class="newproject container bg-white mb-5">
     <% if @ongoing_projects.empty? %>
-      <h3>New project coming soon...</h3>
+      <h3><mark class = "black bg-white">New project <mark class = "purple bg-white">coming soon...</mark></mark></h3>
     <% else %>
       <h3 class="usershowh3"><mark class = "purple"> My projects</mark> you can invest in</h3>
         <div class="row mt-4">
