@@ -1,9 +1,8 @@
 .whoami-box{
   background: #5353EC;
-  box-shadow: 0 0 5px #5353EC;
   height: 400px;
   padding: 48px;
-  border-radius: 30px;
+  border-radius: 20px;
   color: white;
 }
 
@@ -16,7 +15,7 @@
   transform: translateX(-50%);
   background-color: white;
   box-shadow: 0 0 1px #5353EC;
-  border-radius: 30px;
+  border-radius: 19px;
   padding-top: 4px;
 }
 
@@ -29,13 +28,13 @@
   overflow: hidden;
   height: 160px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 4px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  border-radius: 30px;
+  border-radius: 17px;
 }
 .project-card:hover{
-  box-shadow: 0 0 10px #5353EC;
+  box-shadow: 0 0 4px #5353EC;
 }
 
 .project-card {
@@ -48,7 +47,7 @@
 }
 
 .newproject{
-  margin-top: 170px;
+  margin-top: 50px;
   grid-template-columns: 1fr 1fr;
   color: #5353EC;
 }
