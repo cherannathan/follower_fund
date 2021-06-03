@@ -268,7 +268,7 @@ project_22.save!
 genre_22 = Genre.find_by(name: "Comedy")
 project_genre_22 = ProjectGenre.create(project: project_22, genre: genre_22)
 
-project_photo_23 = URI.open('https://images.unsplash.com/photo-1565802900597-6e85ec534f8f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80')
+project_photo_23 = URI.open('https://images.unsplash.com/photo-1606762988363-d039207ed63a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1531&q=80')
 project_23 = Project.new(user: user_16, status: 'fundraising', goal_amount: '350', number_of_views: '0', revenue_split: '30%', deadline: DateTime.now + 76, revenue_generated: '0', title: 'Caviar and KFC', bio: 'What goes best with expensive shit? KFC. Please help me make the ultimate Caviar Chicken Burger')
 project_23.photo.attach(io: project_photo_23, filename: 'hello.png', content_type: 'image/png')
 project_23.save!
