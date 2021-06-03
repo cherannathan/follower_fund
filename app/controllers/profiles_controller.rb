@@ -3,6 +3,6 @@ class ProfilesController < ApplicationController
 
   def show
     # @investment.user = Investment.where(user: current_user)
-    @investments = current_user.investments.includes(:project)
+    @investments = current_user.investments.includes(:project).order(created_at: :desc)
   end
 end
