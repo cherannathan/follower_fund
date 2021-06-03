@@ -38,14 +38,17 @@
         <%= link_to user_path(user), class: 'text-decoration-none text-dark' do %>
 
         <% if user.photo.attached? %>
-          <div class="card-product" style="background-image: url(<%= cl_image_path user.photo.key %>)">
+          <div class="card-product position-relative" style="background-image: url(<%= cl_image_path user.photo.key %>)">
+          <div class="badge-wrapper">
+            <% user.genres.map { |genre| genre.name }.uniq.each do |name| %>
+            <div class="badge badge-pill badge-light mr-2"><%= name.downcase %></div>
+            <%end %>
+          </div>
         <% else %>
           <div class="card-product" style="background-image: url(<%= asset_path "FakeAvatar" %>)">
         <% end %>
             <h2 class="text-center mt-2"><%= user.pseudo %></h2>
-
         </div>
-
       <% end %>
     <% end %>
   </div>

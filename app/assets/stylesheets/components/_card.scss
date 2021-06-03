@@ -102,3 +102,20 @@ ul {
 .card-header h3{
   color: #5353ec;
 }
+
+.badge-wrapper {
+  display: flex;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.badge {
+  padding: 0.4em 0.4em 0.6em 0.4em;
+  font-size: 16px;
+  background-color: #f8f9faba;
+}
+
+.badge-pill {
+  border-radius: 14px;
+}

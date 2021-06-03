@@ -25,7 +25,7 @@
           <h3 > Creator data</h3>
         </div>
         <ul class="list-group list-group-flush text-center mt-3">
-          <li>Number of followers : <strong><%= @creator.number_suscribers.nil? ? " 0" : @creator.number_suscribers %></li></strong>
+          <li>Number of followers : <strong><%= @creator.number_suscribers.nil? ? " 0" : number_with_delimiter(@creator.number_suscribers, delimiter: ',') %></li></strong>
           <li>Number of projects done : <strong><%= @done_projects.count %></li></strong>
           <li>On going projects : <strong><%= @ongoing_projects.count %></li></strong>
           <li>Number of investors : <strong><%= @investors.count %></li></strong>
