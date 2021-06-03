@@ -32,7 +32,8 @@ class InvestmentsController < ApplicationController
   def update
     @investment = Investment.find(params[:id])
     @investment.update(investment_params)
-    render :profile
+    redirect_to profile_path(anchor: "investment-#{@investment.id}")
+    flash[:notice] = "Merci pour votre message !"
   end
 
   def checkout

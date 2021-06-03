@@ -19,3 +19,7 @@
 @import "components/avatar";
 @import "components/footer";
 @import "pages/users";
+
+body {
+  scroll-behavior: smooth;
+}
