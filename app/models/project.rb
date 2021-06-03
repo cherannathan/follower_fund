@@ -12,7 +12,7 @@ class Project < ApplicationRecord
   has_many :investors, through: :investments, source: :user
 
   def total_investments
-    investments.where(status: 'done').pluck(:price_cents).sum
+    investments.where(status: 'done').pluck(:price_cents).sum/100
   end
 
   include PgSearch::Model
@@ -26,7 +26,7 @@ class Project < ApplicationRecord
       tsearch: { prefix: true }
     }
  def currentamountinvestment
-  (investments.where(status: 'done').pluck(:price_cents).sum*100)/goal_amount
+  (investments.where(status: 'done').pluck(:price_cents).sum)/goal_amount
  end
 
  def roiinvestment
