@@ -89,11 +89,11 @@ user_11.save!
 
 
 file_12 = URI.open('https://images.unsplash.com/photo-1556037757-40496ad2fbc4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')
-user_12 = User.new(last_name: 'May', first_name: 'James', email: 'jamesmay@gmail.com', password: '123456', bio: 'We create tutorials about anything and everything. Fro paper airplanes to japanese swords!', pseudo: 'Crazy Tutorials', role: 'creator', youtube_link: 'https://www.youtube.com/embed/j35JDZvP3eI', number_suscribers: 217000)
+user_12 = User.new(last_name: 'May', first_name: 'James', email: 'jamesmay@gmail.com', password: '123456', bio: 'We create tutorials about anything and everything. From paper airplanes to japanese swords!', pseudo: 'Crazy Tutorials', role: 'creator', youtube_link: 'https://www.youtube.com/embed/j35JDZvP3eI', number_suscribers: 217000)
 user_12.photo.attach(io: file_12, filename: 'nes.png', content_type: 'image/png')
 user_12.save!
 
-file_13 = URI.open('https://datastandard.blob.core.windows.net/botimg/59fd8e47525d5d12288245ab.png')
+file_13 = URI.open('https://images.unsplash.com/photo-1514543250559-83867827ecce?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1911&q=80')
 user_13 = User.new(last_name: 'Lasope', first_name: 'Tyler', email: 'devslopes@gmail.com', password: '123456', bio: 'Devslopes is the worlds most affordable and effective platform to learn how to code.', pseudo: 'Devslopes', role: 'creator', youtube_link: 'https://www.youtube.com/embed/sO1ctUNQ1k8', number_suscribers: 112000)
 user_13.photo.attach(io: file_13, filename: 'nes.png', content_type: 'image/png')
 user_13.save!
@@ -204,8 +204,8 @@ project_13.save!
 genre_13 = Genre.find_by(name: "Tech")
 project_genre_13 = ProjectGenre.create(project: project_13, genre: genre_13)
 
-project_photo_14 = URI.open('https://www.unilad.co.uk/cdn-cgi/image/width=648,quality=70,format=webp,fit=pad,dpr=2/https%3A%2F%2Fwww.unilad.co.uk%2Fwp-content%2Fuploads%2F2020%2F10%2Frubbishdog.jpg')
-project_14 = Project.new(user: user_7, status: 'done', goal_amount: '100', number_of_views: '0', revenue_split: '10%', deadline: DateTime.now + 8, revenue_generated: '1000', title: 'Just drawing dogs', bio: 'My gaming channel has been about mixing cats and games. Now it is time to move onto the next frontier; dogs!', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.')
+project_photo_14 = URI.open('https://images.unsplash.com/photo-1513738781020-f0109e72554f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80')
+project_14 = Project.new(user: user_7, status: 'fundraising', goal_amount: '100', number_of_views: '0', revenue_split: '10%', deadline: DateTime.now + 8, revenue_generated: '0', title: 'Just drawing dogs', bio: 'My gaming channel has been about mixing cats and games. Now it is time to move onto the next frontier; dogs!', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.')
 project_14.photo.attach(io: project_photo_14, filename: 'hello.png', content_type: 'image/png')
 project_14.save!
 genre_14 = Genre.find_by(name: "Gaming")
@@ -246,6 +246,45 @@ project_19.photo.attach(io: project_photo_19, filename: 'hello.png', content_typ
 project_19.save!
 genre_19 = Genre.find_by(name: "Tutorials")
 project_genre_19 = ProjectGenre.create(project: project_19, genre: genre_19)
+
+project_photo_20 = URI.open('https://images.unsplash.com/photo-1502744688674-c619d1586c9e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2100&q=80')
+project_20 = Project.new(user: user_11, status: 'fundraising', goal_amount: '150', number_of_views: '0', revenue_split: '30%', deadline: DateTime.now + 23, revenue_generated: '0', title: 'Trying the fastest motorbike in the world', bio: 'I want to buy the fastest motorbike in the world! My fans will love this and I hope to get some more fans doing this type of content. ', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.')
+project_20.photo.attach(io: project_photo_20, filename: 'hello.png', content_type: 'image/png')
+project_20.save!
+genre_20 = Genre.find_by(name: "Tech")
+project_genre_20 = ProjectGenre.create(project: project_20, genre: genre_20)
+
+project_photo_21 = URI.open('https://images.unsplash.com/photo-1589830640509-17507c2b6cd0?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3289&q=80')
+project_21 = Project.new(user: user_12, status: 'fundraising', goal_amount: '150', number_of_views: '0', revenue_split: '30%', deadline: DateTime.now + 76, revenue_generated: '0', title: '100 paper airplane styles', bio: 'I want to create 100 airplanes! Hopefully you can invest in this project ', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.')
+project_21.photo.attach(io: project_photo_21, filename: 'hello.png', content_type: 'image/png')
+project_21.save!
+genre_21 = Genre.find_by(name: "Tutorials")
+project_genre_21 = ProjectGenre.create(project: project_21, genre: genre_21)
+
+project_photo_22 = URI.open('https://images.unsplash.com/photo-1531243501393-a8996d8f527b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2102&q=80')
+project_22 = Project.new(user: user_12, status: 'fundraising', goal_amount: '150', number_of_views: '0', revenue_split: '30%', deadline: DateTime.now + 76, revenue_generated: '0', title: 'Do Coders make the best lovers?', bio: 'I want to interview 100 coders on their sex lives ', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.')
+project_22.photo.attach(io: project_photo_22, filename: 'hello.png', content_type: 'image/png')
+project_22.save!
+genre_22 = Genre.find_by(name: "Comedy")
+project_genre_22 = ProjectGenre.create(project: project_22, genre: genre_22)
+
+project_photo_23 = URI.open('https://images.unsplash.com/photo-1565802900597-6e85ec534f8f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80')
+project_23 = Project.new(user: user_16, status: 'fundraising', goal_amount: '350', number_of_views: '0', revenue_split: '30%', deadline: DateTime.now + 76, revenue_generated: '0', title: 'Caviar and KFC', bio: 'What goes best with expensive shit? KFC. Please help me make the ultimate Caviar Chicken Burger')
+project_23.photo.attach(io: project_photo_23, filename: 'hello.png', content_type: 'image/png')
+project_23.save!
+genre_23 = Genre.find_by(name: "Comedy")
+project_genre_23 = ProjectGenre.create(project: project_23, genre: genre_23)
+
+
+project_photo_25 = URI.open('https://images.unsplash.com/photo-1565879629766-30adf38aac56?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80')
+project_25 = Project.new(user: user_14, status: 'fundraising', goal_amount: '350', number_of_views: '0', revenue_split: '30%', deadline: DateTime.now + 76, revenue_generated: '0', title: 'Piano and Keyboard recital', bio: 'I want to film a music video where I show off my keyboard skills in Hip Hop music.')
+project_25.photo.attach(io: project_photo_25, filename: 'hello.png', content_type: 'image/png')
+project_25.save!
+genre_25 = Genre.find_by(name: "Tutorials")
+project_genre_25 = ProjectGenre.create(project: project_25, genre: genre_25)
+
+
+
 
 p "Projects created"
 

@@ -43,11 +43,12 @@
   //background-color: rgba(255,255,255,0.4);
   //border-radius: 5px;
   //padding: 9px 22px 6px 22px;
+  padding: 9px 22px 6px 22px;
   transition: all ease 0.2s;
-  &:hover{
+  &:hover,
+  &.active {
     background-color: rgba(255,255,255,0.6);
     border-radius: 5px;
-    padding: 9px 22px 6px 22px;
   }
 }
 

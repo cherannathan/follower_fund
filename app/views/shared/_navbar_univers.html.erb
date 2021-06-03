@@ -2,32 +2,32 @@
   <ul class="navbar-universe list-inline tabs-underlined mb-0 mx-auto" style="z-index: 3; position: relative;">
     <li>
     <%= link_to users_path, class: 'text-decoration-none' do %>
-      <div class="tab-underlined <% params[:all] ? 'active' : '' %> ">All</div>
+      <div class="tab-underlined <%= 'active' unless params[:genre].present? || controller_name == "pages" && action_name == "home" %>">All Creators</div>
       <% end %>
     </li>
     <li>
     <%= link_to users_path(params: { genre: 'Comedy' }), class: 'text-decoration-none' do %>
-      <div class="tab-underlined <% params[:comedy] ? 'active' : '' %>  ">Comedy</div>
+      <div class="tab-underlined <%= 'active' if params[:genre] == "Comedy" %>">Comedy</div>
       <% end %>
     </li>
     <li>
     <%= link_to users_path(params: { genre: 'Gaming' }), class: 'text-decoration-none' do %>
-      <div class="tab-underlined <% params[:gaming] ? 'active' : '' %>  ">Gaming</div>
+      <div class="tab-underlined <%= 'active' if params[:genre] == "Gaming" %>">Gaming</div>
       <% end %>
     </li>
     <li>
       <%= link_to users_path(params: { genre: 'Tech' }), class: 'text-decoration-none' do %>
-      <div class="tab-underlined <% params[:tech] ? 'active' : '' %>  ">Tech</div>
+      <div class="tab-underlined <%= 'active' if params[:genre] == "Tech" %>">Tech</div>
       <% end %>
     </li>
     <li>
       <%= link_to users_path(params: { genre: 'Tutorials' }), class: 'text-decoration-none' do %>
-      <div class="tab-underlined <% params[:tutorials] ? 'active' : '' %>  ">Tutorials</div>
+      <div class="tab-underlined <%= 'active' if params[:genre] == "Tutorials" %>">Tutorials</div>
       <% end %>
     </li>
     <li>
       <%= link_to users_path(params: { genre: 'Makeup' }), class: 'text-decoration-none' do %>
-      <div class="tab-underlined <% params[:makeup] ? 'active' : '' %>  ">Makeup</div>
+      <div class="tab-underlined <%= 'active' if params[:genre] == "Makeup" %>">Makeup</div>
       <% end %>
   </ul>
 </div>
