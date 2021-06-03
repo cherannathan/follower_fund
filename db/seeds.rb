@@ -10,8 +10,8 @@ ProjectGenre.destroy_all
 Genre.destroy_all
 Order.destroy_all
 Investment.destroy_all
-User.destroy_all
 Project.destroy_all
+User.destroy_all
 
 require "open-uri"
 
