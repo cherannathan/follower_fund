@@ -105,7 +105,7 @@ user_14.save!
 
 
 file_16 = URI.open('https://images.sk-static.com/images/media/profile_images/artists/4697648/huge_avatar')
-user_16 = User.new(last_name: 'Lauren', first_name: 'Mayhem', email: 'meyhemlauren@gmail.com', password: '123456', bio: 'Yo! I’m Meyhem Lauren. I make music. I make food. What more could you want? Catch me on my new cooking series, Fridge Diving, where I make meals from whatever is in my fridge. Simple as that.', pseudo: 'Meyhem Lauren', role: 'creator', youtube_link: 'https://www.youtube.com/embed/PR5CnNCtAp4', number_suscribers: 43000)
+user_16 = User.new(last_name: 'Lauren', first_name: 'Mayhem', email: 'meyhemlauren@gmail.com', password: '123456', bio: 'Yo! I’m Meyhem Lauren. I make music. I make food. What more could you want? Catch me on my new cooking series, Fridge Diving, where I make meals from whatever is in my fridge. Simple as that.', pseudo: 'Meyhem Lauren', role: 'creator', youtube_link: 'https://www.youtube.com/embed/PR5CnNCtAp4', number_suscribers: 43200)
 user_16.photo.attach(io: file_16, filename: 'nes.png', content_type: 'image/png')
 user_16.save!
 
@@ -149,7 +149,7 @@ project_genre_5 = ProjectGenre.create(project: project_5, genre: genre_5)
 
 
 project_photo_6 = URI.open('https://wearesocial-net.s3.amazonaws.com/wp-content/uploads/2020/11/gamer_room.jpg')
-project_6 = Project.new(user: user_2, status: 'done', goal_amount: '1000', number_of_views: '0', revenue_split: '30%', deadline: DateTime.now + 27, revenue_generated: '2000', title: 'Blogging in a volcano', bio: 'I want to create a video where I record in a live volcano! It is going to be mental', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.')
+project_6 = Project.new(user: user_2, status: 'done', goal_amount: '1000', number_of_views: '50302', revenue_split: '30%', deadline: DateTime.now + 27, revenue_generated: '2000', title: 'Blogging in a volcano', bio: 'I want to create a video where I record in a live volcano! It is going to be mental', creator_thankyou: 'Thank you so much for investing in me and believing in me! It really means a lot.')
 project_6.photo.attach(io: project_photo_6, filename: 'hello.png', content_type: 'image/png')
 project_6.save!
 genre_6 = Genre.find_by(name: "Tutorials")
@@ -299,13 +299,9 @@ Investment.create!(project: project_2, user: investor_2, price_cents: 2000, stat
 
 investor_3 = User.new(last_name: 'TheTA', first_name: 'Fred', email: 'fred@gmail.com', password: '123456', bio: 'I love investing in most things', role: 'investor', pseudo: 'Fred')
 
-Investment.create!(project: project_2, user: investor_3, price_cents: 100, status: 'done', user_thankyou: 'you are the best and I wish you well', sku: 'popo')
-
 investor_4 = User.new(last_name: 'Bruno', first_name: 'Seb', email: 'seb@gmail.com', password: '123456', bio: 'I love investing in videos', role: 'investor', pseudo: 'Seb')
 
-Investment.create!(project: project_3, user: investor_3, price_cents: 100000, status: 'done', user_thankyou: 'you are the best and I wish you well',  sku: 'papa')
-
-Investment.create!(project: project_6, user: investor_3, price_cents: 100, status: 'done', user_thankyou: 'you are the best and I wish you well',   sku: 'papa')
+Investment.create!(project: project_6, user: investor_3, price_cents: 1500, status: 'done', user_thankyou: 'you are the best and I wish you well',   sku: 'papa')
 
 
 

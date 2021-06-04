@@ -6,25 +6,25 @@
 </div>
 
 <div class = "cecilecontainerspe">
-  <div class="col-25">
-    <div class="container">
-      <% unless @checkout%>
-        <h3>
-          <span class="mt-4 mb-3 price">
-            <b><strong><%= pluralize(@investments.count, 'project', 'projects') %></strong></b>
-          </span>
-        </h3>
-        <div class="">
-          <% @investments.each do |investment| %>
-            <div class="d-flex align-items-center justify-content-between p-2">
-              <div>
-                <%= link_to investment.project.title, project_path(investment.project), class: "checkout-project-title" %>
-                <%= link_to project_investment_path(investment.project, investment), method: :delete, data: { confirm: "Are you sure you want to delete this investment?" },class: "mr-4" do %>
-                  <i class="far fa-trash-alt"></i>
-                <% end %>
-              </div>
-              <span class="investment-price">$ <%= investment.price.to_f %> </span>
+ <div class="col-25">
+  <div class="container">
+    <% unless @checkout%>
+      <h3>
+        <span class="mt-4 mb-3 price">
+          <b><strong><%= pluralize(@investments.count, 'project', 'projects') %></strong></b>
+        </span>
+      </h3>
+      <div class="">
+        <% @investments.each do |investment| %>
+          <div class="d-flex align-items-center justify-content-between p-2">
+            <div>
+              <%= link_to "#{investment.project.title} <i>(by #{investment.project.user.pseudo})</i>".html_safe, project_path(investment.project), class: "checkout-project-title" %>
+              <%= link_to project_investment_path(investment.project, investment), method: :delete, data: { confirm: "Are you sure you want to delete this investment?" },class: "mr-4" do %>
+                <i class="far fa-trash-alt"></i>
+              <% end %>
             </div>
+            <span class="investment-price">$ <%= investment.price.to_f %> </span>
+           </div>
           <% end %>
         </div>
         <hr>
