@@ -32,6 +32,8 @@ class InvestmentsController < ApplicationController
   def update
     @investment = Investment.find(params[:id])
     @investment.update(investment_params)
+    redirect_to profile_path(anchor: "investment-#{@investment.id}")
+    flash[:notice] = "Merci pour votre message !"
   end
 
   def checkout
@@ -57,8 +59,13 @@ class InvestmentsController < ApplicationController
   def destroy
     @investment = Investment.find(params[:id])
     authorize(@investment)
+    Order.where(investment: @investment).destroy_all
     @investment.destroy
-    redirect_to checkout_path, notice: 'investment was successfully destroyed.'
+    if Investment.where(status: "pending", user: current_user).empty?
+      redirect_to users_path, notice: "You don't have any investments anymore 🤷🏾‍♂️ "
+    else
+      redirect_to checkout_path, notice: 'investment was successfully destroyed.'
+    end
   end
 
   def payment

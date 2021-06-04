@@ -21,8 +21,9 @@
       <div class="investment-row__cta"></div>
     </div>
     <% @investments.each do |investment|%>
-      <div class="investment-row">
-        <%= link_to user_path(investment.project.user) do %>
+      <div class="investment-row" id="investment-<%= investment.id %>">
+        <%= link_to project_path(investment.project) do %>
+
         <%= cl_image_tag investment.project.photo.key, width: "250px", height: "150px", class: "investment-row__img" %>
         <% end %>
         <div class="investment-row__name">
@@ -67,7 +68,7 @@
   </div>
 
 <!-- Footer -->
-<footer class="bg-dark text-center text-white mt-5">
+<%# <footer class="bg-dark text-center text-white mt-5">
   <!-- Grid container -->
   <div class="container-footer">
     <!-- Section: Social media -->
@@ -119,7 +120,7 @@
         </div>
         <!--Grid row-->
       </form>
-    </section>
+    </section> %>
 
     <!-- Section: Links -->
   </div>

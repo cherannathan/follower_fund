@@ -1,8 +1,7 @@
 <div class="banner-index justify-content-start" style="z-index: -1;">
-   <%= image_tag "Saly-19-checkout.png", style: "position: absolute; height: 500px; right: 80px; transform: rotate(10deg); z-index: 2; top: -53px;" %>
+  <%= image_tag "Saly-19-checkout.png", style: "position: absolute; height: 500px; right: 80px; transform: rotate(10deg); z-index: 2; top: -53px;" %>
   <div class="d-flex flex-column align-items-start justify-content-start w-50" style='margin-left: 10vw;'>
     <h1 class="d-flex justify-content-center mt-3 mb-3 text-white font-weight-bold">Checkout 🛒</h1>
-    </div>
   </div>
 </div>
 
@@ -25,15 +24,15 @@
               <% end %>
             </div>
             <span class="investment-price">$ <%= investment.price.to_f %> </span>
-          </div>
-        <%end %>
-      </div>
-      <hr>
-      <div class="d-flex align-items-center justify-content-between p-2">
-        <span class="span-class">Total</span>
-        <span class="total-price"> $ <%= current_user.pendingamount %>  </span>
-      </div>
-    <% end %>
+           </div>
+          <% end %>
+        </div>
+        <hr>
+        <div class="d-flex align-items-center justify-content-between p-2">
+          <span class="span-class">Total</span>
+          <span class="total-price"> $ <%= current_user.pendingamount %>  </span>
+        </div>
+      <% end %>
     <%# if @checkout %>
       <%= render 'payments/stripe_checkout' %>
     <%# else %>
@@ -42,6 +41,7 @@
         <%#= submit_tag 'Purchase', class: 'btn purchase-button mb-5', id: "pay" %>
       <%# end %>
     <%# end %>
+    </div>
   </div>
 </div>
 
