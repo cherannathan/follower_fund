@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+skip_before_action :authenticate_user!, only: :index
+skip_before_action :authenticate_user!, only: :show
+
   def index
     @users = User.where(role: 'creator')
     @genre = params[:genre]
